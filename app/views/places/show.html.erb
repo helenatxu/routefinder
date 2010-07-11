@@ -1,0 +1,48 @@
+<p>
+  <b>Name:</b>
+  <%=h @place.name %>
+</p>
+
+<p>
+  <b>Coordinates lat:</b>
+  <%=h @place.coordinates_lat %>
+</p>
+
+<p>
+  <b>Coordinates long:</b>
+  <%=h @place.coordinates_long %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @place.country %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @place.date %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%=h @place.rank %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @place.author %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @place.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @place.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

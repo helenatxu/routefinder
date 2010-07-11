@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  coordinates_lat: 
+  coordinates_long: 
+  country: MyString
+  date: 2010-07-10
+  rank: 
+  author: MyString
+  description: MyText
+  image_url: MyString
+
+two:
+  name: MyString
+  coordinates_lat: 
+  coordinates_long: 
+  country: MyString
+  date: 2010-07-10
+  rank: 
+  author: MyString
+  description: MyText
+  image_url: MyString
