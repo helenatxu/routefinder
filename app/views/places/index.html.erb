@@ -1,3 +1,15 @@
+<div class="search">
+	<% form_tag places_path, :method => 'get' do %>
+	<p>
+		<%= text_field_tag :search, params[:search, :country] %>
+		<%= select_tag(:country, options_for_select([['Spain', 1], ['Poland', 2], ['France', 3]])) %>
+		<%= submit_tag "Search", :name => nil %>
+	</p>
+	<% end %>
+</div>
+
+
+
 <h1>Listing places</h1>
 
 <table>
@@ -34,3 +46,8 @@
 <br />
 
 <%= link_to 'New place', new_place_path %>
+
+<br />
+<br />
+
+

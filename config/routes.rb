@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+
+    
   map.resources :places
 
   map.resources :routes
@@ -18,6 +20,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :places
 
   map.resources :places
+  
+  map.resources :home
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

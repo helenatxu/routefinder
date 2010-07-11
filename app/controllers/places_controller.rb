@@ -2,13 +2,20 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.xml
   def index
-    @places = Place.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @places }
+        # if params[:search]
+        # @places = Place.search(:all, :conditions => [ 'title LIKE ?',"%#{params[:search]}%" ])
+    
+      @places = Place.search(params[:search, :country])
+        # else
+        # @places = Place.find(:all)
     end
-  end
+
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.xml  { render :xml => @places }
+#    end
+#  end
+
 
   # GET /places/1
   # GET /places/1.xml

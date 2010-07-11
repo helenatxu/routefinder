@@ -2,13 +2,8 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.xml
   def index
-    @routes = Route.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @routes }
+      @routes = Route.search(params[:search])
     end
-  end
 
   # GET /routes/1
   # GET /routes/1.xml
