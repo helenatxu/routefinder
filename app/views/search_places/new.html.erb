@@ -1,0 +1,16 @@
+<% title "New Search Place" %>
+
+<% form_for @search_place do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :keyworkds %><br />
+    <%= f.text_field :keyworkds %>
+  </p>
+  <p>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
