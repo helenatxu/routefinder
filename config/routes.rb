@@ -1,4 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :places
+
+  map.resources :routes
+
+  map.resources :comments
+
+  map.resources :users
+
+  map.resources :users
+
   map.resources :users
 
   map.resources :comments
