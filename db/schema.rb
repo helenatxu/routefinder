@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(:version => 20100711194351) do
   end
 
   create_table "search_places", :force => true do |t|
-    t.string   "keyworkds"
+    t.string   "keywords"
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "search_routes", :force => true do |t|
-    t.string   "keyworkds"
+    t.string   "keywords"
     t.string   "place_name"
     t.string   "country"
     t.datetime "created_at"

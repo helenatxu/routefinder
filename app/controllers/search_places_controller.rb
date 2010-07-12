@@ -17,3 +17,6 @@ class SearchPlacesController < ApplicationController
     @search_place = SearchPlace.find(params[:id])
   end
 end
+
+
+

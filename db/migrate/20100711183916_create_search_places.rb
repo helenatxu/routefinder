@@ -1,7 +1,7 @@
 class CreateSearchPlaces < ActiveRecord::Migration
   def self.up
     create_table :search_places do |t|
-      t.string :keyworkds
+      t.string :keywords
       t.string :country
       t.timestamps
     end

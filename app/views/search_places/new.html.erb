@@ -1,16 +1,15 @@
-<% title "New Search Place" %>
+
 
 <% form_for @search_place do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :keyworkds %><br />
-    <%= f.text_field :keyworkds %>
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
   </p>
   <p>
     <%= f.label :country %><br />
     <%= f.text_field :country %>
+    <%= f.collection_select :country, Place.all, :id, :name, :include_blank => true %>
   </p>
   <p><%= f.submit %></p>
 <% end %>
-
-
