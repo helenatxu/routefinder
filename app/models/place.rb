@@ -6,13 +6,5 @@ class Place < ActiveRecord::Base
   :message => 'must be a URL for GIF, JPG ' + 
   'or PNG image.'
 
-  def self.search(search, country)
-    if search
-      find(:all, :conditions => ['name LIKE ? and country LIKE ?',"%#{search}%", "%#{country}%"])
-    else
-      #find(:all, :condition => ['country LIKE ?', "%#{country}%"])
-      find(:all)
-      # find(:all, :conditions => ["name LIKE ? or country LIKE ?", "%#{search}%", "%#{search}%"], :order => 'service_date DESC')
-    end
-  end
+
 end

@@ -1,5 +1,6 @@
 class CreateRoutes < ActiveRecord::Migration
   def self.up
+    down
     create_table :routes do |t|
       t.string :name
       t.date :date

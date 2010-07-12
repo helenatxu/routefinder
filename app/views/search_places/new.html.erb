@@ -7,7 +7,7 @@
   </p>
   <p>
     <%= f.label :country %>
-    <%= f.collection_select :country, Place.all, :id, :name, :include_blank => true %>
+    <%= f.collection_select :country, Country.all, :name, :include_blank => true %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

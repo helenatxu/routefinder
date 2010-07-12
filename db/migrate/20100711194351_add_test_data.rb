@@ -6,6 +6,26 @@ class AddTestData < ActiveRecord::Migration
     Comment.delete_all
     User.delete_all  
 
+    Country.create(
+    :name => 'Spain'
+    )
+    
+    Country.create(
+    :name => 'Poland'
+    )
+    
+    Country.create(
+    :name => 'France'
+    )
+    
+    Country.create(
+    :name => 'Portugal'
+    )
+    
+    Country.create(
+    :name => 'Italy'
+    )
+
     User.create(
     :username => 'helenatxu', 
     :email => 'helenatxu@gmail.com', 
