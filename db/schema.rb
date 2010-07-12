@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100711114351) do
+ActiveRecord::Schema.define(:version => 20100711194351) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -40,6 +40,21 @@ ActiveRecord::Schema.define(:version => 20100711114351) do
     t.string   "author"
     t.text     "description"
     t.integer  "places"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "search_places", :force => true do |t|
+    t.string   "keyworkds"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "search_routes", :force => true do |t|
+    t.string   "keyworkds"
+    t.string   "place_name"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

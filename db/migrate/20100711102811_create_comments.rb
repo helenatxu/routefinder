@@ -1,5 +1,8 @@
 class CreateComments < ActiveRecord::Migration
   def self.up
+    
+    drop_table :comments
+    
     create_table :comments do |t|
       t.string :author
       t.date :date
