@@ -1438,3 +1438,336 @@ Migrating to AddDirectionToPlace (20100712125013)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("routes")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("routes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+Migrating to CreateRoutes (20100711110330)
+Migrating to CreatePlaces (20100711110504)
+Migrating to CreateCountries (20100711185654)
+Migrating to AddTestData (20100711194351)
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("routes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("routes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+Migrating to CreateRoutes (20100711110330)
+Migrating to CreatePlaces (20100711110504)
+Migrating to CreateCountries (20100711185654)
+Migrating to AddTestData (20100711194351)
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("routes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("routes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+Migrating to CreateRoutes (20100711110330)
+Migrating to CreatePlaces (20100711110504)
+Migrating to CreateCountries (20100711185654)
+Migrating to AddTestData (20100711194351)
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("routes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TEMPORARY TABLE "altered_places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "direction" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "places"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_places")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_places"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100712125013'[0m
+Migrating to AddTestData (20100711194351)
+  [4;36;1mUser Delete all (0.6ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mPlace Delete all (0.1ms)[0m   [0mDELETE FROM "places" WHERE 1=1[0m
+  [4;36;1mRoute Delete all (0.1ms)[0m   [0;1mDELETE FROM "routes" WHERE 1=1[0m
+  [4;35;1mComment Delete all (0.1ms)[0m   [0mDELETE FROM "comments" WHERE 1=1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100711194351'[0m
+Migrating to CreateCountries (20100711185654)
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "countries"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100711185654'[0m
+Migrating to CreatePlaces (20100711110504)
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "places"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100711110504'[0m
+Migrating to CreateRoutes (20100711110330)
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "routes"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100711110330'[0m
+Migrating to CreateComments (20100711110300)
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "comments"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100711110300'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: comments: DROP TABLE "comments"[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: comments: DROP TABLE "comments"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "date" date, "comment" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110300')[0m
+Migrating to CreateRoutes (20100711110330)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "rank" integer, "author" varchar(255), "description" text, "places" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110330')[0m
+Migrating to CreatePlaces (20100711110504)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110504')[0m
+Migrating to CreateCountries (20100711185654)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+Migrating to CreateComments (20100711110300)
+Migrating to CreateRoutes (20100711110330)
+Migrating to CreatePlaces (20100711110504)
+Migrating to CreateCountries (20100711185654)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711185654')[0m
+Migrating to AddTestData (20100711194351)
+  [4;35;1mPlace Delete all (0.4ms)[0m   [0mDELETE FROM "places" WHERE 1=1[0m
+  [4;36;1mRoute Delete all (0.1ms)[0m   [0;1mDELETE FROM "routes" WHERE 1=1[0m
+  [4;35;1mComment Delete all (0.1ms)[0m   [0mDELETE FROM "comments" WHERE 1=1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mCountry Delete all (0.1ms)[0m   [0mDELETE FROM "countries" WHERE 1=1[0m
+  [4;36;1mCountry Create (0.2ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Spain', '2010-07-12 21:32:51', '2010-07-12 21:32:51')[0m
+  [4;35;1mCountry Create (0.1ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Poland', '2010-07-12 21:32:51', '2010-07-12 21:32:51')[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('France', '2010-07-12 21:32:51', '2010-07-12 21:32:51')[0m
+  [4;35;1mCountry Create (0.1ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Portugal', '2010-07-12 21:32:51', '2010-07-12 21:32:51')[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Italy', '2010-07-12 21:32:51', '2010-07-12 21:32:51')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'helenatxu') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'helenatxu@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("updated_at", "photo_url", "username", "email", "created_at") VALUES('2010-07-12 21:32:51', '/images/rails.png', 'helenatxu', 'helenatxu@gmail.com', '2010-07-12 21:32:51')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'julas') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'julas@julas.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("updated_at", "photo_url", "username", "email", "created_at") VALUES('2010-07-12 21:32:51', '/images/rails.png', 'julas', 'julas@julas.com', '2010-07-12 21:32:51')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'prueba') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'prueba@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("updated_at", "photo_url", "username", "email", "created_at") VALUES('2010-07-12 21:32:51', '/images/rails.png', 'prueba', 'prueba@gmail.com', '2010-07-12 21:32:51')[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-12 21:32:51', '2010-01-02', 'helenatxu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-12 21:32:51', '2010-02-02', 'julas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-12 21:32:51', '2010-03-02', 'julas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;35;1mPlace Create (0.1ms)[0m   [0mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "created_at") VALUES('Place1', -2.235532, '/images/rails.png', '2010-07-12 21:32:51', '2010-01-02', 1, 'helenatxu', 1.00203013, 2, 'Long handle bag made of skin. Including that based portfolio - Removable inner wallet. Dimensions: 25 x 36 12 cms.', '2010-07-12 21:32:51')[0m
+  [4;36;1mPlace Create (0.1ms)[0m   [0;1mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "created_at") VALUES('Place2', -2.235532, '/images/rails.png', '2010-07-12 21:32:51', '2010-01-02', 2, 'julas', 1.00203013, 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;35;1mPlace Create (0.1ms)[0m   [0mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "created_at") VALUES('Place3', -5.235532, '/images/rails.png', '2010-07-12 21:32:51', '2010-01-06', 1, 'prueba', 4.00203013, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;36;1mRoute Create (0.2ms)[0m   [0;1mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route1', 1, '2010-07-12 21:32:51', '2010-01-02', 'helenatxu', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;35;1mRoute Create (0.1ms)[0m   [0mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route2', 3, '2010-07-12 21:32:51', '2010-10-02', 'julas', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;36;1mRoute Create (0.1ms)[0m   [0;1mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route3', 2, '2010-07-12 21:32:51', '2010-01-05', 'helenatxu', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-12 21:32:51')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100711194351')[0m
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "places" ADD "direction" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100712125013')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("countries")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("places")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("routes")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m

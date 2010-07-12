@@ -4,7 +4,8 @@ class AddTestData < ActiveRecord::Migration
     Place.delete_all 
     Route.delete_all 
     Comment.delete_all
-    User.delete_all  
+    User.delete_all
+    Country.delete_all    
 
     Country.create(
     :name => 'Spain'
@@ -73,7 +74,7 @@ class AddTestData < ActiveRecord::Migration
     :name => 'Place1', 
     :coordinates_lat => '1.00203013',
     :coordinates_long => '-2.235532',
-    :country => 'Spain',
+    :country => '1',
     :date => '01/02/2010',
     :rank => '2',
     :author => 'helenatxu',
@@ -85,7 +86,7 @@ class AddTestData < ActiveRecord::Migration
     :name => 'Place2', 
     :coordinates_lat => '1.00203013',
     :coordinates_long => '-2.235532',
-    :country => 'Poland',
+    :country => '2',
     :date => '01/02/2010',
     :rank => '5',
     :author => 'julas',
@@ -99,7 +100,7 @@ class AddTestData < ActiveRecord::Migration
     :name => 'Place3', 
     :coordinates_lat => '4.00203013',
     :coordinates_long => '-5.235532',
-    :country => 'Poland',
+    :country => '1',
     :date => '01/06/2010',
     :rank => '1',
     :author => 'prueba',

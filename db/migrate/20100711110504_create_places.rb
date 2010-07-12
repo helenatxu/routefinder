@@ -1,6 +1,6 @@
 class CreatePlaces < ActiveRecord::Migration
   def self.up
-    down
+
     create_table :places do |t|
       t.string :name
       t.decimal :coordinates_lat

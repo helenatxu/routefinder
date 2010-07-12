@@ -1,6 +1,6 @@
 class CreateCountries < ActiveRecord::Migration
   def self.up
-    down
+
     create_table :countries do |t|
       
       t.string :name
