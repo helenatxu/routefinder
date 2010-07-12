@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100711194351) do
+ActiveRecord::Schema.define(:version => 20100712125654) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -19,11 +19,17 @@ ActiveRecord::Schema.define(:version => 20100711194351) do
     t.datetime "updated_at"
   end
 
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "places", :force => true do |t|
     t.string   "name"
     t.decimal  "coordinates_lat"
     t.decimal  "coordinates_long"
-    t.string   "country"
+    t.integer  "country"
     t.date     "date"
     t.integer  "rank"
     t.string   "author"
@@ -31,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20100711194351) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "direction"
   end
 
   create_table "routes", :force => true do |t|

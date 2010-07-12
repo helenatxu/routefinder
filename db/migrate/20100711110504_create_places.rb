@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :name
       t.decimal :coordinates_lat
       t.decimal :coordinates_long
-      t.string :country
+      t.integer :country
       t.date :date
       t.integer :rank
       t.string :author
