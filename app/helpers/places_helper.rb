@@ -1,2 +1,6 @@
 module PlacesHelper
+  
+
+  
+  
 end

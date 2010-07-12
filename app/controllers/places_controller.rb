@@ -1,21 +1,21 @@
 class PlacesController < ApplicationController
   # GET /places
   # GET /places.xml
+
   def index
-        # if params[:search]
-        # @places = Place.search(:all, :conditions => [ 'title LIKE ?',"%#{params[:search]}%" ])
-    
-      @places = Place.search(params[:search, :country])
-        # else
-        # @places = Place.find(:all)
+    if params[:keywords]
+      @places = Place.find(:all,:conditions => ['Place.name LIKE ?', "%#{keywords}%"])
+      else
+        @places = Place.find(:all)
     end
+  end
 
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.xml  { render :xml => @places }
-#    end
-#  end
 
+  #    respond_to do |format|
+  #      format.html # index.html.erb
+  #      format.xml  { render :xml => @places }
+  #    end
+  #  end
 
   # GET /places/1
   # GET /places/1.xml
@@ -87,4 +87,6 @@ class PlacesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+
 end
