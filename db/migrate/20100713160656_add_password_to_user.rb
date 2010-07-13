@@ -1,0 +1,13 @@
+class AddPasswordToUser < ActiveRecord::Migration
+  def self.up
+    add_column :users, :hashed_password, :string
+    add_column :users, :salt, :string
+    add_column :users, :profile, :string
+  end
+
+  def self.down
+    remove_column :users, :profile
+    remove_column :users, :salt
+    remove_column :users, :hashed_password
+  end
+end
