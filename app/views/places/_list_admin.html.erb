@@ -23,8 +23,10 @@
 		<td><%=h place.rank %></td>
 		<td><%=h place.author %></td>
 		<td><%=h place.description %></td>
-		<td id="image_url"><%= image_tag place.image_url, :class => 'list-image' %></td>
+		<td><%=h place.image_url %></td>
 		<td><%= link_to 'Show', place %></td>
+		<td><%= link_to 'Edit', edit_place_path(place) %></td>
+		<td><%= link_to 'Destroy', place, :confirm => 'Are you sure?', :method => :delete %></td>
 	</tr>
 	<% end %>
 </table>

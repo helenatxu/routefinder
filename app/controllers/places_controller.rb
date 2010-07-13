@@ -6,9 +6,9 @@ class PlacesController < ApplicationController
     @countries = Country.find(:all)
     if params[:keywords] and not params[:keywords].empty?
       if params[:country_id] and not params[:country_id].empty?
-        @places = Place.find(:all, :conditions => ['name LIKE ? and country = ?', "%#{params[:keywords]}%", params[:country_id]])
+        @places = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country = ?', "%#{params[:keywords]}%", "%#{params[:keywords]}%", params[:country_id]])
       else
-        @places = Place.find(:all, :conditions => ['name LIKE ?', "%#{params[:keywords]}%"])
+        @places = Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords]}%", "%#{params[:keywords]}%"])
       end
     else
       @places = Place.find(:all)
