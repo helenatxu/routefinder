@@ -3,13 +3,21 @@ class PlacesController < ApplicationController
   # GET /places.xml
 
   def index
-    if params[:keywords, :country_id]
-      @places = Place.find(:all, :conditions => ['name LIKE ? and country LIKE ?', "%#{params[:keywords]}%"], "{params[:country_id]}")
+    @countries = Country.find(:all)
+    if params[:keywords] and not params[:keywords].empty?
+      if params[:country_id] and not params[:country_id].empty?
+        @places = Place.find(:all, :conditions => ['name LIKE ? and country = ?', "%#{params[:keywords]}%", params[:country_id]])
       else
-        @places = Place.find(:all)
+        @places = Place.find(:all, :conditions => ['name LIKE ?', "%#{params[:keywords]}%"])
+      end
+    else
+      @places = Place.find(:all)
     end
   end
 
+  def list
+    @places = Place.find(:all)
+  end
 
   #    respond_to do |format|
   #      format.html # index.html.erb

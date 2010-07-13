@@ -1,0 +1,37 @@
+<h1>Listing places</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Coordinates lat</th>
+		<th>Coordinates long</th>
+		<th>Country</th>
+		<th>Date</th>
+		<th>Rank</th>
+		<th>Author</th>
+		<th>Description</th>
+		<th>Image url</th>
+	</tr>
+
+	<% @places.each do |place| %>
+	<tr>
+		<td><%=h place.name %></td>
+		<td><%=h place.coordinates_lat %></td>
+		<td><%=h place.coordinates_long %></td>
+		<td><%=h place.country %></td>
+		<td><%=h place.date %></td>
+		<td><%=h place.rank %></td>
+		<td><%=h place.author %></td>
+		<td><%=h place.description %></td>
+		<td><%=h place.image_url %></td>
+		<td><%= link_to 'Show', place %></td>
+		<td><%= link_to 'Edit', edit_place_path(place) %></td>
+		<td><%= link_to 'Destroy', place, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+<p>
+<%= link_to 'Places', places_path %>
+<%= link_to 'New place', new_place_path %>
+</p>

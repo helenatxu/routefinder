@@ -1,17 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Places: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>RouteFinder | Places: <%= controller.action_name %></title>
+	<%= stylesheet_link_tag 'routefinder' %>
 </head>
 <body>
 
-<p style="color: green"><%= notice %></p>
+	<div id="header">
+		<p>Route Finder</p>
+	</div>
 
-<%= yield %>
+	<div id="container">
+
+		<p style="color: green"><%= notice %></p>
+
+		<div id="log_in">
+
+			<form id="form_login" action="/login" method="get"> 
+				<p><label for="login" class="login_class">Log in:</label> 
+					<input id="login" class="login_class" type="text" size="15"/> 
+				</p>
+				<p><label for="password" class="login_class">Password:</label> 
+					<input id="password" class="login_class" type="text" size="12"/>
+				</p>
+				<input id="button_login" name="commit" type="submit" value="Log in!" /> 
+			</form> 
+			<p><a id="link_new_user" class="login_class" href="#">Create new user</a></p>
+		</div>
+
+		<h1>What Are You Looking For?</h1>
+
+		<%= yield %>
+	</div>	
+
+	<div id="footer">
+		<p>RouteFinder 2010.  Helena Moreno Chacón</p>
+	</div>
 
 </body>
 </html>
