@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100713160656) do
+ActiveRecord::Schema.define(:version => 20100713161039) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20100713160656) do
     t.string   "hashed_password"
     t.string   "salt"
     t.string   "profile"
+    t.boolean  "is_admin"
   end
 
 end
