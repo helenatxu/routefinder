@@ -1,24 +1,40 @@
 <h1>Editing user</h1>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+<div id="campos_user">
 
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :photo_url %><br />
-    <%= f.text_field :photo_url %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% form_for(@user) do |f| %>
+<%= f.error_messages %>
+
+<p>
+	<%= f.label :username %><br />
+	<%= f.text_field :username %>
+</p>
+<p>
+	<%= f.label :email %><br />
+	<%= f.text_field :email %>
+</p>
+<p>
+	<%= f.label :password %><br />
+	<%= f.password_field :hashed_password %>
+</p>
+<p>
+	<%= f.label :photo_url %><br />
+	<%= f.text_field :photo_url %>
+</p>
+<p>
+	<%= f.label :photo_url %><br />
+	<%= f.text_field :photo_url %>
+</p>
+<p>
+	<%= f.label :profile %><br />
+	<%= f.text_field :profile %>
+</p>
+<p>
+	<%= f.submit 'Update' %>
+</p>	
+
 <% end %>
+</div>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
