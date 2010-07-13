@@ -1,28 +1,24 @@
 class AddTestData < ActiveRecord::Migration
   def self.up
 
-    Place.delete_all 
-    Route.delete_all 
-    Comment.delete_all
-    User.delete_all
-    Country.delete_all    
+    #down   
 
     Country.create(
     :name => 'Spain'
     )
-    
+
     Country.create(
     :name => 'Poland'
     )
-    
+
     Country.create(
     :name => 'France'
     )
-    
+
     Country.create(
     :name => 'Portugal'
     )
-    
+
     Country.create(
     :name => 'Italy'
     )
@@ -40,7 +36,7 @@ class AddTestData < ActiveRecord::Migration
     :username => 'julas', 
     :email => 'julas@julas.com',
     :hashed_password => '1234', 
-    :profile => 'Hi! I am from Spain. I like travel. Nice to meet you!',
+    :profile => 'Hi! I like travel. Nice to meet you!',
     :photo_url => '/images/rails.png',
     :is_admin => false
     )
@@ -49,16 +45,16 @@ class AddTestData < ActiveRecord::Migration
     :username => 'prueba', 
     :email => 'prueba@gmail.com', 
     :hashed_password => '1234', 
-    :profile => 'Hi! I am from Spain. I like travel. Nice to meet you!',
+    :profile => 'Hi! I am from Spain. Nice to meet you!',
     :photo_url => '/images/rails.png',
     :is_admin => false
     )
-    
+
     User.create(
     :username => 'pepe', 
     :email => 'pepe@gmail.com',
     :hashed_password => '1234', 
-    :profile => 'Hi! I am from France. I like travel. Nice to meet you!',
+    :profile => 'Hi! I am from France. I like travel.',
     :photo_url => '/images/rails.png',
     :is_admin => false
     )
@@ -80,8 +76,8 @@ class AddTestData < ActiveRecord::Migration
     :photo_url => '/images/rails.png',
     :is_admin => false
     )
-    
-    
+
+
     Comment.create(
     :author => 'helenatxu',
     :date => '01/02/2010',
@@ -105,7 +101,7 @@ class AddTestData < ActiveRecord::Migration
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
     ornare urna, quis pulvinar magna aliquet ac.'
     )
-    
+
     Place.create(
     :name => 'Place1', 
     :coordinates_lat => '1.00203013',
@@ -190,7 +186,10 @@ class AddTestData < ActiveRecord::Migration
     Place.delete_all 
     Route.delete_all 
     Comment.delete_all
+    Country.delete_all  
 
   end
 
 end
+
+
