@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :search_routes
-
-  map.resources :search_places
-
 
     
   map.resources :places
@@ -27,6 +23,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :home
   
+  map.resources :search_routes
+
+  map.resources :search_places
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -9478,3 +9478,2775 @@ Processing UsersController#show (for 127.0.0.1 at 2010-07-13 21:56:26) [GET]
 Rendering template within layouts/users
 Rendering users/show
 Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-13 21:59:03) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 112ms (View: 25, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddTestData (20100713194351)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mUser Delete all (0.5ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mPlace Delete all (0.1ms)[0m   [0;1mDELETE FROM "places" WHERE 1=1[0m
+  [4;35;1mRoute Delete all (0.1ms)[0m   [0mDELETE FROM "routes" WHERE 1=1[0m
+  [4;36;1mComment Delete all (0.1ms)[0m   [0;1mDELETE FROM "comments" WHERE 1=1[0m
+  [4;35;1mCountry Delete all (0.2ms)[0m   [0mDELETE FROM "countries" WHERE 1=1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100713194351'[0m
+Migrating to AddIsAdminToUser (20100713161039)
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255), "profile" varchar(255), "is_admin" boolean) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255), "profile" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100713161039'[0m
+Migrating to AddPasswordToUser (20100713160656)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255), "profile" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100713160656'[0m
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "direction" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "places"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_places")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_places"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100712125013'[0m
+Migrating to CreateCountries (20100711185654)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mDROP TABLE "countries"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711185654'[0m
+Migrating to CreatePlaces (20100711110504)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDROP TABLE "places"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711110504'[0m
+Migrating to CreateRoutes (20100711110330)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDROP TABLE "routes"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711110330'[0m
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "comments"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711110300'[0m
+Migrating to CreateUsers (20100711102819)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711102819'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711102819')[0m
+Migrating to CreateComments (20100711110300)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "date" date, "comment" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110300')[0m
+Migrating to CreateRoutes (20100711110330)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "rank" integer, "author" varchar(255), "description" text, "places" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110330')[0m
+Migrating to CreatePlaces (20100711110504)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110504')[0m
+Migrating to CreateCountries (20100711185654)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711185654')[0m
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "places" ADD "direction" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100712125013')[0m
+Migrating to AddPasswordToUser (20100713160656)
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "users" ADD "hashed_password" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "salt" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "profile" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100713160656')[0m
+Migrating to AddIsAdminToUser (20100713161039)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "is_admin" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100713161039')[0m
+Migrating to AddTestData (20100713194351)
+  [4;35;1mCountry Create (0.5ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Spain', '2010-07-13 20:01:08', '2010-07-13 20:01:08')[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Poland', '2010-07-13 20:01:08', '2010-07-13 20:01:08')[0m
+  [4;35;1mCountry Create (0.1ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('France', '2010-07-13 20:01:08', '2010-07-13 20:01:08')[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Portugal', '2010-07-13 20:01:08', '2010-07-13 20:01:08')[0m
+  [4;35;1mCountry Create (0.1ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Italy', '2010-07-13 20:01:08', '2010-07-13 20:01:08')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'helenatxu') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'helenatxu@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:01:08', '/images/rails.png', NULL, 'Hi! I am from Spain. I like travel. Nice to meet you!', 'helenatxu', 't', 'helenatxu@gmail.com', '2010-07-13 20:01:08')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'julas') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'julas@julas.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:01:09', '/images/rails.png', NULL, 'Hi! I like travel. Nice to meet you!', 'julas', 'f', 'julas@julas.com', '2010-07-13 20:01:09')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'prueba') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'prueba@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:01:09', '/images/rails.png', NULL, 'Hi! I am from Spain. Nice to meet you!', 'prueba', 'f', 'prueba@gmail.com', '2010-07-13 20:01:09')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'pepe') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'pepe@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:01:09', '/images/rails.png', NULL, 'Hi! I am from France. I like travel.', 'pepe', 'f', 'pepe@gmail.com', '2010-07-13 20:01:09')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'juan') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'juan@julas.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:01:09', '/images/rails.png', NULL, 'Hi! I am from Poland. I like travel. Nice to meet you!', 'juan', 'f', 'juan@julas.com', '2010-07-13 20:01:09')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'maria') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maria@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:01:09', '/images/rails.png', NULL, 'Hi! I am from Portugal. I like travel. Nice to meet you!', 'maria', 'f', 'maria@gmail.com', '2010-07-13 20:01:09')[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-13 20:01:09', '2010-01-02', 'helenatxu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:01:09')[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-13 20:01:09', '2010-02-02', 'julas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:01:09')[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-13 20:01:09', '2010-03-02', 'julas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:01:09')[0m
+  [4;35;1mPlace Create (1.0ms)[0m   [0mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "direction", "created_at") VALUES('Place1', -2.235532, '/images/rails.png', '2010-07-13 20:01:09', '2010-01-02', 1, 'helenatxu', 1.00203013, 2, 'Long handle bag made of skin. Including that based portfolio - Removable inner wallet. Dimensions: 25 x 36 12 cms.', NULL, '2010-07-13 20:01:09')[0m
+  [4;36;1mPlace Create (0.1ms)[0m   [0;1mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "direction", "created_at") VALUES('Place2', -2.235532, '/images/rails.png', '2010-07-13 20:01:09', '2010-01-02', 2, 'julas', 1.00203013, 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', NULL, '2010-07-13 20:01:09')[0m
+  [4;35;1mPlace Create (0.1ms)[0m   [0mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "direction", "created_at") VALUES('Place3', -5.235532, '/images/rails.png', '2010-07-13 20:01:09', '2010-01-06', 1, 'prueba', 4.00203013, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', NULL, '2010-07-13 20:01:09')[0m
+  [4;36;1mRoute Create (0.1ms)[0m   [0;1mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route1', 1, '2010-07-13 20:01:09', '2010-01-02', 'helenatxu', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:01:09')[0m
+  [4;35;1mRoute Create (0.1ms)[0m   [0mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route2', 3, '2010-07-13 20:01:09', '2010-10-02', 'julas', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:01:09')[0m
+  [4;36;1mRoute Create (0.1ms)[0m   [0;1mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route3', 2, '2010-07-13 20:01:09', '2010-01-05', 'helenatxu', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:01:09')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100713194351')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("countries")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("places")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("routes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-13 22:01:37) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-07-13 22:01:40) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 28ms (View: 18, DB: 0) | 200 OK [http://localhost/users/5/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-07-13 22:01:46) [PUT]
+  Parameters: {"user"=>{"profile"=>"Hi! I am from Poland. I like travel. Nice to meet you!", "photo_url"=>"/images/rails.png", "username"=>"juan", "password"=>"123", "email"=>"juan@julas.com"}, "commit"=>"Update", "authenticity_token"=>"FawVQr05bjvt8mhe0Iug6P8HFjMmxIdyNes8n5Kh3RQ=", "id"=>"5"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'juan' AND "users".id <> 5) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'juan@julas.com' AND "users".id <> 5) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "hashed_password" = '867be55da363c944014cbbfe430c9c58da5ac599', "updated_at" = '2010-07-13 20:01:46', "salt" = 'ET8Js232vG' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/users/5
+Completed in 31ms (DB: 1) | 302 Found [http://localhost/users/5]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-13 22:01:46) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/users/5]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-13 22:01:49) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-13 22:02:49) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (100.2ms)
+Completed in 133ms (View: 124, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-13 22:03:51) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:04:09) [GET]
+  Parameters: {"commit"=>"Log in!"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddTestData (20100713194351)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mUser Delete all (0.6ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mPlace Delete all (0.1ms)[0m   [0;1mDELETE FROM "places" WHERE 1=1[0m
+  [4;35;1mRoute Delete all (0.1ms)[0m   [0mDELETE FROM "routes" WHERE 1=1[0m
+  [4;36;1mComment Delete all (0.1ms)[0m   [0;1mDELETE FROM "comments" WHERE 1=1[0m
+  [4;35;1mCountry Delete all (0.1ms)[0m   [0mDELETE FROM "countries" WHERE 1=1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100713194351'[0m
+Migrating to AddIsAdminToUser (20100713161039)
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255), "profile" varchar(255), "is_admin" boolean) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255), "profile" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100713161039'[0m
+Migrating to AddPasswordToUser (20100713160656)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255), "profile" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255), "salt" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime, "hashed_password" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100713160656'[0m
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "direction" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "places"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_places")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_places"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100712125013'[0m
+Migrating to CreateCountries (20100711185654)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mDROP TABLE "countries"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711185654'[0m
+Migrating to CreatePlaces (20100711110504)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mDROP TABLE "places"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711110504'[0m
+Migrating to CreateRoutes (20100711110330)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDROP TABLE "routes"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711110330'[0m
+Migrating to CreateComments (20100711110300)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "comments"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711110300'[0m
+Migrating to CreateUsers (20100711102819)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100711102819'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100711102819)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "photo_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711102819')[0m
+Migrating to CreateComments (20100711110300)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "date" date, "comment" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110300')[0m
+Migrating to CreateRoutes (20100711110330)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "rank" integer, "author" varchar(255), "description" text, "places" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110330')[0m
+Migrating to CreatePlaces (20100711110504)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "coordinates_lat" decimal, "coordinates_long" decimal, "country" integer, "date" date, "rank" integer, "author" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711110504')[0m
+Migrating to CreateCountries (20100711185654)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100711185654')[0m
+Migrating to AddDirectionToPlace (20100712125013)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "places" ADD "direction" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100712125013')[0m
+Migrating to AddPasswordToUser (20100713160656)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "hashed_password" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "salt" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "profile" varchar(255)[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100713160656')[0m
+Migrating to AddIsAdminToUser (20100713161039)
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "is_admin" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100713161039')[0m
+Migrating to AddTestData (20100713194351)
+  [4;35;1mCountry Create (0.5ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Spain', '2010-07-13 20:06:38', '2010-07-13 20:06:38')[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Poland', '2010-07-13 20:06:38', '2010-07-13 20:06:38')[0m
+  [4;35;1mCountry Create (0.1ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('France', '2010-07-13 20:06:38', '2010-07-13 20:06:38')[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Portugal', '2010-07-13 20:06:38', '2010-07-13 20:06:38')[0m
+  [4;35;1mCountry Create (0.1ms)[0m   [0mINSERT INTO "countries" ("name", "updated_at", "created_at") VALUES('Italy', '2010-07-13 20:06:38', '2010-07-13 20:06:38')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'helenatxu') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'helenatxu@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:06:38', '/images/rails.png', NULL, 'Hi! I am from Spain. I like travel. Nice to meet you!', 'helenatxu', 't', 'helenatxu@gmail.com', '2010-07-13 20:06:38')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'julas') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'julas@julas.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:06:38', '/images/rails.png', NULL, 'Hi! I like travel. Nice to meet you!', 'julas', 'f', 'julas@julas.com', '2010-07-13 20:06:38')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'prueba') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'prueba@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:06:38', '/images/rails.png', NULL, 'Hi! I am from Spain. Nice to meet you!', 'prueba', 'f', 'prueba@gmail.com', '2010-07-13 20:06:38')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'pepe') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'pepe@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:06:38', '/images/rails.png', NULL, 'Hi! I am from France. I like travel.', 'pepe', 'f', 'pepe@gmail.com', '2010-07-13 20:06:38')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'juan') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'juan@julas.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:06:38', '/images/rails.png', NULL, 'Hi! I am from Poland. I like travel. Nice to meet you!', 'juan', 'f', 'juan@julas.com', '2010-07-13 20:06:38')[0m
+WARNING: Can't mass-assign these protected attributes: hashed_password
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'maria') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maria@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "photo_url", "hashed_password", "profile", "username", "is_admin", "email", "created_at") VALUES(NULL, '2010-07-13 20:06:38', '/images/rails.png', NULL, 'Hi! I am from Portugal. I like travel. Nice to meet you!', 'maria', 'f', 'maria@gmail.com', '2010-07-13 20:06:38')[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-13 20:06:38', '2010-01-02', 'helenatxu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:06:38')[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-13 20:06:38', '2010-02-02', 'julas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:06:38')[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "date", "author", "comment", "created_at") VALUES('2010-07-13 20:06:38', '2010-03-02', 'julas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:06:38')[0m
+  [4;35;1mPlace Create (0.2ms)[0m   [0mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "direction", "created_at") VALUES('Place1', -2.235532, '/images/rails.png', '2010-07-13 20:06:38', '2010-01-02', 1, 'helenatxu', 1.00203013, 2, 'Long handle bag made of skin. Including that based portfolio - Removable inner wallet. Dimensions: 25 x 36 12 cms.', NULL, '2010-07-13 20:06:38')[0m
+  [4;36;1mPlace Create (0.1ms)[0m   [0;1mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "direction", "created_at") VALUES('Place2', -2.235532, '/images/rails.png', '2010-07-13 20:06:38', '2010-01-02', 2, 'julas', 1.00203013, 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', NULL, '2010-07-13 20:06:38')[0m
+  [4;35;1mPlace Create (0.1ms)[0m   [0mINSERT INTO "places" ("name", "coordinates_long", "image_url", "updated_at", "date", "country", "author", "coordinates_lat", "rank", "description", "direction", "created_at") VALUES('Place3', -5.235532, '/images/rails.png', '2010-07-13 20:06:38', '2010-01-06', 1, 'prueba', 4.00203013, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', NULL, '2010-07-13 20:06:38')[0m
+  [4;36;1mRoute Create (0.1ms)[0m   [0;1mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route1', 1, '2010-07-13 20:06:38', '2010-01-02', 'helenatxu', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:06:38')[0m
+  [4;35;1mRoute Create (0.1ms)[0m   [0mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route2', 3, '2010-07-13 20:06:38', '2010-10-02', 'julas', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:06:38')[0m
+  [4;36;1mRoute Create (0.1ms)[0m   [0;1mINSERT INTO "routes" ("name", "places", "updated_at", "date", "author", "rank", "description", "created_at") VALUES('Route3', 2, '2010-07-13 20:06:38', '2010-01-05', 'helenatxu', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+ a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+ ornare urna, quis pulvinar magna aliquet ac.', '2010-07-13 20:06:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100713194351')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("countries")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("places")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("routes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-13 22:06:47) [GET]
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:06:55) [GET]
+  Parameters: {"commit"=>"Log in!"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:07:20) [GET]
+  Parameters: {"commit"=>"Log in!"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:07:25) [GET]
+  Parameters: {"commit"=>"Log in!"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-13 22:07:28) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.8ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.7ms)
+Completed in 126ms (View: 114, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:07:32) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:07:39) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:24:51) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-13 22:24:56) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:25:00) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:26:21) [GET]
+  Parameters: {"commit"=>"login"}
+
+NameError (uninitialized constant LoginController):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:27:15) [GET]
+  Parameters: {"commit"=>"login"}
+
+SyntaxError (/Users/helenatxu/proyectos/finalproject/webroutes/app/controllers/login_controller.rb:32: syntax error, unexpected $end, expecting kEND):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-07-13 22:27:22) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::UnknownAction (No action responded to index. Actions: login, logout, and signup):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:28:50) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 22:29:10) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:50:39) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 10:50:41) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 10:50:46) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 10:50:50) [GET]
+  Parameters: {"commit"=>"login"}
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places?commit=login]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 10:57:12) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 10:57:12) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.8ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.7ms)
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#login (for 127.0.0.1 at 2010-07-14 10:57:36) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionView::MissingTemplate (Missing template application/login.erb in view path app/views):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#login (for 127.0.0.1 at 2010-07-14 10:57:42) [GET]
+  Parameters: {"commit"=>"login"}
+
+ActionView::MissingTemplate (Missing template application/login.erb in view path app/views):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 10:59:57) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 10:59:58) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:47:00) [GET]
+  [4;36;1mCountry Load (53.1ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (1.1ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (72.2ms)
+Completed in 838ms (View: 474, DB: 54) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:48:03) [GET]
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (1.0ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (28.2ms)
+Completed in 145ms (View: 120, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:48:41) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (10.6ms)
+Completed in 50ms (View: 29, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:09) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (1.2ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (12.3ms)
+Completed in 102ms (View: 32, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:18) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.8ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:18) [GET]
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 23ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:26) [GET]
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.7ms)
+Completed in 20ms (View: 10, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:37) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:43) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:49:52) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:50:04) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:50:20) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:50:27) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:50:32) [GET]
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:50:45) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:50:55) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:51:08) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.4ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:51:13) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:51:19) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.7ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:51:23) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:51:37) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:51:43) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.8ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (130.4ms)
+Completed in 146ms (View: 135, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:55:12) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:55:20) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:55:41) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:55:49) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.8ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:55:52) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:55:56) [GET]
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:56:03) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.7ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 11:56:24) [GET]
+  [4;36;1mCountry Load (0.9ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mPlace Load (0.6ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#show (for 127.0.0.1 at 2010-07-14 12:14:43) [GET]
+  Parameters: {"id"=>"prueba_botones"}
+  [4;36;1mPlace Load (0.2ms)[0m   [0;1mSELECT * FROM "places" WHERE ("places"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Place with ID=prueba_botones):
+  app/controllers/places_controller.rb:31:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#show to html (for 127.0.0.1 at 2010-07-14 12:15:03) [GET]
+  Parameters: {"id"=>"prueba_botones"}
+  [4;35;1mPlace Load (0.2ms)[0m   [0mSELECT * FROM "places" WHERE ("places"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Place with ID=prueba_botones):
+  app/controllers/places_controller.rb:31:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (130.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show to html (for 127.0.0.1 at 2010-07-14 12:15:18) [GET]
+  Parameters: {"id"=>"prueba_botones"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=prueba_botones):
+  app/controllers/users_controller.rb:16:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:15:34) [GET]
+
+ActionController::RoutingError (No route matches "/prueba_botones.html" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:15:51) [GET]
+
+ActionController::RoutingError (No route matches "/prueba_botones.html" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:17:43) [GET]
+
+ActionController::RoutingError (No route matches "/prueba_botones.html" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:49:34) [GET]
+  [4;35;1mCountry Load (14.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (12.7ms)
+Completed in 42ms (View: 17, DB: 16) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:49:39) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:50:03) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:50:55) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:50:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/bg_button_a.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:51:47) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:51:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/button-design.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:51:57) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:51:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/button-design.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:52:07) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:52:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/button-design.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:54:18) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 160ms (View: 151, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:54:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/button-design.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:55:27) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (19.6ms)
+Completed in 193ms (View: 183, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:55:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/button-design.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:55:46) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 27ms (View: 18, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:55:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/button-design.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:56:05) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:56:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/bg_button_span.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:56:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/bg_button_a.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:56:40) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:56:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/bg_button_a.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 12:56:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/bg_button_span.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:57:11) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:58:23) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:58:56) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:59:15) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:59:30) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.9ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 12:59:44) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:00:11) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:00:17) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:00:44) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:00:53) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.8ms)
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:01:04) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:01:16) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:01:24) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:02:10) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 13:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_button_a.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-14 13:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_button_span.gif" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:02:37) [GET]
+  [4;35;1mCountry Load (133.2ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (1.1ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 157ms (View: 12, DB: 134) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:05:33) [GET]
+  [4;35;1mCountry Load (17.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.9ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (9.4ms)
+Completed in 68ms (View: 15, DB: 19) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:06:41) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:07:25) [GET]
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.9ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (9.5ms)
+Completed in 29ms (View: 15, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:07:33) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:08:39) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 27ms (View: 18, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:08:50) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:09:02) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:09:24) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:09:32) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:09:39) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.8ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.5ms)
+Completed in 111ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:09:53) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:10:17) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:10:25) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:10:34) [GET]
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.9ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (9.3ms)
+Completed in 53ms (View: 14, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:10:43) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:10:48) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:10:54) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:02) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:07) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:11) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:16) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:22) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:43) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:48) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:11:56) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:12:18) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:12:33) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 109ms (View: 100, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:12:46) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:12:55) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:12:59) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:04) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:13) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:18) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 110ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:33) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:41) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:46) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:51) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:13:55) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:14:06) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:14:13) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:14:17) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:14:22) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:14:31) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:15:04) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:15:14) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:15:41) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:15:56) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:16:03) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:16:11) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.4ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:16:23) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.9ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (101.1ms)
+Completed in 115ms (View: 105, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:16:30) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:16:45) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:16:53) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:03) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:11) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:22) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.9ms)
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:27) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:28) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:36) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:17:44) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:09) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:10) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:18) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:26) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:38) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:45) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:18:59) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:03) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:14) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:18) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:23) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:30) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:36) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (96.3ms)
+Completed in 109ms (View: 100, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:41) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 23ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:48) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:53) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:19:58) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:20:04) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:20:11) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:20:55) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.5ms)
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing ApplicationController#login (for 127.0.0.1 at 2010-07-14 13:20:59) [GET]
+
+ActionView::MissingTemplate (Missing template application/login.erb in view path app/views):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:21:19) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:21:36) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:21:47) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:22:18) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.4ms)
+Completed in 110ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:22:19) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:22:28) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:22:40) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:23:02) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:23:17) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:23:35) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:23:45) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:23:51) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:24:03) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:24:32) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:24:42) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:24:54) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:25:02) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:25:09) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:25:33) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:25:40) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:25:52) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (95.6ms)
+Completed in 109ms (View: 100, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:26:05) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:26:14) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:26:44) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:27:03) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:27:17) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:27:22) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.4ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:27:37) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:27:49) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:27:57) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.8ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:28:05) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:28:10) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:28:15) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.5ms)
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:28:21) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:28:26) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:28:45) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:29:25) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:29:42) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:29:50) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:30:00) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-14 13:30:05) [GET]
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (6.9ms)
+Completed in 23ms (View: 11, DB: 2) | 200 OK [http://localhost/places]

@@ -80,12 +80,15 @@ body {
 }
 
 #link_new_user{
-	margin: 0.4em 0 0 0.5em;	
+	float:left;
+	margin: 0.5em 0em 1em 0.5em;
+		border: dotted 1px;
+
 }
 
 #button_login {
-	margin: 0.5em 1.5em 1em;
 	float:right;
+	margin: 0.5em 2.5em 1em 0;
 }
 
 table {
@@ -94,11 +97,41 @@ table {
 }
 
 #image_url{
-	
 }
 
 h1 {
 	color: #004500;
 	font:italic bold 20px/2em Georgia,serif;
 	
+}
+
+/********** BUTTONS *************/
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+.button {
+
+    font: normal 12px arial, sans-serif;
+    height: 1.8em;
+    padding: 0.25em 0.5em 0.75em 0.5em;
+
+
+}
+
+.button span {
+    display: block;
+    line-height: 14px;
+    padding: 0em 0.5em 0em 0.5em;
+}
+
+.button:active {
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+.button:active span {
+    padding: 0em 0.5em 0em 0.5em; /* push text down 1px */
 }

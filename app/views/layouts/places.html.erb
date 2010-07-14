@@ -19,17 +19,20 @@
 
 		<div id="log_in">
 
-			<form id="form_login" action="/login" method="get"> 
-				<p><label for="login" class="login_class">Log in:</label> 
-					<input id="login" class="login_class" type="text" size="15"/> 
+			<form id="form_login" action="<%= url_for :controller => 'application', :action => 'login' %>" method="get"> 
+				<p><label for="username" class="login_class">Log in:</label> 
+					<input id="username" class="login_class" type="text" size="15"/> 
 				</p>
 				<p><label for="password" class="login_class">Password:</label> 
 					<input id="password" class="login_class" type="text" size="12"/>
 				</p>
-				<input id="button_login" name="commit" type="submit" value="Log in!" /> 
+				<button id="button_login" class="button" type="submit"><span>Log in</span></button>
 			</form> 
-			<p><a id="link_new_user" class="login_class" href="#">Create new user</a></p>
+			<p><a id="link_new_user" class="signup_class" action="<%= url_for :controller => 'application', :action => 'signup' %>">Create new user</a>
+			</p>		
+
 		</div>
+
 
 		<h1>What Are You Looking For?</h1>
 
