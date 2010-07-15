@@ -19,7 +19,7 @@ body {
 	padding: 0em 0em 5em 0em;
 /*	background-color: #4B7C00; */
 	text-align:center;
-	background-image:url('/images/header_pixel2.png');
+	background-image:url('/images/header_pixel3.png');
 	background-repeat: x-repeat;
 }
 
@@ -67,7 +67,8 @@ body {
 	width:227px;
 	height:97px;
 	float:right;
-	padding: 0.2em 0 0.5em 0.5em;
+	margin: -0.5em;
+	padding: 0em 0 0.5em 0.5em;
 	background-image:url('/images/login_06.png');
 	background-repeat:no-repeat;
 	color: #F3F8F5;

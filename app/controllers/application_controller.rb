@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
       else
         flash[:message] = "Login unsuccessful | Invalid user/password combination"
       end
-      redirect_to :controller => 'places', :action => 'index'
+      redirect_to :controller => 'home', :action => 'index'
     #end
   end
 

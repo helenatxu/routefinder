@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="autor" content="helenatxu" />
+	<title>RouteFinder | <%= controller.action_name %></title>
+	<%= stylesheet_link_tag 'routefinder' %>
+</head>
+
+<body>
+
+	<div id="header">
+		<p>Route Finder</p>
+	</div>
+
+	<div id="container">
+
+		<div id="log_in">
+
+			<form id="form_login" action="<%= url_for :controller => 'application', :action => 'login' %>" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+				<p><label for="username" class="login_class">Log in:</label> 
+					<input id="username" class="login_class" name="username" type="text" size="15"/> 
+				</p>
+				<p><label for="password" class="login_class">Password:</label> 
+					<input id="password" class="login_class" name="password" type="text" size="12"/>
+				</p>
+				<button id="button_login" class="button" type="submit"><span>Log in</span></button>
+			</form> 
+			<p><a id="link_new_user" class="signup_class" action="<%= url_for :controller => 'application', :action => 'signup' %>">Create new user</a>
+			</p>		
+
+		</div>
+
+		<h1>What Are You Looking For?</h1>
+
+		<div id="notices">
+			<p class="notice"><%= notice %></p>
+			<p class="notice"><%= flash[:message] %></p>
+		</div>
+
+		<%= yield %>
+
+
+	</div>	
+
+	<div id="footer">
+		<p>RouteFinder 2010.</p>
+		<p>Helena Moreno Chacón</p>
+	</div>
+
+</body>
+</html>
+

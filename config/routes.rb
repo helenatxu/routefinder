@@ -25,9 +25,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :home
   
-  map.resources :search_routes
-
-  map.resources :search_places
   
   #map.resources :places, :login => { :application => :login }
   
