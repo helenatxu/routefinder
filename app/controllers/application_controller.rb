@@ -9,7 +9,16 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
 
- # before_filter :login_required, :only=>['welcome', 'change_password', 'hidden']
+  # before_filter :login_required, :only=>['welcome', 'change_password', 'hidden']
+
+  # def check_if_admin
+  #    if session[:user][:is_admin] == true
+  #      :notice => 'You are admin'
+  #      return true
+  #   else return false
+  #   end
+  #  end
+
 
   def signup
     @user = User.new(@params[:user])
@@ -26,20 +35,19 @@ class ApplicationController < ActionController::Base
 
   def login
     #if request.post?
-      if session[:user] = User.authenticate(params[:username], params[:password])
-        flash[:message] = "Login successful"
-        # redirect_to_stored
-      else
-        flash[:message] = "Login unsuccessful | Invalid user/password combination"
-      end
-      redirect_to :controller => 'home', :action => 'index'
-    #end
+    if session[:user] = User.authenticate(params[:username], params[:password])
+      flash[:message] = "Login successful"
+      # redirect_to_stored
+    else
+      flash[:message] = "Login unsuccessful | Invalid user/password combination"
+    end
+    redirect_to :controller => 'application', :action => 'index'
   end
 
   def logout
     session[:user] = nil
     flash[:message] = 'Logged out'
-    redirect_to :action => 'login'
+    redirect_to :controller => 'application', :action => 'index'
   end
 
 
@@ -49,7 +57,7 @@ class ApplicationController < ActionController::Base
     end
     flash[:warning]='Please login to continue'
     session[:return_to]=request.request_uri
-    redirect_to :controller => "user", :action => "login"
+    redirect_to :controller => "application", :action => "login"
     return false 
   end
 
@@ -62,7 +70,7 @@ class ApplicationController < ActionController::Base
       session[:return_to]=nil
       redirect_to_url(return_to)
     else
-      redirect_to :controller=>'user', :action=>'welcome'
+      redirect_to :controller=>'application', :action=>'index'
     end
   end
 

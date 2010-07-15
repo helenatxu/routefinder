@@ -1,8 +1,20 @@
 class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.xml
-  def index
-      @routes = Route.search(params[:search])
+    
+    def index
+      @countries = Country.find(:all)
+      if params[:keywords] and not params[:keywords].empty?
+        if params[:country_id] and not params[:country_id].empty?
+     #   @routes = Route.find(:all, :conditions => ['(routes.name LIKE ? or routes.description LIKE ?) and (places.country = ? and places.id IN routes.places)', "%#{params[:keywords]}%", "%#{params[:keywords]}%", params[:country_id]])
+        @routes = Route.find(:all, :conditions => ['(routes.name LIKE ? or routes.description LIKE ? )', "%#{params[:keywords]}%", "%#{params[:keywords]}%"])
+          
+        else
+          @routes = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords]}%", "%#{params[:keywords]}%"])
+        end
+      else
+        @routes = Route.find(:all)
+      end
     end
 
   # GET /routes/1

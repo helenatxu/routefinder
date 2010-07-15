@@ -144,3 +144,31 @@ h1 {
 .button:active span {
     padding: 0.15em 0.5em 0em 0.5em; /* NO FUNCIONA */
 }
+
+
+/*********/
+
+#title_tab_routes{
+	padding: 1em 0.5em 0.5em 3em;
+	float:left;
+	color: #FFFFFF;
+}
+
+#search_form_routes {
+	margin: 10.5em 0.5em 0.5em 0.5em;
+	padding: 3em 1em 2em 2em;
+	position:inline;
+	margin: 1em;
+	background-image:url('/images/search_form5.png');
+	background-repeat:no-repeat;
+	color: #B2A100;
+	/*	border: dotted 3px; */
+}
+
+.search_class_routes{
+	padding: 0.75em 0.5em 0.5em 0.5em;
+}
+
+#search_button{
+	margin: -1em 0 0 18em;
+}
