@@ -5,13 +5,14 @@
     <th>Username</th>
     <th>Email</th>
     <th>Photo url</th>
+    <th>Description</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.photo_url %></td>
+	<td id="image_url"><%= image_tag user.photo_url, :class => 'list-image' %></td>
     <td><%=h user.profile %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

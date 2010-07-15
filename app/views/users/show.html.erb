@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <b>Password:</b>
+  <%=h @user.hashed_password %>
+</p>
+
+<p>
   <b>Photo url:</b>
   <%=h @user.photo_url %>
 </p>
@@ -19,9 +24,10 @@
 </p>
 
 <p>
-  <b>Password:</b>
-  <%=h @user.hashed_password %>
+  <b>Photo:</b>
+  <td id="image_url"><%= image_tag @user.photo_url, :class => 'list-image' %></td>
 </p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

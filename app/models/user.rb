@@ -1,8 +1,7 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
   
-  attr_protected :hashed_password, :enabled
-  attr_protected :salt
+  attr_protected :is_admin
   attr_accessor :password
 
   validates_presence_of :username, :message => 'you must write an user'
@@ -42,10 +41,10 @@ class User < ActiveRecord::Base
    
    
    def self.authenticate(username, password)
-     u=find(:first, :conditions=>["username = ?", username])
-     return nil if u.nil?
-     return u if User.encrypt(password, u.salt)==u.hashed_password
-     nil
+     u = find(:first, :conditions=>["username = ?", username])
+     return false if u.nil?
+     return u if User.encrypt(password, u.salt) == u.hashed_password
+     false
    end
 
 end

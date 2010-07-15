@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
 
-  before_filter :login_required, :only=>['welcome', 'change_password', 'hidden']
+ # before_filter :login_required, :only=>['welcome', 'change_password', 'hidden']
 
   def signup
     @user = User.new(@params[:user])
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       if @user.save
         session[:user] = User.authenticate(@user.username, @user.password)
         flash[:message] = "Signup successful"
-        redirect_to :action => "welcome"          
+        redirect_to :action => "new"          
       else
         flash[:warning] = "Signup unsuccessful"
       end
@@ -25,14 +25,15 @@ class ApplicationController < ActionController::Base
   end
 
   def login
-    if request.post?
-      if session[:user] = User.authenticate(params[:user][:username], params[:user][:password])
-        flash[:message]  = "Login successful"
-        redirect_to_stored
+    #if request.post?
+      if session[:user] = User.authenticate(params[:username], params[:password])
+        flash[:message] = "Login successful"
+        # redirect_to_stored
       else
-        flash[:warning] = "Login unsuccessful | Invalid user/password combination"
+        flash[:message] = "Login unsuccessful | Invalid user/password combination"
       end
-    end
+      redirect_to :controller => 'places', :action => 'index'
+    #end
   end
 
   def logout
@@ -40,5 +41,31 @@ class ApplicationController < ActionController::Base
     flash[:message] = 'Logged out'
     redirect_to :action => 'login'
   end
+
+
+  def login_required
+    if session[:user]
+      return true
+    end
+    flash[:warning]='Please login to continue'
+    session[:return_to]=request.request_uri
+    redirect_to :controller => "user", :action => "login"
+    return false 
+  end
+
+  def current_user
+    session[:user]
+  end
+
+  def redirect_to_stored
+    if return_to = session[:return_to]
+      session[:return_to]=nil
+      redirect_to_url(return_to)
+    else
+      redirect_to :controller=>'user', :action=>'welcome'
+    end
+  end
+
+
 
 end

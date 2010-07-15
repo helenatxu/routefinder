@@ -11,7 +11,6 @@ ul, ol {
 
 body {
 	margin: 0em;
-	border: dotted 1px;
 	background-color: #EFF3FE;
 }
 
@@ -23,7 +22,7 @@ body {
 }
 
 #container {
-	padding: 0em 0em 5em 0em;
+	padding: 0em 2em 5em 3em;
 }
 
 #footer {
@@ -48,7 +47,7 @@ body {
 	padding: 3em 1em 2em 2em;
 	position:inline;
 	margin: 1em;
-	background-image:url('/images/search_form1.png');
+	background-image:url('/images/search_form5.png');
 	background-repeat:no-repeat;
 	color: #B2A100;
 	/*	border: dotted 3px; */
@@ -64,12 +63,13 @@ body {
 
 #log_in {
 	width:227px;
-	height:100px;
+	height:97px;
 	float:right;
-	margin: 0 2em 1em 0;
-	padding: 0.5em 0.5em 0.5em 0.5em;
-	background-image:url('/images/login_04.png');
+	padding: 0.2em 0 0.5em 0.5em;
+	background-image:url('/images/login_06.png');
 	background-repeat:no-repeat;
+	color: #F3F8F5;
+	
 /*	border: dotted 3px;
 	border-style:solid; */
 }
@@ -82,13 +82,18 @@ body {
 #link_new_user{
 	float:left;
 	margin: 0.5em 0em 1em 0.5em;
-		border: dotted 1px;
-
 }
 
 #button_login {
 	float:right;
 	margin: 0.5em 2.5em 1em 0;
+}
+
+.notice {
+	color: green;
+	position: relative;
+	float:right;
+	margin: 5em -14em 1em 0em;
 }
 
 table {

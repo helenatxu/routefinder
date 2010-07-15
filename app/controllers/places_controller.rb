@@ -57,15 +57,11 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(params[:place])
 
-    respond_to do |format|
       if @place.save
-        format.html { redirect_to(@place, :notice => 'Place was successfully created.') }
-        format.xml  { render :xml => @place, :status => :created, :location => @place }
+        redirect_to(@place, :notice => 'Place was successfully created.')
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @place.errors, :status => :unprocessable_entity }
+        render :action => "new"
       end
-    end
   end
 
   # PUT /places/1
