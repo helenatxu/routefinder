@@ -17440,3 +17440,210 @@ Rendering template within layouts/places
 Rendering places/index
 Rendered places/_list (7.2ms)
 Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:45:07) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 27ms (View: 18, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:46:08) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:46:43) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:46:48) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (115.3ms)
+Completed in 155ms (View: 120, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:46:53) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.4ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:01) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.5ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:14) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:24) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:30) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:34) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.4ms)
+Completed in 21ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:49) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:47:56) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:01) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:05) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.8ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.0ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:12) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 21ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:16) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:22) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:37) [GET]
+  [4;35;1mCountry Load (0.9ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.3ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:40) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:45) [GET]
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.6ms)
+Completed in 21ms (View: 12, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:51) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:48:55) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.7ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.2ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-07-15 19:49:08) [GET]
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mPlace Load (0.6ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Rendered places/_list (7.1ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/places]
