@@ -2,6 +2,7 @@ class CreatePlaces < ActiveRecord::Migration
 
   def self.up
 
+
     create_table :places do |t|
       t.string :name
       t.decimal :coordinates_lat
