@@ -12,6 +12,7 @@
 ActiveRecord::Schema.define(:version => 20100716164505) do
 
   create_table "comments", :force => true do |t|
+    t.integer  "author_id"
     t.date     "date"
     t.text     "comment"
     t.datetime "created_at"
@@ -30,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20100716164505) do
     t.decimal  "coordinates_long"
     t.integer  "country"
     t.date     "date"
-    t.integer  "rank"
-    t.string   "author"
+    t.float    "rank"
+    t.integer  "author_id"
     t.text     "description"
     t.string   "image_url"
     t.datetime "created_at"
@@ -39,10 +40,24 @@ ActiveRecord::Schema.define(:version => 20100716164505) do
     t.string   "direction"
   end
 
+  create_table "rates", :force => true do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.integer  "stars",         :null => false
+    t.string   "dimension"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
+
   create_table "routes", :force => true do |t|
     t.string   "name"
     t.date     "date"
-    t.integer  "rank"
+    t.float    "rank"
+    t.integer  "author_id"
     t.text     "description"
     t.integer  "places"
     t.integer  "comments"

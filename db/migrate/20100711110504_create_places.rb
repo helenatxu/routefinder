@@ -9,8 +9,8 @@ class CreatePlaces < ActiveRecord::Migration
       t.decimal :coordinates_long
       t.integer :country
       t.date :date
-      t.integer :rank
-      t.string :author
+      t.float :rank
+      t.integer :author_id
       t.text :description
       t.string :image_url
 

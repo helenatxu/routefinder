@@ -1,6 +1,6 @@
 class Place < ActiveRecord::Base
 
-
+  ajaxful_rateable :stars => 5, :allow_update => true
     
   validates_presence_of :name, :coordinates_lat, :coordinates_long, :country, :date, :author, :description
   validates_format_of :image_url, 

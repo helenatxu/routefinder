@@ -79,7 +79,7 @@ class AddTestData < ActiveRecord::Migration
 
 
     Comment.create(
-    :author => 1,
+    :author_id => 1,
     :date => '01/02/2010',
     :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
@@ -87,7 +87,7 @@ class AddTestData < ActiveRecord::Migration
     )
 
     Comment.create(
-    :author => 2,
+    :author_id => 2,
     :date => '02/02/2010',
     :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
@@ -95,7 +95,7 @@ class AddTestData < ActiveRecord::Migration
     )
 
     Comment.create(
-    :author => 2,
+    :author_id => 2,
     :date => '03/02/2010',
     :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
@@ -110,7 +110,7 @@ class AddTestData < ActiveRecord::Migration
     :country => '2',
     :date => '01/02/2010',
     :rank => '2',
-    :author => 1,
+    :author_id => 1,
     :description => 'Long handle bag made of skin. Including that based portfolio - Removable inner wallet. Dimensions: 25 x 36 12 cms.',
     :image_url => '/images/autocaravana1.jpg'
     )
@@ -123,7 +123,7 @@ class AddTestData < ActiveRecord::Migration
     :country => '1',
     :date => '01/02/2010',
     :rank => '5',
-    :author => 2,
+    :author_id => 2,
     :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
     ornare urna, quis pulvinar magna aliquet ac.',
@@ -138,7 +138,7 @@ class AddTestData < ActiveRecord::Migration
     :country => '1',
     :date => '01/06/2010',
     :rank => '1',
-    :author => 3,
+    :author_id => 3,
     :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
     ornare urna, quis pulvinar magna aliquet ac.',
@@ -149,7 +149,7 @@ class AddTestData < ActiveRecord::Migration
     :name => 'Route1', 
     :date => '01/02/2010',
     :rank => '3',
-    :author => 1,
+    :author_id => 1,
     :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
     ornare urna, quis pulvinar magna aliquet ac.',
@@ -160,7 +160,7 @@ class AddTestData < ActiveRecord::Migration
     :name => 'Route2', 
     :date => '10/02/2010',
     :rank => '2',
-    :author => 2,
+    :author_id => 2,
     :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
     ornare urna, quis pulvinar magna aliquet ac.',
@@ -171,7 +171,7 @@ class AddTestData < ActiveRecord::Migration
     :name => 'Route3', 
     :date => '01/05/2010',
     :rank => '5',
-    :author => 1,
+    :author_id => 1,
     :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
     a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
     ornare urna, quis pulvinar magna aliquet ac.',
