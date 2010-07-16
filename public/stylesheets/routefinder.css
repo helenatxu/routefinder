@@ -113,6 +113,14 @@ h1 {
 	
 }
 
+#summary{
+	width: 25em;
+	margin: 0 0 0 0em;
+	float: right;
+	border: solid 1px;
+	padding: 2em;
+}
+
 /********** BUTTONS *************/
 
 .clear { /* generic container (i.e. div) for floating buttons */
@@ -165,8 +173,23 @@ h1 {
 	/*	border: dotted 3px; */
 }
 
+#search_form_routes_small{
+	margin: 10.5em 0.5em 0.5em 0.5em;
+	padding: 3em 1em 2em 2em;
+	position:inline;
+	margin: 0em;
+	background-image:url('/images/search_form_small1.png');
+	background-repeat:no-repeat;
+	color: #B2A100;
+	border: dotted 3px; 
+}
+
 .search_class_routes{
 	padding: 0.75em 0.5em 0.5em 0.5em;
+}
+
+.search_class_routes_small{
+	padding: 0.2em 0.5em 0.5em 0.5em;
 }
 
 #search_button{
