@@ -85,7 +85,8 @@
 		<%=h @route.rank %>
 	</p>
 	<li class='current-rating'>
-		Currently <%= number_with_precision(@route.rating, 1) %>/5 Stars.
+		Currently rating
+		<%= ratings_for @route %>
 	</li>
 </div>
 

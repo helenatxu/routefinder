@@ -1,6 +1,8 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
   
+  ajaxful_rater
+  
   attr_protected :is_admin
   attr_accessor :password
 

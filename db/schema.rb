@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716164505) do
+ActiveRecord::Schema.define(:version => 20100716173558) do
 
   create_table "comments", :force => true do |t|
     t.integer  "author_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20100716164505) do
     t.string   "name"
     t.decimal  "coordinates_lat"
     t.decimal  "coordinates_long"
-    t.integer  "country"
+    t.integer  "country_id"
     t.date     "date"
     t.float    "rank"
     t.integer  "author_id"
