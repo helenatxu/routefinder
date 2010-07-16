@@ -1,48 +1,65 @@
-<p>
-  <b>Name:</b>
-  <%=h @place.name %>
-</p>
+<div id="summary">
 
-<p>
-  <b>Coordinates lat:</b>
-  <%=h @place.coordinates_lat %>
-</p>
+	<h2>Route Summary</h2>
+	<p>
+		<b>Name:</b>
+		<%=h @place.name %>
+	</p>
 
-<p>
-  <b>Coordinates long:</b>
-  <%=h @place.coordinates_long %>
-</p>
+	<p>
+		<b>Coordinates lat:</b>
+		<%=h @place.coordinates_lat %>
+	</p>
 
-<p>
-  <b>Country:</b>
-  <%=h @place.country %>
-</p>
+	<p>
+		<b>Coordinates long:</b>
+		<%=h @place.coordinates_long %>
+	</p>
 
-<p>
-  <b>Date:</b>
-  <%=h @place.date %>
-</p>
+	<p>
+		<b>Country:</b>
+		<%=h @place.country %>
+	</p>
 
-<p>
-  <b>Rank:</b>
-  <%=h @place.rank %>
-</p>
+	<p>
+		<b>Date:</b>
+		<%=h @place.date %>
+	</p>
 
-<p>
-  <b>Author:</b>
-  <%=h @place.author %>
-</p>
+	<p>
+		<b>Rank:</b>
+		<%=h @place.rank %>
+	</p>
 
-<p>
-  <b>Description:</b>
-  <%=h @place.description %>
-</p>
+	<p>
+		<b>Author:</b>
+		<%=h @place.author %>
+	</p>
 
-<p>
-  <b>Image url:</b>
-  <%=h @place.image_url %>
-</p>
+	<p>
+		<b>Description:</b>
+		<%=h @place.description %>
+	</p>
+
+	<p>
+		<b>Image url:</b>
+		<%=h @place.image_url %>
+	</p>
+</div>
+
+<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=pintor+manuel+siguenza,+pinedo,+valencia&amp;sll=40.396764,-3.713379&amp;sspn=9.368034,18.391113&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+del+Pintor+Manuel+Sig%C3%BCenza,+46012+Valencia,+Comunidad+Valenciana&amp;t=h&amp;ll=39.422072,-0.33946&amp;spn=0.031826,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+<br />
+<small>
+	<a href="http://maps.google.es/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=pintor+manuel+siguenza,+pinedo,+valencia&amp;sll=40.396764,-3.713379&amp;sspn=9.368034,18.391113&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+del+Pintor+Manuel+Sig%C3%BCenza,+46012+Valencia,+Comunidad+Valenciana&amp;t=h&amp;ll=39.422072,-0.33946&amp;spn=0.031826,0.054932&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
 
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+	<p>
+		<!-- %= render(:partial => "/rating/rateplace") %> --> 
+	</p>
+
+	<p>Comments:</p>
+
+	<p class="comeback_links">
+		<%= link_to 'Edit', edit_place_path(@place) %> |
+		<%= link_to 'Back', places_path %>
+	</p>

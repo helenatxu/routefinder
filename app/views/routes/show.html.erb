@@ -43,6 +43,8 @@
 </div>
 
 <div id="summary">
+
+	<h1>Route Summary</h1>
 	<p>
 		<b>Name:</b>
 		<%=h @route.name %>
@@ -51,11 +53,6 @@
 	<p>
 		<b>Date:</b>
 		<%=h @route.date %>
-	</p>
-
-	<p>
-		<b>Rank:</b>
-		<%=h @route.rank %>
 	</p>
 
 	<p>
@@ -72,16 +69,24 @@
 		<b>Places:</b>
 		<%=h @route.places %>
 	</p>
-	
+
 	<p>
 		<b>Creation date:</b>
 		<%=h @route.created_at %>
 	</p>
-	
+
 	<p>
 		<b>Last update:</b>
 		<%=h @route.updated_at %>
 	</p>
+
+	<p>
+		<b>Rating:</b>
+		<%=h @route.rank %>
+	</p>
+	<li class='current-rating'>
+		Currently <%= number_with_precision(@route.rating, 1) %>/5 Stars.
+	</li>
 </div>
 
 <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=pintor+manuel+siguenza,+pinedo,+valencia&amp;sll=40.396764,-3.713379&amp;sspn=9.368034,18.391113&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+del+Pintor+Manuel+Sig%C3%BCenza,+46012+Valencia,+Comunidad+Valenciana&amp;t=h&amp;ll=39.422072,-0.33946&amp;spn=0.031826,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
@@ -89,9 +94,14 @@
 <small>
 	<a href="http://maps.google.es/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=pintor+manuel+siguenza,+pinedo,+valencia&amp;sll=40.396764,-3.713379&amp;sspn=9.368034,18.391113&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+del+Pintor+Manuel+Sig%C3%BCenza,+46012+Valencia,+Comunidad+Valenciana&amp;t=h&amp;ll=39.422072,-0.33946&amp;spn=0.031826,0.054932&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
 
+	<p>
+ <%= render(:partial => "/rating/rateroute") %>
+	</p>
+
 	<p>Comments:</p>
 
-
-	<%= link_to 'Edit', edit_route_path(@route) %> |
-	<%= link_to 'New route', new_route_path %> |
-	<%= link_to 'Back', routes_path %>
+	<p class="comeback_links">
+		<%= link_to 'Edit', edit_route_path(@route) %> |
+		<%= link_to 'New route', new_route_path %> |
+		<%= link_to 'Back', routes_path %>
+	</p>

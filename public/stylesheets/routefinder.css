@@ -17,7 +17,7 @@ body {
 
 #header {
 	padding: 0em 0em 5em 0em;
-/*	background-color: #4B7C00; */
+	/*	background-color: #4B7C00; */
 	text-align:center;
 	background-image:url('/images/header_pixel3.png');
 	background-repeat: x-repeat;
@@ -72,9 +72,9 @@ body {
 	background-image:url('/images/login_06.png');
 	background-repeat:no-repeat;
 	color: #F3F8F5;
-	
+
 /*	border: dotted 3px;
-	border-style:solid; */
+border-style:solid; */
 }
 
 .login_class {
@@ -110,7 +110,7 @@ table {
 h1 {
 	color: #004500;
 	font:italic bold 20px/2em Georgia,serif;
-	
+
 }
 
 #summary{
@@ -124,33 +124,33 @@ h1 {
 /********** BUTTONS *************/
 
 .clear { /* generic container (i.e. div) for floating buttons */
-    overflow: hidden;
-    width: 100%;
+	overflow: hidden;
+	width: 100%;
 }
 
 .button {
 
-    font: normal 12px arial, sans-serif;
-    height: 1.8em;
-    width: 5em;
-  /*  padding: 0.25em 0.5em 0.75em 0.5em; */
+	font: normal 12px arial, sans-serif;
+	height: 1.8em;
+	width: 5em;
+	/*  padding: 0.25em 0.5em 0.75em 0.5em; */
 
 
 }
 
 .button span {
-    display: block;
-    line-height: 14px;
-    padding: 0em 0.5em 0em 0.5em; 
+	display: block;
+	line-height: 14px;
+	padding: 0em 0.5em 0em 0.5em; 
 }
 
 .button:active {
-    color: #000;
-    outline: none; /* hide dotted outline in Firefox */
+	color: #000;
+	outline: none; /* hide dotted outline in Firefox */
 }
 
 .button:active span {
-    padding: 0.15em 0.5em 0em 0.5em; /* NO FUNCIONA */
+	padding: 0.15em 0.5em 0em 0.5em; /* NO FUNCIONA */
 }
 
 
@@ -195,3 +195,76 @@ h1 {
 #search_button{
 	margin: -1em 0 0 18em;
 }
+
+
+
+/* styles for the star rater */
+.star-rating{
+	list-style:none;
+	margin: 0;
+	padding:0;
+	width: 80px;
+	height: 16px;
+	position: relative;
+	background: url(/images/star_matrix.gif) top left repeat-x;
+}
+.star-rating li{
+	padding:0;
+	margin:0;
+	float: left;
+}
+.star-rating li a{
+	display:block;
+	width:16px;
+	height: 16px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 20;
+	position: absolute;
+	padding: 0px;
+}
+.star-rating li a:hover{
+	background: url(/images/star_matrix.gif) left center;
+	z-index: 2;
+	left: 0px;
+	border:none;
+}
+.star-rating a.one-star{
+	left: 0px;
+}
+.star-rating a.one-star:hover{
+	width:16px;
+}
+.star-rating a.two-stars{
+	left:16px;
+}
+.star-rating a.two-stars:hover{
+	width: 32px;
+}
+.star-rating a.three-stars{
+	left: 32px;
+}
+.star-rating a.three-stars:hover{
+	width: 48px;
+}
+.star-rating a.four-stars{
+	left: 48px;
+}
+.star-rating a.four-stars:hover{
+	width: 64px;
+}
+.star-rating a.five-stars{
+	left: 64px;
+}
+.star-rating a.five-stars:hover{
+	width: 80px;
+}
+.star-rating li.current-rating{
+	background: url(/images/star_matrix.gif) left bottom;
+	position: absolute;
+	height: 16px;
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+}
+
