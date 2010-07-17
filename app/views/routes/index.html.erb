@@ -2,16 +2,16 @@
 <p id="title_tab_routes">
 	Routes
 </p>
-<div id="search_form_routes">
+<div class="search_form">
 
-	<p class="search_class_routes">
+	<p class="search_class">
 		<%= label_tag(:keywords, "Search for:") %> 
 		<%= text_field_tag :keywords, params[:keywords] %>
 	</p>
-	<p id="example" class="search_class_routes">
+	<p class="example" class="search_class">
 		(eg.: castle, river, coast, ...)
 	</p>
-	<p class="search_class_routes">
+	<p class="search_class">
 		<%= label_tag(:country_id, "Select a country:") %> 
 		<%= select_tag(:country_id, 
 		'<option value=""> </option>
@@ -30,13 +30,13 @@
 		) %>
 
 	</p>
-	<p  class="search_class_routes">
+	<p  class="search_class">
 		<%= check_box_tag(:caravanista) %>
 		<%= label_tag(:caravanista, "Llevo caravana") %>	
 		<%= check_box_tag(:autocaravanista) %>
 		<%= label_tag(:autocaravanista, "Llevo autocaravana") %>
 	</p>
-	<p  id="search_button" class="search_class_routes" class="button">
+	<p  class="search_button" class="search_class" class="button">
 		<%= submit_tag "Search!", :name => nil %>
 		<% end %>
 	</p>

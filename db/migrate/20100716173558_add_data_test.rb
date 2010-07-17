@@ -80,7 +80,14 @@ class AddDataTest < ActiveRecord::Migration
 
         Comment.create(
         :author_id => 1,
-        :date => '01/02/2010',
+        :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+        a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+        ornare urna, quis pulvinar magna aliquet ac.'
+        )
+        
+
+        Comment.create(
+        :author_id => 2,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
@@ -88,95 +95,112 @@ class AddDataTest < ActiveRecord::Migration
 
         Comment.create(
         :author_id => 2,
-        :date => '02/02/2010',
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
         )
 
         Comment.create(
-        :author_id => 2,
-        :date => '03/02/2010',
+        :author_id => 1,
+        :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+        a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+        ornare urna, quis pulvinar magna aliquet ac.'
+        )
+        
+
+        Comment.create(
+        :author_id => 3,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
         )
 
+        Comment.create(
+        :author_id => 3,
+        :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
+        a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
+        ornare urna, quis pulvinar magna aliquet ac.'
+        )
+        
+        
         Place.create(
         :name => 'Place1', 
-        :coordinates_lat => '1.00203013',
-        :coordinates_long => '-2.235532',
+        :coordinates_lat => 1.00203013,
+        :coordinates_long => -2.235532,
         :direction => 'ul. Piotrkowska, nº 2, Lodz, Polska',
         :country_id => 2,
-        :date => '01/02/2010',
         :rank => 2.0,
         :author_id => 1,
         :description => 'Long handle bag made of skin. Including that based portfolio - Removable inner wallet. Dimensions: 25 x 36 12 cms.',
-        :image_url => '/images/autocaravana1.jpg'
+        :image_url => '/images/autocaravana1.jpg',
+        :comments_id => 1
         )
 
         Place.create(
         :name => 'Place2', 
-        :coordinates_lat => '1.00203013',
-        :coordinates_long => '-2.235532',
-        :direction => 'C/ Pintor Manuel Siguenza, nº6, Piedo, Valencia',
+        :coordinates_lat => 1.00203013,
+        :coordinates_long => -2.235532,
+        :direction => 'C/ Pintor Manuel Siguenza, nº6, Pinedo, Valencia',
         :country_id => 1,
-        :date => '01/02/2010',
         :rank => 5.0,
         :author_id => 2,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :image_url => '/images/autocaravana2.jpg'
+        :image_url => '/images/autocaravana2.jpg',
+        :comments_id => 2
         )
 
         Place.create(
         :name => 'Place3', 
-        :coordinates_lat => '4.00203013',
-        :coordinates_long => '-5.235532',
+        :coordinates_lat => 4.00203013,
+        :coordinates_long => -5.235532,
         :direction => 'C/ del Mar, nº2, Valencia',
         :country_id => 1,
-        :date => '01/06/2010',
         :rank => 1.0,
         :author_id => 3,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :image_url => '/images/autocaravana1.jpg'
+        :image_url => '/images/autocaravana1.jpg',
+        :comments_id => 3
         )
 
         Route.create(
         :name => 'Route1', 
-        :date => '01/02/2010',
         :rank => 3.0,
         :author_id => 1,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :places => 1
+        :places_id => 1,
+        :comments_id => 4
         )
 
         Route.create(
         :name => 'Route2', 
-        :date => '10/02/2010',
         :rank => 2.0,
         :author_id => 2,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :places => 3
+        :places_id => 3,
+        :comments_id => 5
         )
 
         Route.create(
         :name => 'Route3', 
-        :date => '01/05/2010',
         :rank => 5.0,
-        :author_id => 1,
+        :author_id => 3,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :places => 2
+        :places_id => 2,
+        :comments_id => 6
         )
+        
+
+
 
 
         # . . . 
@@ -185,13 +209,8 @@ class AddDataTest < ActiveRecord::Migration
 
       def self.down
 
-        User.delete_all 
-        Comment.delete_all
-        Route.delete_all 
-        Place.delete_all 
-        Country.delete_all
+
 
       end
 
     end
-

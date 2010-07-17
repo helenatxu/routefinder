@@ -9,11 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716173558) do
+ActiveRecord::Schema.define(:version => 20100717002141) do
 
   create_table "comments", :force => true do |t|
     t.integer  "author_id"
-    t.date     "date"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,15 +28,15 @@ ActiveRecord::Schema.define(:version => 20100716173558) do
     t.string   "name"
     t.decimal  "coordinates_lat"
     t.decimal  "coordinates_long"
+    t.string   "direction"
     t.integer  "country_id"
-    t.date     "date"
     t.float    "rank"
     t.integer  "author_id"
     t.text     "description"
     t.string   "image_url"
+    t.integer  "comments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "direction"
   end
 
   create_table "rates", :force => true do |t|
@@ -55,12 +54,11 @@ ActiveRecord::Schema.define(:version => 20100716173558) do
 
   create_table "routes", :force => true do |t|
     t.string   "name"
-    t.date     "date"
     t.float    "rank"
     t.integer  "author_id"
     t.text     "description"
-    t.integer  "places"
-    t.integer  "comments"
+    t.integer  "places_id"
+    t.integer  "comments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,12 +67,12 @@ ActiveRecord::Schema.define(:version => 20100716173558) do
     t.string   "username"
     t.string   "email"
     t.string   "photo_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "hashed_password"
     t.string   "salt"
-    t.string   "profile"
+    t.text     "profile"
     t.boolean  "is_admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

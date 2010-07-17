@@ -1,27 +1,22 @@
-
 <h1>Listing routes</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Rank</th>
-    <th>Author</th>
-    <th>Description</th>
-    <th>Places</th>
-  </tr>
+	<tr>
+		<th>Name:</th>
+		<th>Author:</th>
+		<th>Rank:</th>
+		<th>Places:</th>
+	</tr>
 
-<% @routes.each do |route| %>
-  <tr>
-    <td><%=h route.name %></td>
-    <td><%=h route.date %></td>
-    <td><%=h route.rank %></td>
-    <td><%=h route.author %></td>
-    <td><%=h route.description %></td>
-    <td><%=h route.places %></td>
-    <td><%= link_to 'Show', route %></td>
-  </tr>
-<% end %>
+	<% @routes.each do |route| %>
+	<tr>
+		<td><%=h route.name %></td>
+		<td><%=h route.author_id %></td>
+		<td><%=h route.rank %></td>
+		<td><%=h route.places_id %></td>
+		<td><%= link_to 'Show', route %></td>
+	</tr>
+	<% end %>
 </table>
 
 <br />

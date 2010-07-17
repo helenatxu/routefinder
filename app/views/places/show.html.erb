@@ -1,50 +1,98 @@
-<div id="summary">
+<% form_tag places_path, :method => 'get' do %> 
+<p id="title_tab_places">
+	Places
+</p>
+<div class="search_form_small">
 
+	<p class="search_class_small">
+		<%= label_tag(:keywords, "Search for:") %> 
+		<%= text_field_tag :keywords, params[:keywords] %>
+
+		<%= label_tag(:country_id, "Select a country:") %> 
+		<%= select_tag(:country_id, 
+		'<option value=""> </option>
+		<option value="1">Spain</option>
+		<option value="2">Poland</option>
+		<option value="3">France</option>
+		<option value="4">Portugal</option>
+		<option value="5">Italy</option>
+		<option value="6">Holand</option>
+		<option value="7">Chec Republic</option>
+		<option value="8">Slovakia</option>
+		<option value="9">Ucrania</option>
+		<option value="10">Turkey</option>
+		<option value="11">Greece</option>
+		<option value="12">Germany</option>'	
+		) %>
+
+	</p>
+	<p class="example_small" class="search_class_small">
+		(eg.: restaurant, river, city, ...)
+	</p>
+	<p  class="options_search" class="search_class_small">
+		<%= check_box_tag(:caravanista) %>
+		<%= label_tag(:caravanista, "Llevo caravana") %>	
+		<%= check_box_tag(:autocaravanista) %>
+		<%= label_tag(:autocaravanista, "Llevo autocaravana") %>
+	</p>
+	<p  class="search_button_small" class="search_class_small" class="button">
+		<%= submit_tag "Search!", :name => nil %>
+		<% end %>
+	</p>
+</div>
+
+
+<h1>
+	<%=h @place.name %>
+</h1>
+
+<div id="summary">
 	<h2>Route Summary</h2>
 	<p>
 		<b>Name:</b>
 		<%=h @place.name %>
 	</p>
-
+	<p>
+		<b>Created at::</b>
+		<%=h @place.created_at %>
+	</p>
+	<p>
+		<b>Last update:</b>
+		<%=h @place.updated_at %>
+	</p>
+	<p>
+		<b>Author:</b>
+		<%=h @place.author_id %>
+	</p>
 	<p>
 		<b>Coordinates lat:</b>
 		<%=h @place.coordinates_lat %>
 	</p>
-
 	<p>
 		<b>Coordinates long:</b>
 		<%=h @place.coordinates_long %>
 	</p>
-
+	<p>
+		<b>Direction:</b>
+		<%=h @place.direction %>
+	</p>
 	<p>
 		<b>Country:</b>
-		<%=h @place.country %>
+		<%=h @place.country_id %>
 	</p>
-
-	<p>
-		<b>Date:</b>
-		<%=h @place.date %>
-	</p>
-
-	<p>
-		<b>Rank:</b>
-		<%=h @place.rank %>
-	</p>
-
-	<p>
-		<b>Author:</b>
-		<%=h @place.author %>
-	</p>
-
 	<p>
 		<b>Description:</b>
 		<%=h @place.description %>
 	</p>
-
+	<p>
+		<b>Rank:</b>
+		<%=h @place.rank %>
+	</p>
 	<p>
 		<b>Image url:</b>
-		<%=h @place.image_url %>
+		<%= image_tag @place.image_url, :class => 'list-image' %>
 	</p>
+	<%= link_to 'Edit', edit_place_path(@place) %>
 </div>
 
 <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=pintor+manuel+siguenza,+pinedo,+valencia&amp;sll=40.396764,-3.713379&amp;sspn=9.368034,18.391113&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+del+Pintor+Manuel+Sig%C3%BCenza,+46012+Valencia,+Comunidad+Valenciana&amp;t=h&amp;ll=39.422072,-0.33946&amp;spn=0.031826,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
@@ -59,7 +107,7 @@
 
 	<p>Comments:</p>
 
-	<p class="comeback_links">
+	<p id="comeback_links">
 		<%= link_to 'Edit', edit_place_path(@place) %> |
 		<%= link_to 'Back', places_path %>
 	</p>
