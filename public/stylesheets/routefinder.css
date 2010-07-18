@@ -73,12 +73,13 @@ table,th, td {
 	margin: -3em 0em 0 42em;
 	border: solid 1px;
 	padding: 0em;
+	border:solid 2px #9DEE96;
 }
 
 #summary p {
-	margin: 0 0.5em 0.5em 0.5em;
-	padding: 0.5em;
-	border: dotted 0.1em green;
+	margin: 0 0.5em 0.15em 0.5em;
+	padding: 0.75em;
+	background: #CCFFE0;
 }
 
 #comeback_links {
@@ -90,21 +91,35 @@ table,th, td {
 
 /*********** LOGIN ****************/
 
+#log_in input { 
+	width: 6em;
+	height: 1.0em;
+	margin: 0.15em 0.25em 0.15em 0.25em;
+	
+}
+
+#log_in p {
+	margin: 0.25em 0.25em 0.1em 0.75em;
+}
+
+
+#remember_me label {
+	margin-left: -5em;
+}
 
 #log_in {
 	width:227px;
 	height:97px;
 	position:absolute;
-	margin: -1.5em 0 0 59em;
-	padding: 0em 0 0.5em 0.5em;
+	margin: -3em 0 0 66em;
+	padding: 0em 0 0.5em 0.25em;
 	background-image:url('/images/login_06.png');
 	background-repeat:no-repeat;
 	color: #F3F8F5;
+	font-size:90%;
+/*	border: solid 3px #CCCCCC; */
 
-/*	border: dotted 3px;
-border-style:solid; */
 }
-
 
 .login_class {
 	float:left;
@@ -117,8 +132,8 @@ border-style:solid; */
 }
 
 #button_login {
-	float:right;
-	margin: 0.5em 2.5em 1em 0;
+	margin: -0.75em 1em 1em 0em !important;
+	float: right !important;
 }
 
 
@@ -152,6 +167,34 @@ border-style:solid; */
 
 .button:active span {
 	padding: 0.15em 0.5em 0em 0.5em; /* NO FUNCIONA */
+}
+
+
+/******** FORMS *********/
+.texta { 
+	font-size: 20px; 
+	background-color: #CCCCCC; 
+	border: 1px solid #666666; 
+}
+
+.fieldarea, .texta { 
+	font-size: 20px; 
+	background-color: #CCCCCC; 
+	border: 1px solid #666666; 
+	float:right;
+}
+
+#form_fields p {
+	margin: 0.5em 10em 1.25em 0;
+}
+
+#form_fields {
+	margin: 0.25em 20em 1.25em 10em;
+	padding: 2.5em 2em 2em 2em;
+	border:solid 2px #9DEE96;
+	background: #CCFFE0;
+	
+
 }
 
 
