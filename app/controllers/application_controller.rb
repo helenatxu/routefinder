@@ -5,75 +5,45 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password, :password_confirmation
+  helper_method :current_user, :current_user_session
 
 
-  # before_filter :login_required, :only=>['welcome', 'change_password', 'hidden']
-
-  # def check_if_admin
-  #    if session[:user][:is_admin] == true
-  #      :notice => 'You are admin'
-  #      return true
-  #   else return false
-  #   end
-  #  end
-
-
-  def signup
-    @user = User.new(@params[:user])
-    if request.post?  
-      if @user.save
-        session[:user] = User.authenticate(@user.username, @user.password)
-        flash[:message] = "Signup successful"
-        redirect_to :action => "new"          
-      else
-        flash[:warning] = "Signup unsuccessful"
-      end
-    end
-  end
-
-  def login
-    #if request.post?
-    if session[:user] = User.authenticate(params[:username], params[:password])
-      flash[:message] = "Login successful"
-      # redirect_to_stored
-    else
-      flash[:message] = "Login unsuccessful | Invalid user/password combination"
-    end
-    redirect_to :controller => 'application', :action => 'index'
-  end
-
-  def logout
-    session[:user] = nil
-    flash[:message] = 'Logged out'
-    redirect_to :controller => 'application', :action => 'index'
-  end
-
-
-  def login_required
-    if session[:user]
-      return true
-    end
-    flash[:warning]='Please login to continue'
-    session[:return_to]=request.request_uri
-    redirect_to :controller => "application", :action => "login"
-    return false 
+  private
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
   end
 
   def current_user
-    session[:user]
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
   end
 
-  def redirect_to_stored
-    if return_to = session[:return_to]
-      session[:return_to]=nil
-      redirect_to_url(return_to)
-    else
-      redirect_to :controller=>'application', :action=>'index'
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to new_user_session_url
+      return false
     end
   end
 
+  def require_no_user
+    if current_user
+      store_location
+      flash[:notice] = "You must be logged out to access this page"
+      redirect_to account_url
+      return false
+    end
+  end
 
+  def store_location
+    session[:return_to] = request.request_uri
+  end
 
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
+  end
 end

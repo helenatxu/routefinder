@@ -2,13 +2,13 @@
 <p id="title_tab_places">
 	Places
 </p>
-<div id="search_form">
+<div class="search_form">
 
 	<p class="search_class">
 		<%= label_tag(:keywords, "Search for:") %> 
 		<%= text_field_tag :keywords, params[:keywords] %>
 	</p>
-	<p id="example" class="search_class">
+	<p class="example" class="search_class">
 		(eg.: restaurant, river, city, ...)
 	</p>
 	<p class="search_class">
@@ -30,15 +30,14 @@
 		) %>
 
 	</p>
-	<p  class="search_class">
+	<p class="search_class">
 		<%= check_box_tag(:caravanista) %>
 		<%= label_tag(:caravanista, "Llevo caravana") %>	
 		<%= check_box_tag(:autocaravanista) %>
 		<%= label_tag(:autocaravanista, "Llevo autocaravana") %>
 	</p>
-	<p  id="search_button" class="search_class" class="button">
+	<p class="search_button" class="search_class" class="button">
 		<%= submit_tag "Search!", :name => nil %>
 		<% end %>
 	</p>
 </div>
-

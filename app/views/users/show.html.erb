@@ -1,34 +1,37 @@
 <p>
-  <b>Username:</b>
-  <%=h @user.username %>
+  <b>Login:</b>
+  <%=h @user.login %>
 </p>
 
 <p>
-  <b>Email:</b>
-  <%=h @user.email %>
+  <b>Login count:</b>
+  <%=h @user.login_count %>
 </p>
 
 <p>
-  <b>Password:</b>
-  <%=h @user.hashed_password %>
+  <b>Last request at:</b>
+  <%=h @user.last_request_at %>
 </p>
 
 <p>
-  <b>Photo url:</b>
-  <%=h @user.photo_url %>
+  <b>Last login at:</b>
+  <%=h @user.last_login_at %>
 </p>
 
 <p>
-  <b>Profile:</b>
-  <%=h @user.profile %>
+  <b>Current login at:</b>
+  <%=h @user.current_login_at %>
 </p>
 
 <p>
-  <b>Photo:</b>
-  <td id="image_url"><%= image_tag @user.photo_url, :class => 'list-image' %></td>
+  <b>Last login ip:</b>
+  <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b>Current login ip:</b>
+  <%=h @user.current_login_ip %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> |
-<%= link_to 'Back to Main', '/application/index' %>
+<%= link_to 'Edit', edit_account_path %>

@@ -2,34 +2,15 @@
 
 <div id="campos_user">
 
-<% form_for(@user) do |f| %>
-<%= f.error_messages %>
+<% form_for @user, :url => account_path do |f| %>
+	<%= f.error_messages %>
 
-<p>
-	<%= f.label :username %><br />
-	<%= f.text_field :username %>
-</p>
-<p>
-	<%= f.label :email %><br />
-	<%= f.text_field :email %>
-</p>
-<p>
-	<%= f.label :password %><br />
-	<%= f.password_field :password %>
-</p>
-<p>
-	<%= f.label :photo_url %><br />
-	<%= f.text_field :photo_url %>
-</p>
-<p>
-	<%= f.label :profile %><br />
-	<%= f.text_field :profile %>
-</p>
-<p>
-	<%= f.submit 'Update' %>
-</p>	
+	<%= render :partial => "form", :object => f %>
+	
+	<%= f.submit "Update" %>
+	<% end %>
 
-<% end %>
+	<br /><%= link_to "My Profile", account_path %>
 </div>
 
 <%= link_to 'Show', @user %> |
