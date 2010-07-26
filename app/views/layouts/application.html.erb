@@ -16,19 +16,18 @@
 	</div>
 
 	<div id="container">
-		
+
 		<%= pluralize User.logged_in.count, "user" %> currently logged in<br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
 
 		<div id="user_nav"> 
 			<% if !current_user %>
-			  <%= link_to "Register", new_account_path %> |
-			  <%= link_to "Log In", new_user_session_path %> |
+			<%= link_to "Register", new_account_path %> |
+			<%= link_to "Log In", new_user_session_path %> |
 			<% else %>
-			  <%= link_to "My Account", account_path %> |
-			  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+			<%= link_to "My Account", account_path %> |
+			<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
 			<% end %>
 		</div>
-
 
 		<div id="notices">
 			<p class="notice" style="color: green"><%= flash[:notice] %></p>
