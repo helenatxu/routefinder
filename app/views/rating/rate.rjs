@@ -1,3 +1,0 @@
-page.replace_html "star-ratings-block", :partial => 'rating/rateroute', :locals => { :route=> @route }
-
-page.replace_html "star-ratings-block", :partial => 'rating/rateplace', :locals => { :place=> @place }

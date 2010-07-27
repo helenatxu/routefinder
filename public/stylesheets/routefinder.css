@@ -24,7 +24,7 @@ body {
 }
 
 #container {
-	padding: 10px 15px 10px 20px;
+	padding: 0 15px 10px 20px;
 }
 
 #footer {
@@ -44,15 +44,10 @@ h1 {
 h2 {
 	color: #3B2910;
 	font:italic bold 25px/2em Georgia,serif;
-	margin: 0.5em 0.5em 0.5em 0.5em;
+	margin: 10px auto 10px 30px;
+
 }
 
-
-.notice {
-	color: green;
-	float:right;
-	border: dotted 2px #2F5FF2;
-}
 
 table {
 	border-collapse:collapse;
@@ -66,10 +61,15 @@ table,th, td {
 }
 
 #welcome {
-	height:150px;
-	width: 550px;
+	width: 525px;
 	float: right;
+	margin: 60px -100px auto auto;
 }
+
+#welcome h1 {
+	margin: 10px;
+}
+
 
 #summary {
 	width: 30em;
@@ -88,6 +88,15 @@ table,th, td {
 
 #comeback_links {
 	margin: 10px;
+}
+
+#user_nav {
+	font-size:90%;
+	color: green;
+}
+
+.notice {
+
 }
 
 /*********** USER PROFILE *********/
@@ -112,8 +121,8 @@ table,th, td {
 	width:227px;
 	height:97px;
 	float: right;
-	margin: -53px 20px 0 0;
-	padding: 0em 0 10px 15px;
+	margin: -40px 20px 0 0;
+	padding: 5px 0 10px 15px;
 	background-image:url(/images/login_06.png);
 	background-repeat:no-repeat;
 	color: #F3F8F5;
@@ -122,19 +131,24 @@ table,th, td {
 }
 
 #log_in input { 
-	width: 6em;
-	height: 1.0em;
-	margin: 0.15em 0.25em 0.15em 0.25em;
-
+	width: 100px;
+	height: 14px;
 }
 
 #log_in p {
-	margin: 0.25em 0.25em 0.1em 0.75em;
+	mamrgin: 0.25em 0.25em 0.1em 0.75em;
 }
 
+#remember_me input{
+	clear:both;
+	float: left;
+	width: 20px;
+	margin: 15px auto auto 0;
+}
 
-#remember_me label {
-	margin-left: -5em;
+#remember_me label{
+	margin: 15px auto auto 6px;
+	float: left;
 }
 
 
@@ -245,6 +259,7 @@ table,th, td {
 .search_form {
 	width: 441px;
 	height: 225px;
+	margin: 0 0 0 30px;
 	background-image:url(/images/search_form5.png);
 	background-repeat:no-repeat;	
 	color: #B2A100;
@@ -291,8 +306,6 @@ table,th, td {
 	padding: 8px;
 }
 
-.search_class_small{  /*****/
-}
 
 .search_button_small{
 	margin: -1.75em 0 0 28em;
