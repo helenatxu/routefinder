@@ -44,8 +44,7 @@ h1 {
 h2 {
 	color: #3B2910;
 	font:italic bold 25px/2em Georgia,serif;
-	margin: 10px auto 10px 30px;
-
+	margin: 30px auto 10px 30px;
 }
 
 
@@ -153,8 +152,9 @@ table,th, td {
 
 
 .login_class {
-	float:left;
-	margin: 0.2em 0em 0em 0.5em;
+	float:right;
+	margin: 0 50px 0 0;
+	
 }
 
 #link_new_user{
@@ -162,9 +162,12 @@ table,th, td {
 	margin: 0.5em 0em 1em 0.5em;
 }
 
-#button_login {
-	margin: -0.75em 1em 1em 0em !important;
+.button_login {
+	margin: 12px 30px 0 0 !important;
 	float: right !important;
+	width: 60px !important;
+	height: 20px !important;
+	font: normal 12px arial, sans-serif;
 }
 
 
@@ -176,27 +179,21 @@ table,th, td {
 }
 
 .button {
-
 	font: normal 12px arial, sans-serif;
-	height: 1.8em;
-	width: 5em;
-	/*  padding: 0.25em 0.5em 0.75em 0.5em; */
-
-
 }
 
-.button span {
+.aaaabutton span {
 	display: block;
 	line-height: 14px;
 	padding: 0em 0.5em 0em 0.5em; 
 }
 
-.button:active {
+.aaaaabutton:active {
 	color: #000;
 	outline: none; /* hide dotted outline in Firefox */
 }
 
-.button:active span {
+.aaaaaabutton:active span {
 	padding: 0.15em 0.5em 0em 0.5em; /* NO FUNCIONA */
 }
 
@@ -248,7 +245,8 @@ table,th, td {
 }
 
 .search_button{
-	margin: -1em 0 0 18em;
+	float:right;
+	margin: -20px 0 0 0;
 }
 
 .options_search {
@@ -267,6 +265,7 @@ table,th, td {
 }
 
 .content-search {
+	margin-top: 10px;
 	padding: 45px 20px 20px 30px;
 }
 
@@ -279,6 +278,7 @@ table,th, td {
 /***** Search form small ****/ 
 
 .search_form_small{
+	margin: 0 0 0 30px;
 	width: 583px;
 	height: 127px;
 	background-image:url(/images/search_form_small1.png);
@@ -299,6 +299,7 @@ table,th, td {
 }
 
 .content-search_small{
+	margin-top: 30px;
 	padding: 20px 20px 20px 30px;
 }
 

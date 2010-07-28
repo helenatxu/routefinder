@@ -18,7 +18,8 @@
 	<%= f.label :remember_me %>
 </p>
 
-<p id="button_login" class="login_class"><%= f.submit "Login" %></p>
+<%= f.submit "Login", :class => "button_login" %>
+
 
 <%= f.error_messages %>
 <% end %>
