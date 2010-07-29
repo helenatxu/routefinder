@@ -101,7 +101,7 @@ table,th, td {
 /*********** USER PROFILE *********/
 
 #user_profile {
-	width: 300px;
+	width: 350px;
 	margin-left: 200px;
 	padding: 0em;
 	background-color: #ffd;
@@ -135,7 +135,7 @@ table,th, td {
 }
 
 #log_in p {
-	mamrgin: 0.25em 0.25em 0.1em 0.75em;
+	
 }
 
 #remember_me input{
