@@ -30,9 +30,12 @@ body {
 #footer {
 	clear:both;
 	padding: 20px;
-	background-color: #E5FFDE;
+	color: #E5FFDE;
 	text-align:center;
-	height: 80px;
+	background-image:url(/images/footer.png);
+	background-repeat: x-repeat;
+	height: 60px;
+	font: italic 80% Georgia,serif;
 }
 
 #content {
@@ -77,18 +80,16 @@ table,th, td {
 
 
 #summary {
-	width: 30em;
-	position: absolute;
-	margin: -3em 0em 0 42em;
-	border: solid 1px;
-	padding: 0em;
+	width: 500px;
+	float: right;
+	margin: 0 20px 0 0;
 	border:solid 2px #9DEE96;
+	background: #CCFFE0;
 }
 
 #summary p {
 	margin: 0 0.5em 0.15em 0.5em;
-	padding: 0.75em;
-	background: #CCFFE0;
+	padding: 9px;
 }
 
 #comeback_links {
@@ -131,7 +132,7 @@ table,th, td {
 }
 
 #log_in p {
-	
+
 }
 
 #remember_me input{
@@ -150,7 +151,7 @@ table,th, td {
 .login_class {
 	float:right;
 	margin: 0 50px 0 0;
-	
+
 }
 
 #link_new_user{
@@ -166,6 +167,14 @@ table,th, td {
 	font: normal 12px arial, sans-serif;
 }
 
+#comments {
+	clear:both;
+	padding: 30px 0 0 0;
+}
+
+#comments .comment {
+	background-color: #E5FFDE;
+}
 
 /*********** USER PROFILE *********/
 
@@ -336,8 +345,9 @@ table,th, td {
 }
 
 
-
 #map {
 	width: 640px;
 	height: 480px;
+	float: left;
+	maargin-top: -500px;
 }

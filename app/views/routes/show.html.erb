@@ -3,6 +3,10 @@
 <h1>
 	<%=h @route.name %>
 </h1>
+<div id="map">
+	<img src="/images/map.png" alt="map" />
+</div>
+
 
 <div id="summary">
 
@@ -42,16 +46,17 @@
 	<%= link_to 'Edit', edit_route_path(@route) %>
 </div>
 
-<img id="map" src="/images/map.png" alt="map" />
 
-<p>
-	Rate:
-	<!--	%= ratings_for @route, @user, :dimension => :rank %> -->
-</p>
+<div id="comments">
+	<p>
+		Rate:
+		<!--	%= ratings_for @route, @user, :dimension => :rank %> -->
+	</p>
 
-<p>Comments:</p>
+	<p class="comment">Comments:</p>
 
-<p id="comeback_links">
-	<%= link_to 'New route', new_route_path %> |
-	<%= link_to 'Back', routes_path %>
-</p>
+	<p id="comeback_links">
+		<%= link_to 'New route', new_route_path %> |
+		<%= link_to 'Back', routes_path %>
+	</p>
+</div>
