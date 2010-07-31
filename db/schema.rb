@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20100718150058) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "author_id"
+    t.integer  "users_id"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(:version => 20100718150058) do
     t.decimal  "coordinates_lat"
     t.decimal  "coordinates_long"
     t.string   "direction"
-    t.integer  "country_id"
+    t.integer  "countries_id"
     t.float    "rank"
-    t.integer  "author_id"
+    t.integer  "users_id"
     t.text     "description"
     t.string   "image_url"
     t.integer  "comments_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20100718150058) do
   create_table "routes", :force => true do |t|
     t.string   "name"
     t.float    "rank"
-    t.integer  "author_id"
+    t.integer  "users_id"
     t.text     "description"
     t.integer  "places_id"
     t.integer  "comments_id"

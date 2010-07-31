@@ -121,7 +121,7 @@ class AddDataTest < ActiveRecord::Migration
 
 
         Comment.create(
-        :author_id => 1,
+        :users_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
@@ -129,21 +129,21 @@ class AddDataTest < ActiveRecord::Migration
         
 
         Comment.create(
-        :author_id => 2,
+        :users_id => 2,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
         )
 
         Comment.create(
-        :author_id => 2,
+        :users_id => 2,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
         )
 
         Comment.create(
-        :author_id => 1,
+        :users_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
@@ -151,14 +151,14 @@ class AddDataTest < ActiveRecord::Migration
         
 
         Comment.create(
-        :author_id => 3,
+        :users_id => 3,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
         )
 
         Comment.create(
-        :author_id => 3,
+        :users_id => 3,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.'
@@ -170,9 +170,9 @@ class AddDataTest < ActiveRecord::Migration
         :coordinates_lat => 1.00203013,
         :coordinates_long => -2.235532,
         :direction => 'ul. Piotrkowska, nº 2, Lodz, Polska',
-        :country_id => 2,
+        :countries_id => 2,
         :rank => 2.0,
-        :author_id => 1,
+        :users_id => 1,
         :description => 'Long handle bag made of skin. Including that based portfolio - Removable inner wallet. Dimensions: 25 x 36 12 cms.',
         :image_url => '/images/autocaravana1.jpg',
         :comments_id => 1
@@ -183,9 +183,9 @@ class AddDataTest < ActiveRecord::Migration
         :coordinates_lat => 1.00203013,
         :coordinates_long => -2.235532,
         :direction => 'C/ Pintor Manuel Siguenza, nº6, Pinedo, Valencia',
-        :country_id => 1,
+        :countries_id => 1,
         :rank => 5.0,
-        :author_id => 2,
+        :users_id => 2,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
@@ -198,9 +198,9 @@ class AddDataTest < ActiveRecord::Migration
         :coordinates_lat => 4.00203013,
         :coordinates_long => -5.235532,
         :direction => 'C/ del Mar, nº2, Valencia',
-        :country_id => 1,
+        :countries_id => 1,
         :rank => 1.0,
-        :author_id => 3,
+        :users_id => 3,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
@@ -211,7 +211,7 @@ class AddDataTest < ActiveRecord::Migration
         Route.create(
         :name => 'Route1', 
         :rank => 3.0,
-        :author_id => 1,
+        :users_id => 1,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
@@ -222,7 +222,7 @@ class AddDataTest < ActiveRecord::Migration
         Route.create(
         :name => 'Route2', 
         :rank => 2.0,
-        :author_id => 2,
+        :users_id => 2,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
@@ -233,7 +233,7 @@ class AddDataTest < ActiveRecord::Migration
         Route.create(
         :name => 'Route3', 
         :rank => 5.0,
-        :author_id => 3,
+        :users_id => 3,
         :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',

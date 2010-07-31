@@ -9,10 +9,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :current_user_session
 
   def index
-      @user_session = UserSession.new
+    @user_session = UserSession.new
   end
-  
+
   private
+
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
