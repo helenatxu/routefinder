@@ -17,27 +17,37 @@
 
 	<div id="container">
 
-		<div id="user_nav"> 
-			<% if !current_user %>
-			<%= link_to "Register", new_account_path %> |
-			<%= link_to "Log In", new_user_session_path %> |
-			<% else %>
-			<%= link_to "My Account", account_path %> |
-			<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-			<% end %>
+		<div id="navs">
+			<div id="user_nav"> 
+				<% if !current_user %>
+				<%= link_to "Register", new_account_path %> 
+				<% else %>
+				<%= link_to "My Account", account_path %> |
+				<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+				<% end %>
 
-			<p class="notice">
-				<%= flash[:notice] %>
-			</p>
-			<p><%= pluralize User.logged_in.count, "user" %> currently logged in
-			</p>
-			<!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
+				<p class="notice">
+					<%= flash[:notice] %>
+				</p>
 
+				<p>
+					<%= pluralize User.logged_in.count, "user" %> currently logged in
+					<!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
+				</p>
+			</div>
+
+			<div id="login_nav">
+				<% if @index and !current_user %>
+				<%= render :partial => "user_sessions/login", :locals =>{ :user_session => @user_session } %>
+				<%end%>
+			</div>
 		</div>
 
-		<%= yield %>
+		<div id="content">
+			<%= yield %>
+		</div>
 
-	</div>	
+	</div>
 
 	<div id="footer">
 		<p>RouteFinder 2010.</p>
