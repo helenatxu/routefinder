@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       redirect_to account_url
     else
-      render :action => :new
+      render :action => :_login
     end
   end
   

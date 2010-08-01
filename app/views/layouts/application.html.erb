@@ -18,28 +18,35 @@
 	<div id="container">
 
 		<div id="navs">
-			<div id="user_nav"> 
-				<% if !current_user %>
-				<%= link_to "Register", new_account_path %> 
-				<% else %>
-				<%= link_to "My Account", account_path %> |
-				<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-				<% end %>
 
-				<p class="notice">
+			<% if !current_user %>
+			<div id="log_in">
+				<%= render :partial => "user_sessions/login", :locals =>{ :user_session => @user_session } %>
+				<p id="register_link">
+					<%= link_to "Register new user", new_account_path %> 
+				</p>
+			</div>
+
+			<% else %>
+			<div id="user_nav_logged">
+				<p>
+					Hello <%=h @user.login %>! 
+				</p>
+				<p>
+					<%= link_to "My Account", account_path %> |
+					<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+				</p>
+			</div>
+			<% end %>
+
+			<div class="notices">
+				<p>
 					<%= flash[:notice] %>
 				</p>
-
 				<p>
 					<%= pluralize User.logged_in.count, "user" %> currently logged in
 					<!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
 				</p>
-			</div>
-
-			<div id="login_nav">
-				<% if @index and !current_user %>
-				<%= render :partial => "user_sessions/login", :locals =>{ :user_session => @user_session } %>
-				<%end%>
 			</div>
 		</div>
 

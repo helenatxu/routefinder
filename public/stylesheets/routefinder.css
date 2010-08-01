@@ -96,28 +96,26 @@ table,th, td {
 	margin: 10px;
 }
 
-#user_nav {
+#register_link {
+	margin: 62px auto auto 5px;
+}
+
+
+.notices {
+	float:right;
 	font-size:90%;
 	color: green;
-	float:left;
-	margin: 0 0 20px 5px;
+	margin: 5px 20px 0 0;
 }
 
-.notice {
-}
-
-#login_nav {
-	float:right;
-	margin-top: -8px;
-}
 
 /*********** LOGIN ****************/
 
-#log_in {
+#log_in, #user_nav_logged {
 	width:227px;
 	height:97px;
 	float: right;
-	maargin: -38px 10px 0 0;
+	margin-top: -8px;	
 	padding: 5px 0 10px 15px;
 	background-image:url(/images/login_06.png);
 	background-repeat:no-repeat;
@@ -126,44 +124,40 @@ table,th, td {
 	/*	border: solid 3px #CCCCCC; */
 }
 
-#log_in input { 
-	width: 100px;
-	height: 14px;
+#user_nav_logged p {
+	padding: 8px;
 }
 
-#log_in p {
+#log_in input { 
+	width: 100px;
+	height: 12px;
+}
 
+#remember_me label{
+	margin: 5px auto auto auto;
+	float: right;
+	font-size:87%;
 }
 
 #remember_me input{
 	clear:both;
-	float: left;
 	width: 20px;
-	margin: 15px auto auto 0;
-}
-
-#remember_me label{
-	margin: 15px auto auto 6px;
-	float: left;
+	float: right;
+	margin: 5px 40px auto auto;
 }
 
 
 .login_class {
 	float:right;
-	margin: 0 50px 0 0;
-
-}
-
-#link_new_user{
-	float:left;
-	margin: 0.5em 0em 1em 0.5em;
+	margin: 0 40px 0 0;
 }
 
 .button_login {
-	margin: 12px 30px 0 0 !important;
+	clear:both;
+	margin: 6px 35px 0 0 !important;
 	float: right !important;
-	width: 60px !important;
 	height: 20px !important;
+	width: 60px !important;
 	font: normal 12px arial, sans-serif;
 }
 
@@ -173,7 +167,8 @@ table,th, td {
 }
 
 #comments .comment {
-	background-color: #E5FFDE;
+	background-color: #FFFFF0;
+	border: 1px solid #FFE899;
 }
 
 /*********** USER PROFILE *********/
@@ -181,9 +176,6 @@ table,th, td {
 #user_profile {
 	width: 350px;
 	margin-left: 200px;
-	padding: 0em;
-	background-color: #ffd;
-	border: 1px solid #fc0;
 }
 
 #user_profile p {
@@ -220,29 +212,29 @@ table,th, td {
 }
 
 
-/******** FORMS *********/
-.texta { 
-	font-size: 20px; 
-	background-color: #CCCCCC; 
-	border: 1px solid #666666; 
-}
 
-.fieldarea, .texta { 
-	font-size: 20px; 
-	background-color: #CCCCCC; 
-	border: 1px solid #666666; 
-	float:right;
+/******** FORMS *********/
+
+#form_fields {
+	margin: 0 0 20px 300px;
+	border:solid 2px #9DEE96;
+	background: #CCFFE0;
+	float: left;
+	width: 550px;
 }
 
 #form_fields p {
-	margin: 0.5em 10em 1.25em 0;
+	margin: 20px;
 }
 
-#form_fields {
-	margin: 0.25em 20em 1.25em 10em;
-	padding: 2.5em 2em 2em 2em;
-	border:solid 2px #9DEE96;
-	background: #CCFFE0;
+.texta { 
+	height: 70px;
+	width: 325px !important;
+}
+
+.fieldarea, .texta { 
+	font-size: 100%; 
+	float:right;
 }
 
 

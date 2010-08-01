@@ -7,11 +7,17 @@ class ApplicationController < ActionController::Base
 
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user, :current_user_session
-
+  before_filter :set_session
+  
   def index
     @user_session = UserSession.new
     @index = true
   end
+  
+  def set_session
+    @user_session = UserSession.new
+  end
+
 
   private
 
@@ -29,7 +35,8 @@ class ApplicationController < ActionController::Base
     unless current_user
       store_location
       flash[:notice] = "You must be logged in to access this page"
-      redirect_to new_user_session_url
+  #   redirect_to new_user_session_url
+      redirect_to("/application/index")
       return false
     end
   end
@@ -49,7 +56,10 @@ class ApplicationController < ActionController::Base
 
   def redirect_back_or_default(default)
     redirect_to(session[:return_to])
-#    redirect_to(session[:return_to] || default)
+    #    redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
+
+
+
 end
