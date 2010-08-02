@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     @user = @current_user
   end
 
+  
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
@@ -34,4 +35,5 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end
+  
 end

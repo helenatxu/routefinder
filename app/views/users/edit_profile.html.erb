@@ -1,0 +1,35 @@
+<h1>Editing user</h1>
+
+<div id="form_fields">
+
+<% form_for @user, :url => account_path do |f| %>
+	<%= f.error_messages %>
+	
+	<p>
+		<%= f.label :login %>
+		<%= f.text_field ( :login, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :photo_url %>
+		<%= f.text_field ( :photo_url, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :profile %>
+		<%= f.text_area ( :profile, :class => "texta" ) %>
+	</p>
+	<p>
+		Mis favoritos:
+		(cambiar, añadir eliminar favorito)
+	</p>
+	
+	<%= f.submit "Update" %>
+	<% end %>
+
+</div>
+
+<p id="comeback_links">
+<%= link_to "My Profile", account_path %> |
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %> |
+<%= link_to 'Back to Main', '/application/index' %>
+</p>

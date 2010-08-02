@@ -4,8 +4,33 @@
 	<% form_for @user, :url => account_path do |f| %>
 	<%= f.error_messages %>
 
-	<%= render :partial => "form", :object => f %>
-	
+
+	<p>
+		<%= f.label :login %>
+		<%= f.text_field ( :login, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field ( :email, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :password, f.object.new_record? ? nil : "Change password" %>
+		<%= f.password_field ( :password, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field ( :password_confirmation, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :photo_url %>
+		<%= f.text_field ( :photo_url, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :profile %>
+		<%= f.text_field ( :profile, :class => "texta" ) %>
+	</p>
+
+
 	<p>
 	<%= f.submit "Register" %>
 	</p>

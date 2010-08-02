@@ -101,12 +101,13 @@ table,th, td {
 }
 
 
-.notices {
+.notices, #errorExplanation, .errorExplanation h2 {
 	float:right;
 	font-size:90%;
 	color: green;
 	margin: 5px 20px 0 0;
 }
+
 
 
 /*********** LOGIN ****************/
@@ -131,6 +132,10 @@ table,th, td {
 #log_in input { 
 	width: 100px;
 	height: 12px;
+}
+
+#log_in #errorExplanation, .fieldWithErrors { 
+	text-indent: -9999px;
 }
 
 #remember_me label{
@@ -171,19 +176,6 @@ table,th, td {
 	border: 1px solid #FFE899;
 }
 
-/*********** USER PROFILE *********/
-
-#user_profile {
-	width: 350px;
-	margin-left: 200px;
-}
-
-#user_profile p {
-	padding: 10px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
-
 
 /********** BUTTONS *************/
 
@@ -215,6 +207,18 @@ table,th, td {
 
 /******** FORMS *********/
 
+#show_user_fields {
+	width: 350px;
+	margin-left: 200px;
+	background-color: #FFFFF0;
+	border: 1px solid #FFE899;
+	padding: 10px;
+}
+
+
+#show_user_fields p {
+	padding: 10px;
+}
 #form_fields {
 	margin: 0 0 20px 300px;
 	border:solid 2px #9DEE96;
@@ -222,6 +226,7 @@ table,th, td {
 	float: left;
 	width: 550px;
 }
+
 
 #form_fields p {
 	margin: 20px;

@@ -39,6 +39,7 @@
 			</div>
 			<% end %>
 
+			<% if flash[:notice] -%> 			
 			<div class="notices">
 				<p>
 					<%= flash[:notice] %>
@@ -48,6 +49,7 @@
 					<!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
 				</p>
 			</div>
+			<% end -%> 
 		</div>
 
 		<div id="content">
