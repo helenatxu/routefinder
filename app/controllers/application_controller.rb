@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_user
-    @user = User.new
+    @user = current_user
   end
 
 
@@ -46,8 +46,10 @@ class ApplicationController < ActionController::Base
     unless current_user
       store_location
       #   redirect_to new_user_session_url
-      redirect_to("/application/index")
-      flash[:notice] = "You must be logged in to access this page"
+      redirect_to("/")
+#      if not defined? flash[:notice]    #<-- How to check if an array or dictionary has an element
+        flash[:notice] = "You must be logged in to access this page"
+#     end
       return false
     end
   end
@@ -71,6 +73,4 @@ class ApplicationController < ActionController::Base
   end
 
 end
-
-
 

@@ -2,6 +2,7 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.xml
 
+
   def index
     @countries = Country.find(:all)
     if params[:keywords] and not params[:keywords].empty?

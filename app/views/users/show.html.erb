@@ -1,5 +1,10 @@
-<h1>Your Profile</h1>
+<h1>Your Account</h1>
 <div id="show_user_fields">
+	<p>
+		<b>Login:</b>
+		<%=h @user.login %>
+	</p>
+	
 	<p>
 		<b>Login:</b>
 		<%=h @user.login %>
@@ -19,14 +24,41 @@
 		<b>Something about you:</b>
 		<%=h @user.profile %> 
 	</p>
+
+	<p>
+		<b>Login count:</b>
+		<%=h @user.login_count %>
+	</p>
+
+	<p>
+		<b>Last request at:</b>
+		<%=h @user.last_request_at %>
+	</p>
+
+	<p>
+		<b>Last login at:</b>
+		<%=h @user.last_login_at %>
+	</p>
+
+	<p>
+		<b>Current login at:</b>
+		<%=h @user.current_login_at %>
+	</p>
+
+	<p>
+		<b>Last login ip:</b>
+		<%=h @user.last_login_ip %>
+	</p>
+
+	<p>
+		<b>Current login ip:</b>
+		<%=h @user.current_login_ip %>
+	</p>
+
 </div>
 
 <p id="comeback_links">
 <%= link_to 'Edit profile', edit_account_path %> |
-
-<%= link_to 'Edit profile', :controller => 'users', :action => :update_profile %> |
-
-<%= link_to 'Show Account', '/users/show_account' %> |
 <%= link_to 'Back', "/" %>
 </p>
 

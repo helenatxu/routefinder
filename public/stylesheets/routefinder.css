@@ -46,7 +46,7 @@ body {
 h1 {
 	color: #004500;
 	font:italic bold 35px/2em Georgia,serif;
-	margin: 20px 5px 20px 10px;
+	margin: 20px 5px 20px 30px;
 }
 
 h2 {
@@ -79,6 +79,7 @@ table,th, td {
 }
 
 
+
 #summary {
 	width: 500px;
 	float: right;
@@ -93,7 +94,9 @@ table,th, td {
 }
 
 #comeback_links {
-	margin: 10px;
+	clear: both;
+	margin: 5px auto 30px 300px;
+	float: left;
 }
 
 #register_link {
@@ -228,7 +231,7 @@ table,th, td {
 }
 
 
-#form_fields p {
+#form_fields p, #form_fields h3 {
 	margin: 20px;
 }
 

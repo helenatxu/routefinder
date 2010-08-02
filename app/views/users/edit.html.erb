@@ -5,6 +5,10 @@
 <% form_for @user, :url => account_path do |f| %>
 	<%= f.error_messages %>
 	
+	<h3>
+		Your profile data:
+	</h3>
+	
 	<p>
 		<%= f.label :login %>
 		<%= f.text_field ( :login, :class => "fieldarea" ) %>
@@ -20,6 +24,23 @@
 	<p>
 		Mis favoritos:
 		(cambiar, añadir eliminar favorito)
+	</p>
+	
+	<h3>
+		Your account data:
+	</h3>
+
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field ( :email, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :password, f.object.new_record? ? nil : "Change password" %>
+		<%= f.password_field ( :password, :class => "fieldarea" ) %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field ( :password_confirmation, :class => "fieldarea" ) %>
 	</p>
 	
 	<%= f.submit "Update" %>
