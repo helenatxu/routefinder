@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.datetime "updated_at"
   end
 
+  create_table "places_routes", :id => false, :force => true do |t|
+    t.integer "place_id"
+    t.integer "route_id"
+  end
+
+  add_index "places_routes", ["place_id", "route_id"], :name => "index_places_routes_on_place_id_and_route_id", :unique => true
+  add_index "places_routes", ["route_id"], :name => "index_places_routes_on_route_id"
+
   create_table "rates", :force => true do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -69,14 +77,6 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "routes_places", :id => false, :force => true do |t|
-    t.integer "place_id"
-    t.integer "route_id"
-  end
-
-  add_index "routes_places", ["place_id", "route_id"], :name => "index_routes_places_on_place_id_and_route_id", :unique => true
-  add_index "routes_places", ["route_id"], :name => "index_routes_places_on_route_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
