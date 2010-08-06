@@ -3,6 +3,8 @@ class Route < ActiveRecord::Base
   has_and_belongs_to_many :places # places belongs from many routes and vice versa
   has_and_belongs_to_many :users # users can mark this route as favourite
   belongs_to :user # one user is the author
+  has_many :routecomments
+  
   
   ajaxful_rateable :stars => 5, :allow_update => true, :cache_column => :rank, :dimensions => [:rank]
   
