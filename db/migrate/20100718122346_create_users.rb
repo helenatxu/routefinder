@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :login,               :null => false                # optional, you can use email instead, or both
       t.string    :email,               :null => false                # optional, you can use login instead, or both
       t.string    :photo_url
-      t.text      :profile
+      t.text      :profile     
       t.boolean   :is_admin,            :default => false
       t.string    :crypted_password,    :null => false                # optional, see below
       t.string    :password_salt,       :null => false                # optional, but highly recommended

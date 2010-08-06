@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
   add_index "places_routes", ["place_id", "route_id"], :name => "index_places_routes_on_place_id_and_route_id", :unique => true
   add_index "places_routes", ["route_id"], :name => "index_places_routes_on_route_id"
 
+  create_table "places_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "place_id"
+  end
+
+  add_index "places_users", ["user_id", "place_id"], :name => "index_places_users_on_user_id_and_place_id", :unique => true
+  add_index "places_users", ["user_id"], :name => "index_places_users_on_user_id"
+
   create_table "rates", :force => true do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -77,6 +85,14 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "routes_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "route_id"
+  end
+
+  add_index "routes_users", ["user_id", "route_id"], :name => "index_routes_users_on_user_id_and_route_id", :unique => true
+  add_index "routes_users", ["user_id"], :name => "index_routes_users_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

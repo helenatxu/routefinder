@@ -11,6 +11,7 @@ class PlacesRoutes < ActiveRecord::Migration
   end
 
   def self.down
+    drop_table :places_routes
   end
 
 end
