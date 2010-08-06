@@ -1,0 +1,28 @@
+
+<h4>Listing comments</h4>
+
+<% if @routecomments %>
+<table>
+	<tr>
+		<th>Author:</th>
+		<th>Date:</th>
+		<th>Comment:</th>
+	</tr>
+
+	<% @routecomments.each do |routecomment| %>
+	<tr>
+		<td><%=h routecomment.user_id %></td>
+		<td><%=h routecomment.date %></td>
+		<td><%=h routecomment.comment %></td>
+		<td><%= link_to 'Edit', edit_routecomment_path(@routecomment) %></td>
+	</tr>
+	<% end %>
+</table>
+<% else %>
+
+<p>There are not comments </p>
+
+<%end%>
+
+<p><%= link_to 'New',  %></p>
+<%= link_to "New", :controller :routecomments_controller, :action => "new" %>

@@ -22,22 +22,12 @@ class RoutesController < ApplicationController
   # GET /routes/1.xml
   def show
     @route = Route.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @route }
-    end
   end
 
   # GET /routes/new
   # GET /routes/new.xml
   def new
     @route = Route.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @route }
-    end
   end
 
   # GET /routes/1/edit

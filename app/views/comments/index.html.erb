@@ -9,7 +9,7 @@
 
 <% @comments.each do |comment| %>
   <tr>
-    <td><%=h comment.users_id %></td>
+    <td><%=h comment.user_id %></td>
     <td><%=h comment.date %></td>
     <td><%=h comment.comment %></td>
     <td><%= link_to 'Show', comment %></td>

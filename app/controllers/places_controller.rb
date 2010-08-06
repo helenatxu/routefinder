@@ -19,31 +19,18 @@ class PlacesController < ApplicationController
     @places = Place.find(:all)
   end
 
-  #    respond_to do |format|
-  #      format.html # index.html.erb
-  #      format.xml  { render :xml => @places }
-  #    end
-  #  end
+
 
   # GET /places/1
   # GET /places/1.xml
   def show
     @place = Place.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @place }
-    end
   end
 
   # GET /places/new
   # GET /places/new.xml
   def new
     @place = Place.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @place }
     end
   end
 

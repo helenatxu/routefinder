@@ -9,17 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100718150058) do
+ActiveRecord::Schema.define(:version => 20100818150058) do
 
-  create_table "comments", :force => true do |t|
-    t.integer  "users_id"
-    t.text     "comment"
+  create_table "countries", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "countries", :force => true do |t|
-    t.string   "name"
+  create_table "placecomments", :force => true do |t|
+    t.integer  "place_id"
+    t.integer  "user_id"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,12 +30,11 @@ ActiveRecord::Schema.define(:version => 20100718150058) do
     t.decimal  "coordinates_lat"
     t.decimal  "coordinates_long"
     t.string   "direction"
-    t.integer  "countries_id"
+    t.integer  "country_id"
     t.float    "rank"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.text     "description"
     t.string   "image_url"
-    t.integer  "comments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,16 +52,31 @@ ActiveRecord::Schema.define(:version => 20100718150058) do
   add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
   add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
-  create_table "routes", :force => true do |t|
-    t.string   "name"
-    t.float    "rank"
-    t.integer  "users_id"
-    t.text     "description"
-    t.integer  "places_id"
-    t.integer  "comments_id"
+  create_table "routecomments", :force => true do |t|
+    t.integer  "route_id"
+    t.integer  "user_id"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "routes", :force => true do |t|
+    t.string   "name"
+    t.float    "rank"
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "routes_places", :id => false, :force => true do |t|
+    t.integer "place_id"
+    t.integer "route_id"
+  end
+
+  add_index "routes_places", ["place_id", "route_id"], :name => "index_routes_places_on_place_id_and_route_id", :unique => true
+  add_index "routes_places", ["route_id"], :name => "index_routes_places_on_route_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

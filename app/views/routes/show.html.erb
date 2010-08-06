@@ -17,7 +17,7 @@
 	</p>
 	<p>
 		<b>Author:</b>
-		<%=h @route.users_id %>
+		<%=h @route.user_id %>
 	</p>
 	<p>
 		<b>Description:</b>
@@ -25,7 +25,7 @@
 	</p>
 	<p>
 		<b>Places:</b>
-		<%=h @route.places_id %>
+		<%=h @route.place_id %>
 	</p>
 	<p>
 		<b>Creation date:</b>
@@ -54,6 +54,8 @@
 	</p>
 
 	<p class="comment">Comments:</p>
+	<%= render :partial => "show_comments", :locals =>{:route_id => @route_id } %>
+
 
 	<p id="comeback_links">
 		<%= link_to 'New route', new_route_path %> |

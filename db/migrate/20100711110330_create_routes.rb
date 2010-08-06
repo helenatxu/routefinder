@@ -5,10 +5,9 @@ class CreateRoutes < ActiveRecord::Migration
     create_table :routes do |t|
       t.string :name
       t.float :rank
-      t.integer :users_id
+      t.integer :user_id
       t.text :description
-      t.integer :places_id
-      t.integer :comments_id
+      t.integer :place_id
 
       t.timestamps
     end
