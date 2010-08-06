@@ -39,11 +39,10 @@ class RoutecommentsController < ApplicationController
   def create
     @routecomment = Routecomment.new(params[:routecomment])
 
-    respond_to do |format|
       if @routecomment.save
-        format.html { redirect_to(@routecomment, :notice => 'Comment was successfully created.') }
+        redirect_to(@routecomment, :notice => 'Comment was successfully created.') 
       else
-        format.html { render :action => "new" }
+        render :action => "new"
       end
     end
   end

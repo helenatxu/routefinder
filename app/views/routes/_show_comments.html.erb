@@ -24,5 +24,17 @@
 
 <%end%>
 
-<p><%= link_to 'New',  %></p>
-<%= link_to "New", :controller :routecomments_controller, :action => "new" %>
+
+<div id="form_fields">
+	<h1>New comment</h1>
+
+	<% form_for(@routecomments) do |f| %>
+	  <%= f.error_messages %>
+	  <%= render :partial => "/comments/form_new", :object => f %>
+	
+	  <p>
+	    <%= f.submit 'Create' %>
+	  </p>
+
+<% end %>
+</div>
