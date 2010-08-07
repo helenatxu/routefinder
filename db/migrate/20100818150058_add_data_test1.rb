@@ -197,7 +197,8 @@ class AddDataTest1 < ActiveRecord::Migration
         :user_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
-        ornare urna, quis pulvinar magna aliquet ac.'
+        ornare urna, quis pulvinar magna aliquet ac.',
+        :date => Time.now.to_s(:long)
         )
         
 
@@ -206,7 +207,8 @@ class AddDataTest1 < ActiveRecord::Migration
         :user_id => 2,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
-        ornare urna, quis pulvinar magna aliquet ac.'
+        ornare urna, quis pulvinar magna aliquet ac.',
+        :date => Time.now.to_s(:long)
         )
 
         Placecomment.create(
@@ -214,7 +216,8 @@ class AddDataTest1 < ActiveRecord::Migration
         :user_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
-        ornare urna, quis pulvinar magna aliquet ac.'
+        ornare urna, quis pulvinar magna aliquet ac.',
+        :date => Time.now.to_s(:long)
         )
 
         Routecomment.create(
@@ -222,7 +225,8 @@ class AddDataTest1 < ActiveRecord::Migration
         :user_id => 3,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
-        ornare urna, quis pulvinar magna aliquet ac.'
+        ornare urna, quis pulvinar magna aliquet ac.',
+        :date => Time.now.to_s(:long) 
         )
         
 
@@ -231,7 +235,9 @@ class AddDataTest1 < ActiveRecord::Migration
         :user_id => 3,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
-        ornare urna, quis pulvinar magna aliquet ac.'
+        ornare urna, quis pulvinar magna aliquet ac.',
+        :date => Time.now.to_s(:long) 
+
         )
 
         Placecomment.create(
@@ -239,7 +245,8 @@ class AddDataTest1 < ActiveRecord::Migration
         :user_id => 2,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
-        ornare urna, quis pulvinar magna aliquet ac.'
+        ornare urna, quis pulvinar magna aliquet ac.',
+        :date => Time.now.to_s(:long) 
         )
 
       end 

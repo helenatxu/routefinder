@@ -54,7 +54,9 @@
 	</p>
 
 	<p class="comment">Comments:</p>
-	<%= render :partial => "show_comments", :locals =>{:route_id => @route_id } %>
+<!--	%= render :partial => "/comments/show_comments", :locals =>{:route_id => @route_id } %> -->
+	<%= render(:partial => "/comments/show_comments", :object => @route) %> 
+	<%= render(:partial => "/comments/new_comments", :object => @route) %> 
 
 
 	<p id="comeback_links">

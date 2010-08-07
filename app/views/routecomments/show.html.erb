@@ -1,0 +1,23 @@
+<p>
+  <b>Route:</b>
+  <%=h @routecomment.route_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @routecomment.user_id %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @routecomment.comment %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @routecomment.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_routecomment_path(@routecomment) %> |
+<%= link_to 'Back', routecomments_path %>

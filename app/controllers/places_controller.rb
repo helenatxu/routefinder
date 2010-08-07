@@ -20,7 +20,6 @@ class PlacesController < ApplicationController
   end
 
 
-
   # GET /places/1
   # GET /places/1.xml
   def show
@@ -31,40 +30,34 @@ class PlacesController < ApplicationController
   # GET /places/new.xml
   def new
     @place = Place.new
-    end
   end
+end
 
-  # GET /places/1/edit
-  def edit
-    @place = Place.find(params[:id])
+# GET /places/1/edit
+def edit
+  @place = Place.find(params[:id])
+end
+
+# POST /places
+# POST /places.xml
+def create
+  @place = Place.new(params[:place])
+
+  if @place.save
+    redirect_to(@place, :notice => 'Place was successfully created.')
+  else
+    render :action => "new"
   end
+end
 
-  # POST /places
-  # POST /places.xml
-  def create
-    @place = Place.new(params[:place])
-
-      if @place.save
-        redirect_to(@place, :notice => 'Place was successfully created.')
-      else
-        render :action => "new"
-      end
-  end
-
-  # PUT /places/1
-  # PUT /places/1.xml
-  def update
-    @place = Place.find(params[:id])
-
-    respond_to do |format|
-      if @place.update_attributes(params[:place])
-        format.html { redirect_to(@place, :notice => 'Place was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @place.errors, :status => :unprocessable_entity }
-      end
-    end
+# PUT /places/1
+# PUT /places/1.xml
+def update
+  @place = Place.find(params[:id])
+  if @place.update_attributes(params[:place])
+    redirect_to(@place, :notice => 'Place was successfully updated.') 
+  else
+    render :action => "edit" 
   end
 
   # DELETE /places/1
@@ -72,12 +65,58 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
+    redirect_to(places_url)
+  end
 
-    respond_to do |format|
-      format.html { redirect_to(places_url) }
-      format.xml  { head :ok }
+
+  ################################## Comments controllers
+
+  def index_comments
+    @placecomments = Placecomment.all
+  end
+
+  # GET /comments/1
+  def show_comments
+    @placecomment = Placecomment.find(params[:id])
+  end
+
+  # GET /comments/new
+  def new_comments
+    @placecomment = Placecomment.new
+  end
+
+  # GET /comments/1/edit
+  def edit_comments
+    @placecomment = Placecomment.find(params[:id])
+  end
+
+  # POST /comments
+  def create_comments
+    @placecomment = Placecomment.new(params[:placecomment])
+    if @placecomment.save
+      redirect_to(@placecomment, :notice => 'Comment was successfully created.') 
+    else
+      render :action => "new" 
     end
   end
 
 
+  # PUT /comments/1
+  def update_comments
+    @placecomment = Placecomment.find(params[:id])
+    if @placecomment.update_attributes(params[:placecomment])
+      redirect_to(@placecomment, :notice => 'Comment was successfully updated.') 
+    else
+      render :action => "edit" 
+    end
+  end
+
+
+  # DELETE /comments/1
+  def destroy_comments
+    @placecomment = Placecomment.find(params[:id])
+    @placecomment.destroy
+    redirect_to(placecomments_url) 
+  end
 end
+

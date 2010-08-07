@@ -1,0 +1,23 @@
+<p>
+  <b>Place:</b>
+  <%=h @placecomment.place_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @placecomment.user_id %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @placecomment.comment %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @placecomment.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_placecomment_path(@placecomment) %> |
+<%= link_to 'Back', placecomments_path %>

@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   has_many :places # as author
   has_many :routes # as favourites
   
+  has_many :routecomments
+  has_many :placecomments
+  
 end
