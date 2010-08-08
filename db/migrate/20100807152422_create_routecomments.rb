@@ -4,7 +4,7 @@ class CreateRoutecomments < ActiveRecord::Migration
       t.integer :route_id
       t.integer :user_id
       t.text :comment
-      t.date :date
+      t.datetime :date
 
       t.timestamps
     end

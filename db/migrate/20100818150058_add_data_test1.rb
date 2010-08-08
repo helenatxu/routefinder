@@ -198,17 +198,17 @@ class AddDataTest1 < ActiveRecord::Migration
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :date => Time.now.to_s(:long)
+        :date => Time.now
         )
         
 
         Routecomment.create(
         :route_id => 1,
-        :user_id => 2,
+        :user_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :date => Time.now.to_s(:long)
+        :date => Time.now
         )
 
         Placecomment.create(
@@ -217,36 +217,36 @@ class AddDataTest1 < ActiveRecord::Migration
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :date => Time.now.to_s(:long)
+        :date => Time.now
         )
 
         Routecomment.create(
         :route_id => 1,     
-        :user_id => 3,
+        :user_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :date => Time.now.to_s(:long) 
+        :date => Time.now
         )
         
 
         Routecomment.create(
         :route_id => 3,        
-        :user_id => 3,
+        :user_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :date => Time.now.to_s(:long) 
+        :date => Time.now
 
         )
 
         Placecomment.create(
         :place_id => 3,        
-        :user_id => 2,
+        :user_id => 1,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
-        :date => Time.now.to_s(:long) 
+        :date => Time.now
         )
 
       end 

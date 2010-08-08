@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.integer  "place_id"
     t.integer  "user_id"
     t.text     "comment"
-    t.date     "date"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.integer  "route_id"
     t.integer  "user_id"
     t.text     "comment"
-    t.date     "date"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

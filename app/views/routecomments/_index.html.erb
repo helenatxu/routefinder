@@ -1,25 +1,26 @@
-<h1>Listing routecomments</h1>
+
+<h3>Comments:</h3>
 
 <table>
-  <tr>
-    <th>Route</th>
-    <th>User</th>
-    <th>Comment</th>
-    <th>Date</th>
-  </tr>
-
-<% @routecomments.each do |routecomment| %>
-  <tr>
-    <td><%=h routecomment.route_id %></td>
-    <td><%=h routecomment.user_id %></td>
-    <td><%=h routecomment.comment %></td>
-    <td><%=h routecomment.date %></td>
-    <td><%= link_to 'Edit', edit_routecomment_path(routecomment) %></td>
-    <td><%= link_to 'Destroy', routecomment, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+	<tr>
+		<th>User</th>
+		<th>Comment</th>
+		<th>Date</th>
+	</tr>
+	<% @route.routecomments.each do |routecomment| %>
+	<tr class="comment">
+		<td class="user_comment"><%=h routecomment.user_id %></td>
+		
+		<td><%=h routecomment.comment %></td>
+		<td class="date_comment"><%=h routecomment.date %></td>
+		
+		<% if current_user.id == routecomment.user_id %>
+		<td><%= link_to 'Edit', edit_routecomment_path(routecomment) %></td>
+		<td><%= link_to 'Destroy', routecomment, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+		
+	</tr>
+	<% end %>
 </table>
 
-<br />
 
-<%= link_to 'New routecomment', new_routecomment_path %>

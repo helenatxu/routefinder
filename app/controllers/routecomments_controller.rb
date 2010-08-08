@@ -3,6 +3,8 @@ class RoutecommentsController < ApplicationController
   # GET /routecomments
   def index
     @routecomments = Routecomment.find(:all, :conditions => ['route_id = ?', params[:id]])
+ #   @users_comments = User.find(:all, :conditions => ['(user.id = routecomment.user_id'])
+        
   end
 
   # GET /routecomments/new
@@ -21,12 +23,10 @@ class RoutecommentsController < ApplicationController
   # POST /routecomments
   def create
     @routecomment = Routecomment.new(params[:routecomment])
-    @routecomment[:user_id] = @current_user[:user_id]
+    @routecomment.user = @current_user
+    @routecomment[:date] = Time.now
     if @routecomment.save
-      redirect_to route_path(@routecomment[:route_id])
-      #, :notice => 'Routecomment was successfully created.'
- #    redirect_to(@route, :notice => 'Routecomment was successfully created.')
-   #   redirect_back_or_default "/routes/"
+      redirect_to route_path(@routecomment[:route_id]), :notice => 'Your comment was added.'
     else
       render :action => "new" 
     end
@@ -37,7 +37,7 @@ class RoutecommentsController < ApplicationController
   def update
     @routecomment = Routecomment.find(params[:id])
     if @routecomment.update_attributes(params[:routecomment])
-      redirect_to(@routecomment, :notice => 'Routecomment was successfully updated.') 
+      redirect_to(@routecomment, :notice => 'Your comment was updated.') 
     else
       render :action => "edit" 
 

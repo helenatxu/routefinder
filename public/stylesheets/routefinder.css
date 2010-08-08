@@ -4,6 +4,10 @@
 	font-size: 100%;
 }
 
+fieldset, img {
+	border: none;
+}
+
 ul, ol {
 	list-style: none;
 }
@@ -177,8 +181,14 @@ table,th, td {
 #comments .comment {
 	background-color: #FFFFF0;
 	border: 1px solid #FFE899;
+	height: auto;
+	width: 640px;
 }
 
+#newcomment #routecomment_comment {
+	height: 50px;
+	width: 640px;
+}
 
 /********** BUTTONS *************/
 
@@ -209,6 +219,10 @@ table,th, td {
 
 
 /******** FORMS *********/
+
+label {
+	display: block;
+}
 
 #show_user_fields {
 	width: 350px;

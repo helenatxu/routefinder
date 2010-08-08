@@ -4,7 +4,7 @@ class CreatePlacecomments < ActiveRecord::Migration
       t.integer :place_id
       t.integer :user_id
       t.text :comment
-      t.date :date
+      t.datetime :date
 
       t.timestamps
     end

@@ -18,7 +18,6 @@ class RoutesController < ApplicationController
   # GET /routes/1
   def show
     @route = Route.find(params[:id])
-    @routecomments = Routecomment.find(:all, :conditions => ['route_id = ?', params[:id]])
     @newRoutecomment = Routecomment.new
     @route_id = params[:id]
   end
