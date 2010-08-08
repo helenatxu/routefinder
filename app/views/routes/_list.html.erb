@@ -12,7 +12,7 @@
 	<tr>
 		<td><%=h route.name %></td>
 		<td><%=h route.user_id %></td>
-		<td><%=h route.rank %></td>
+		<td><%= ratings_for route, :static, :small => true, :dimension => :rank %></td>
 		<td><%=h route.place_id %></td>
 		<td><%= link_to 'Show', route %></td>
 	</tr>

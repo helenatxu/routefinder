@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.resources :routes, :member => {:rate => :post}
+  map.resources :places, :member => {:rate => :post}
+  
   map.resources :routepoints
 
     

@@ -42,17 +42,23 @@
 		<% end %>	
 	</p>
 	<p>
-		<b>Rating:</b>
-		<%=h @route.rank %>
+		<b>Rate Average:</b>
+	<!--		#To display static stars: -->
+		<%= ratings_for @route, :static %>
+		Your rate:
+	<!--	# To display the rating for the current user (current_user): -->
+		<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
 	</p>
-	<p>
-		Currently rating
-	</p>
-	<%= link_to 'Edit', edit_route_path(@route) %>
+	<% if current_user.id == @route.user_id %>
+	<%= link_to 'Edit route', edit_route_path(@route) %>
+	<% end %>
 </div>
 
 
 <div id="comments">
+	
+	<%= render(:partial => "/routes/addtoroute", :object => @place) %>
+	
 	<p>
 		Rate:
 		<!--	%= ratings_for @route, @user, :dimension => :rank %> -->

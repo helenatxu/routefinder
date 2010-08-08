@@ -7,10 +7,9 @@ class RoutepointsController < ApplicationController
   
   def create
     @routepoint = Routepoint.new(params[:routepoint])
-    @routepoint.place = @place
     @routepoint.order = 3
     if @routepoint.save
-      redirect_to place_path(@routepoint[:place_id]), :notice => 'Place added to route.'
+      redirect_to route_path(@routepoint[:route_id]), :notice => 'Place added to route.'
     else
       render :action => "new" 
     end

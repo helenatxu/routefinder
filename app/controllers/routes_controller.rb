@@ -18,8 +18,9 @@ class RoutesController < ApplicationController
   # GET /routes/1
   def show
     @route = Route.find(params[:id])
-    @newRoutecomment = Routecomment.new
     @route_id = params[:id]
+    @newRoutecomment = Routecomment.new
+    @routepoint = Routepoint.new
   end
 
   # GET /routes/new
@@ -58,5 +59,14 @@ class RoutesController < ApplicationController
     @route.destroy
     redirect_to(routes_url) 
   end
+
+  def rate 
+      @route = Route.find(params[:id]) 
+      @route.rate(params[:stars], current_user, params[:dimension]) 
+      render :update do |page| 
+        page.replace_html @route.wrapper_dom_id(params), ratings_for(@route, params.merge(:wrap => false)) 
+        page.visual_effect :highlight, @route.wrapper_dom_id(params) 
+      end 
+    end 
 
 end

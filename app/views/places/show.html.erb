@@ -43,14 +43,25 @@
 		<%=h @place.description %>
 	</p>
 	<p>
+		<b>Image url:</b>
+		<%= image_tag @place.image_url, :class => 'list-image' %>
+	</p>
+	<p>
 		<b>Rank:</b>
 		<%=h @place.rank %>
 	</p>
 	<p>
-		<b>Image url:</b>
-		<%= image_tag @place.image_url, :class => 'list-image' %>
+		<b>Rate Average:</b>
+	<!--		#To display static stars: -->
+		<%= ratings_for @place, :static %>
+		Your rate:
+	<!--	# To display the rating for the current user (current_user): -->
+		<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
 	</p>
-	<%= link_to 'Edit', edit_place_path(@place) %>
+	
+	<% if current_user.id == @place.user_id %>
+	<%= link_to 'Edit place', edit_place_path(@place) %>
+	<% end %>
 </div>
 
 
@@ -61,9 +72,7 @@
 
 
 <div id="comments">
-	
-	<%= render(:partial => "/places/addtoroute", :object => @place) %>
-		
+			
 	<p>
 		Rate:
 		<!--	%= ratings_for @place, @user, :dimension => :rank %> -->

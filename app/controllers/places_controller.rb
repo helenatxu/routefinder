@@ -19,7 +19,6 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @newPlacecomment = Placecomment.new
     @place_id = params[:id]
-    @routepoint = Routepoint.new
   end
 
   # GET /places/new
@@ -60,7 +59,14 @@ class PlacesController < ApplicationController
     redirect_to(places_url)
   end
 
-
+  def rate 
+      @place = Place.find(params[:id]) 
+      @place.rate(params[:stars], current_user, params[:dimension]) 
+      render :update do |page| 
+        page.replace_html @place.wrapper_dom_id(params), ratings_for(@place, params.merge(:wrap => false)) 
+        page.visual_effect :highlight, @place.wrapper_dom_id(params) 
+      end 
+    end
 
 end
 

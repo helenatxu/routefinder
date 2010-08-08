@@ -1,0 +1,14 @@
+<h3>Add place to route</h3>
+
+<% form_for(@routepoint) do |f| %>
+<fieldset>
+	<input id="routepoint_route_id" name="routepoint[route_id]" type="hidden" value="<%=@route_id%>" />
+	<%= f.error_messages %>
+
+	<p class="button">
+		<%=@places = Place.find(:all, :order => "name") 
+		f.collection_select(:place_id, @places, :id, :name) %>
+		<%= f.submit 'Add place to this route' %>
+	</p>
+</fieldset>
+<% end %>
