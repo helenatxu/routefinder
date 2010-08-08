@@ -48,6 +48,14 @@
 		Your rate:
 	<!--	# To display the rating for the current user (current_user): -->
 		<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
+
+
+		<% for rater in @route.raters(:rank) %>
+		  <%= rater.login %>:
+		  <%= ratings_for @route, rater, :dimension => :rank, :show_user_rating => true %>
+		<% end %>
+		
+		
 	</p>
 	<% if current_user.id == @route.user_id %>
 	<%= link_to 'Edit route', edit_route_path(@route) %>

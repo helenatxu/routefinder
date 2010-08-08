@@ -32,13 +32,12 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.decimal  "coordinates_long"
     t.string   "direction"
     t.integer  "country_id"
-    t.float    "rank"
     t.integer  "user_id"
     t.text     "description"
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "rating_average",   :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "rating_average_rank", :precision => 6, :scale => 2, :default => 0.0
   end
 
   create_table "places_users", :id => false, :force => true do |t|
@@ -81,13 +80,12 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
 
   create_table "routes", :force => true do |t|
     t.string   "name"
-    t.float    "rank"
     t.integer  "user_id"
     t.text     "description"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "rating_average", :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "rating_average_rank", :precision => 6, :scale => 2, :default => 0.0
   end
 
   create_table "routes_users", :id => false, :force => true do |t|
