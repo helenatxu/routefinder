@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
   end
 
   create_table "routepoints", :force => true do |t|
-    t.integer  "place_id"
     t.integer  "route_id"
+    t.integer  "place_id"
     t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"

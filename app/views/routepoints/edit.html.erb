@@ -1,0 +1,12 @@
+<h1>Editing routepoint</h1>
+
+<% form_for(@routepoint) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @routepoint %> |
+<%= link_to 'Back', routepoints_path %>

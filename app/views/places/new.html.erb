@@ -24,8 +24,8 @@
     <%= f.text_field :direction %>
   </p>
   <p>
-    <%= f.label :country_id %><br />
-    <%= f.text_field :country_id %>
+	<%=@countries = Country.find(:all, :order => "name") 
+	f.collection_select(:country_id, @countries, :id, :name) %>
   </p>
   <p>
     <%= f.label :description %><br />
@@ -45,3 +45,6 @@
 <% end %>
 
 <%= link_to 'Back', places_path %>
+
+
+

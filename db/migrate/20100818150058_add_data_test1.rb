@@ -248,6 +248,18 @@ class AddDataTest1 < ActiveRecord::Migration
         ornare urna, quis pulvinar magna aliquet ac.',
         :date => Time.now
         )
+        
+        Routepoint.create(
+        :route_id => 1,     
+        :place_id => 1,
+        :order => 1
+        )
+        
+        Routepoint.create(
+        :route_id => 1,     
+        :place_id => 2,
+        :order => 2
+        )
 
       end 
 

@@ -60,8 +60,10 @@
 
 
 
-
 <div id="comments">
+	
+	<%= render(:partial => "/places/addtoroute", :object => @place) %>
+		
 	<p>
 		Rate:
 		<!--	%= ratings_for @place, @user, :dimension => :rank %> -->

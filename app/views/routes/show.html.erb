@@ -35,8 +35,8 @@
 		This route have not any place.
 		<% else %>
 		<ul>
-			<% @route.places.each do |routeplace| %>
-			<li class="routeplace"><%=h routeplace.places.name %></li>
+			<% @route.places.each do |r| %>
+			<li class="routepoints"><a href="<%=place_path(r)%>"><%=h r.name %></a></li>
 			<% end %>
 		</ul>
 		<% end %>	

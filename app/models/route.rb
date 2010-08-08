@@ -6,6 +6,7 @@ class Route < ActiveRecord::Base
   
   has_and_belongs_to_many :users # users can mark this route as favourite
   belongs_to :user # one user is the author
+  
   has_many :routecomments
   
   

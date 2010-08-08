@@ -1,0 +1,11 @@
+<h1>New routepoint</h1>
+
+<% form_for(@routepoint) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', routepoints_path %>

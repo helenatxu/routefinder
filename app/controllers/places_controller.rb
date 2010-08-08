@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
- 
+
   # GET /places
   def index
     @countries = Country.find(:all)
@@ -19,6 +19,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @newPlacecomment = Placecomment.new
     @place_id = params[:id]
+    @routepoint = Routepoint.new
   end
 
   # GET /places/new
@@ -58,6 +59,8 @@ class PlacesController < ApplicationController
     @place.destroy
     redirect_to(places_url)
   end
+
+
 
 end
 
