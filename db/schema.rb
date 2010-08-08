@@ -40,14 +40,6 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.datetime "updated_at"
   end
 
-  create_table "places_routes", :id => false, :force => true do |t|
-    t.integer "place_id"
-    t.integer "route_id"
-  end
-
-  add_index "places_routes", ["place_id", "route_id"], :name => "index_places_routes_on_place_id_and_route_id", :unique => true
-  add_index "places_routes", ["route_id"], :name => "index_places_routes_on_route_id"
-
   create_table "places_users", :id => false, :force => true do |t|
     t.integer "user_id"
     t.integer "place_id"
@@ -74,6 +66,14 @@ ActiveRecord::Schema.define(:version => 20100818150058) do
     t.integer  "user_id"
     t.text     "comment"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "routepoints", :force => true do |t|
+    t.integer  "place_id"
+    t.integer  "route_id"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

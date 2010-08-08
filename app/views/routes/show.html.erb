@@ -31,7 +31,15 @@
 	</p>
 	<p>
 		<b>Places:</b>
-		<%=h @route.place_id %>
+		<% if @route.places.empty? %>
+		This route have not any place.
+		<% else %>
+		<ul>
+			<% @route.places.each do |routeplace| %>
+			<li class="routeplace"><%=h routeplace.places.name %></li>
+			<% end %>
+		</ul>
+		<% end %>	
 	</p>
 	<p>
 		<b>Rating:</b>
@@ -50,8 +58,7 @@
 		<!--	%= ratings_for @route, @user, :dimension => :rank %> -->
 	</p>
 
-	<p class="comment">Comments:</p>
-	<%= render(:partial => "/routecomments/index", :object => @route) %> 
+	<%= render(:partial => "/routecomments/list", :object => @route) %> 
 	<%= render(:partial => "/routecomments/new", :object => @route) %>
 
 

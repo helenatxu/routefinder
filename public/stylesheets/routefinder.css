@@ -183,8 +183,32 @@ table,th, td {
 	border: 1px solid #FFE899;
 	height: auto;
 	width: 640px;
+	margin-top: -1px;
+	padding: 5px;
 }
 
+#comments .user_comment{
+	color: #004500;
+	font:italic bold 100% Georgia,serif;
+	margin: 5px;
+}
+
+#comments .date_comment {
+	color: #004500;
+	font:italic 80% Georgia,serif;
+	text-align: right;
+	margin: -15px 10px 10px auto;
+}
+
+#comments .links_comment {
+	margin: -10px 10px auto auto;
+	text-align: right;
+}
+
+#newcomment {
+	margin: 10px;
+	margin-top: 20px;
+}
 #newcomment #routecomment_comment, #newcomment #placecomment_comment {
 	height: 50px;
 	width: 640px;
@@ -220,7 +244,7 @@ table,th, td {
 
 /******** FORMS *********/
 
-label {
+#newcomment label {
 	display: block;
 }
 

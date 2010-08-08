@@ -1,0 +1,22 @@
+<h3>Comments:</h3>
+
+<ul>
+	<% @route.routecomments.each do |routecomment| %>
+	<li class="comment">
+		<p class="user_comment"><%=h routecomment.user.login %></p>
+		<p class="date_comment"><%=h routecomment.date %></p>
+
+		<p><%=h routecomment.comment %></p>
+
+		<% if current_user.id == routecomment.user_id %>
+		<p class="links_comment">
+			<%= link_to 'Edit', edit_routecomment_path(routecomment) %>
+			<%= link_to 'Delete', routecomment, :confirm => 'Are you sure?', :method => :delete %>
+		</p>
+		<% end %>
+
+	</li>
+	<% end %>
+</ul>
+
+
