@@ -185,7 +185,7 @@ table,th, td {
 	width: 640px;
 }
 
-#newcomment #routecomment_comment {
+#newcomment #routecomment_comment, #newcomment #placecomment_comment {
 	height: 50px;
 	width: 640px;
 }

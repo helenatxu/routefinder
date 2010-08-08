@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
+ 
   # GET /places
-
   def index
     @countries = Country.find(:all)
     if params[:keywords] and not params[:keywords].empty?
@@ -14,46 +14,43 @@ class PlacesController < ApplicationController
     end
   end
 
-  def list
-    @places = Place.find(:all)
-  end
-
-
   # GET /places/1
   def show
     @place = Place.find(params[:id])
+    @newPlacecomment = Placecomment.new
+    @place_id = params[:id]
   end
 
   # GET /places/new
   def new
     @place = Place.new
   end
-end
 
-# GET /places/1/edit
-def edit
-  @place = Place.find(params[:id])
-end
-
-# POST /places
-def create
-  @place = Place.new(params[:place])
-
-  if @place.save
-    redirect_to(@place, :notice => 'Place was successfully created.')
-  else
-    render :action => "new"
+  # GET /places/1/edit
+  def edit
+    @place = Place.find(params[:id])
   end
-end
 
-# PUT /places/1
-def update
-  @place = Place.find(params[:id])
-  if @place.update_attributes(params[:place])
-    redirect_to(@place, :notice => 'Place was successfully updated.') 
-  else
-    render :action => "edit" 
+  # POST /places
+  def create
+    @place = Place.new(params[:place])
+    if @place.save
+      redirect_to(@place, :notice => 'Place was successfully created.')
+    else
+      render :action => "new"
+    end
   end
+
+  # PUT /places/1
+  def update
+    @place = Place.find(params[:id])
+    if @place.update_attributes(params[:place])
+      redirect_to(@place, :notice => 'Place was successfully updated.') 
+    else
+      render :action => "edit" 
+    end
+  end
+
 
   # DELETE /places/1
   def destroy

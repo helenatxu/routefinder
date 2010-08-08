@@ -3,15 +3,18 @@
 <h1>
 	<%=h @place.name %>
 </h1>
+<div id="map">
+	<img src="/images/map.png" alt="map" />
+</div>
 
 <div id="summary">
-	<h2>Route Summary</h2>
+	<h2>Place Summary</h2>
 	<p>
 		<b>Name:</b>
 		<%=h @place.name %>
 	</p>
 	<p>
-		<b>Created at::</b>
+		<b>Created at:</b>
 		<%=h @place.created_at %>
 	</p>
 	<p>
@@ -53,16 +56,20 @@
 	<%= link_to 'Edit', edit_place_path(@place) %>
 </div>
 
-<img id="map" src="/images/map.png" alt="map" />
 
-<p>
-	Rate:
-	<!-- %= render(:partial => "/rating/rateplace") %> --> 
-</p>
+<div id="comments">
+	<p>
+		Rate:
+		<!--	%= ratings_for @place, @user, :dimension => :rank %> -->
+	</p>
 
-<p>Comments:</p>
+	<p class="comment">Comments:</p>
+	<%= render(:partial => "/placecomments/index", :object => @place) %> 
+	<%= render(:partial => "/placecomments/new", :object => @place) %>
 
-<p id="comeback_links">
-	<%= link_to 'New place', new_place_path %> | |
-	<%= link_to 'Back', places_path %>
-</p>
+
+	<p id="comeback_links">
+		<%= link_to 'New place', new_place_path %> | |
+		<%= link_to 'Back', places_path %>
+	</p>
+</div>

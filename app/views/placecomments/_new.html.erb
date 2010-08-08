@@ -1,0 +1,24 @@
+<div id="newcomment">
+	<h3>New comment</h3>
+
+	<% form_for(@newPlacecomment) do |f| %>
+	<%= f.error_messages %>
+	
+	<fieldset>
+		<input id="placecomment_place_id" name="placecomment[place_id]" type="hidden" value="<%=@place_id%>" />
+
+		<ul>
+			<li>
+				<%= f.label :comment %>
+				<%= f.text_area :comment %>
+			</li>
+
+			<li>
+				<%= f.submit 'Create' %>
+			</li>
+		</ul>
+
+	</fieldset>
+	<% end %>
+
+</div>

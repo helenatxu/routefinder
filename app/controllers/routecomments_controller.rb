@@ -2,9 +2,7 @@ class RoutecommentsController < ApplicationController
   
   # GET /routecomments
   def index
-    @routecomments = Routecomment.find(:all, :conditions => ['route_id = ?', params[:id]])
- #   @users_comments = User.find(:all, :conditions => ['(user.id = routecomment.user_id'])
-        
+    @routecomments = Routecomment.find(:all, :conditions => ['route_id = ?', params[:id]])        
   end
 
   # GET /routecomments/new
@@ -16,7 +14,6 @@ class RoutecommentsController < ApplicationController
   def edit
     @routecomment = Routecomment.find(params[:id])
   end
-
 
 
 
@@ -37,10 +34,9 @@ class RoutecommentsController < ApplicationController
   def update
     @routecomment = Routecomment.find(params[:id])
     if @routecomment.update_attributes(params[:routecomment])
-      redirect_to(@routecomment, :notice => 'Your comment was updated.') 
+      redirect_to route_path(@routecomment[:route_id]), :notice => 'Your comment was updated.'
     else
       render :action => "edit" 
-
     end
   end
 
@@ -49,7 +45,7 @@ class RoutecommentsController < ApplicationController
   def destroy
     @routecomment = Routecomment.find(params[:id])
     @routecomment.destroy
-    redirect_to(routecomments_url) 
+    redirect_to route_path(@routecomment[:route_id]), :notice => 'Your comment was deleted.'
   end
   
 end

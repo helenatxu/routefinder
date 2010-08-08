@@ -7,17 +7,23 @@
 	<img src="/images/map.png" alt="map" />
 </div>
 
-
 <div id="summary">
-
 	<h2>Route Summary</h2>
 	<p>
 		<b>Name:</b>
 		<%=h @route.name %>
 	</p>
 	<p>
+		<b>Creation date:</b>
+		<%=h @route.created_at %>
+	</p>
+	<p>
+		<b>Last update:</b>
+		<%=h @route.updated_at %>
+	</p>
+	<p>
 		<b>Author:</b>
-		<%=h @route.user_id %>
+		<%=h @route.user.login %>
 	</p>
 	<p>
 		<b>Description:</b>
@@ -28,21 +34,8 @@
 		<%=h @route.place_id %>
 	</p>
 	<p>
-		<b>Creation date:</b>
-		<%=h @route.created_at %>
-	</p>
-
-	<p>
-		<b>Last update:</b>
-		<%=h @route.updated_at %>
-	</p>
-	<p>
 		<b>Rating:</b>
 		<%=h @route.rank %>
-	</p>
-	<p>
-		<b>Author:</b>
-		<%=h @route.user.login %>
 	</p>
 	<p>
 		Currently rating

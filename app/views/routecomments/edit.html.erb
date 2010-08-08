@@ -2,22 +2,9 @@
 
 <% form_for(@routecomment) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :route_id %><br />
-    <%= f.text_field :route_id %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
   <p>
     <%= f.label :comment %><br />
     <%= f.text_area :comment %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
   </p>
   <p>
     <%= f.submit 'Update' %>
