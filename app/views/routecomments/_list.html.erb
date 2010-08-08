@@ -1,7 +1,8 @@
 <h3>Comments:</h3>
 
 <ul>
-	<% @route.routecomments.each do |routecomment| %>
+	<% if @route.routecomments %>
+		<% @route.routecomments.each do |routecomment| %>
 	<li class="comment">
 		<p class="user_comment"><%=h routecomment.user.login %></p>
 		<p class="date_comment"><%=h routecomment.date %></p>
@@ -17,6 +18,7 @@
 
 	</li>
 	<% end %>
+	<% else %>
+	<p> There is not any comments </p>
+	<% end %>
 </ul>
-
-

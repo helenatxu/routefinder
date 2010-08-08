@@ -213,7 +213,7 @@ class AddDataTest1 < ActiveRecord::Migration
 
         Placecomment.create(
         :place_id => 2,  
-        :user_id => 1,
+        :user_id => 2,
         :comment => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna felis, 
         a elementum risus. Nulla in egestas justo. Integer eleifend, dui in gravida condimentum, 
         ornare urna, quis pulvinar magna aliquet ac.',
