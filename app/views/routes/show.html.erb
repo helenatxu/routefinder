@@ -4,8 +4,8 @@
 	<%=h @route.name %>
 </h1>
 
-<div id="map">
-	<img src="/images/map.png" alt="map" />
+<div id="map_canvas">
+
 </div>
 
 <div id="summary">
@@ -30,7 +30,7 @@
 		<b>Description:</b>
 		<%=h @route.description %>
 	</p>
-	
+
 	<div id="addplace">
 		<% if current_user %>
 		<% if current_user.id == @route.user_id %>
@@ -38,7 +38,7 @@
 		<% end %>
 		<% end %>
 	</div>
-	
+
 	<p>
 		<b>Places:</b>
 		<% if @route.places.empty? %>
@@ -51,14 +51,13 @@
 		</ul>
 		<% end %>	
 	</p>
-	
-	
+
+
 	<p>
 		<b>Rate Average:</b>
 		<!--		#To display average with static stars: -->
-		<%= ratings_for @route, :static, :dimension => :rank %>
-		
 	</p>
+	<%= ratings_for @route, :static, :dimension => :rank %>
 
 	<p class="edit_links">
 		<% if current_user %>
@@ -69,17 +68,15 @@
 	</p>
 </div>
 
-
+<% if current_user %>
 <div class="ratings">
 	<h3>
-		<% if current_user %>
 		Your rate:
-		<!--	# To display the rating for the current user (current_user): -->
-		<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
-		<% end %>
 	</h3>
+	<!--	# To display the rating for the current user (current_user): -->
+	<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
 </div>
-
+<% end %>
 
 <div id="comments">
 

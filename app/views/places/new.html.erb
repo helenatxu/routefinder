@@ -1,48 +1,86 @@
 <h1>New place</h1>
 
+<% if current_user %>
 <div id="form_fields">
-<% form_for(@place) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :coordinates_lat %><br />
-    <%= f.text_field :coordinates_lat %>
-  </p>
-  <p>
-    <%= f.label :coordinates_long %><br />
-    <%= f.text_field :coordinates_long %>
-  </p>
-  <p>
-    <%= f.label :direction %><br />
-    <%= f.text_field :direction %>
-  </p>
-  <p>Country
-	<%=@countries = Country.find(:all, :order => "name") 
-	f.collection_select(:country_id, @countries, :id, :name) %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+	<% form_for(@place) do |f| %>
+	<%= f.error_messages %>
 
-<%= link_to 'Back', places_path %>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+
+	<div>
+		<fieldset class="prueba"> 
+			<legend>You can type the direction...</legend>
+			<p>
+				<%= f.label :direction %><br />
+				<%= f.text_field :direction %>
+			</p>
+
+		</fieldset>
+	</div>
+	<br /><br />
+	<div>
+		<fieldset class="prueba">
+			<legend>Or the coordinates if you know them</legend>
+			<p>
+				<%= f.label :coordinates_lat %><br />
+				<%= f.text_field :coordinates_lat %>
+			</p>
+			<p>
+				<%= f.label :coordinates_long %><br />
+				<%= f.text_field :coordinates_long %>
+			</p>
+		</fieldset>
+	</div>
+
+	<div id="map_canvas"></div>
+
+	<p id="showlocation" class="button">
+		<button type="button" id="showmap">Show Map</button>
+		<button type="button" id="hidemap">Hide Map</button>
+	</p>
+
+	<script type="text/javascript">
+
+	$('#showmap').click(function() {
+		$('#map_canvas').show(800);
+	});
+
+	$("#hidemap").click(function () {
+		$("#map_canvas").hide(1000);
+	});
+	</script>
+
+	<p>
+		Country
+	</p>
+	<p class="button">
+		<%=@countries = Country.find(:all, :order => "name") 
+		f.collection_select(:country_id, @countries, :id, :name) %>
+	</p>
+	<p>
+		<%= f.label :description %><br />
+		<%= f.text_area :description %>
+	</p>
+	<p>
+		<%= f.label :image_url %><br />
+		<%= f.text_field :image_url %>
+	</p>
+
+	<p class="button">
+		<%= f.submit 'Create' %>
+	</p>
+	<% end %>
+
+	<%= link_to 'Back', places_path %>
 
 </div>
 
-
+<% else %>
+<div id="form_fields">
+	<p>You must be logged to add a new place.</p>
+</div>
+<% end %>

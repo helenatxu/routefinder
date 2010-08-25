@@ -34,6 +34,7 @@ class PlacesController < ApplicationController
   # POST /places
   def create
     @place = Place.new(params[:place])
+    @place.user = @current_user
     if @place.save
       redirect_to(@place, :notice => 'Place was successfully created.')
     else

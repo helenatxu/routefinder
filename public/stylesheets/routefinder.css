@@ -414,9 +414,27 @@ table,th, td {
 }
 
 
-#map {
-	awidth: 640px;
-	aheight: 480px;
+#map_canvas {
+	width: 640px;
+	height: 480px;
 	float: left;
 	margin-bottom: 20px;
+}
+
+#form_fields #map_canvas {
+	display: none;
+	width: 300px; 
+	height: 300px;
+}
+
+#showlocation {
+	
+}
+
+.prueba {
+	border: 1px solid #9DD999 !important;
+}
+
+.prueba legend {
+	font-size:90%;
 }
