@@ -13,9 +13,9 @@
 	<% @places.each do |place| %>
 	<tr>
 		<td><%=h place.name %></td>
-		<td><%=h place.user_id %></td>
+		<td><%=h place.user.login %></td>
 		<td><%=h place.direction %></td>
-		<td><%=h place.country_id %></td>
+		<td><%=h place.country.name %></td>
 		<td><%= ratings_for place, :static, :small => true, :dimension => :rank %></td>
 		<td class="image_url"><%= image_tag place.image_url, :class => 'list-image' %></td>
 		<td><%= link_to 'Show', place %></td>

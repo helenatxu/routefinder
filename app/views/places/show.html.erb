@@ -4,6 +4,10 @@
 	<%=h @place.name %>
 </h1>
 
+<div id="map">
+	<img src="/images/map.png" alt="map" />
+</div>
+
 <div id="summary">
 	<h2>Place Summary</h2>
 	<p>
@@ -43,40 +47,37 @@
 		<%=h @place.description %>
 	</p>
 	<p>
-		<b>Image url:</b>
+		<b>Image: </b>
 		<%= image_tag @place.image_url, :class => 'list-image' %>
 	</p>
 	<p>
-		<b>Rank:</b>
-		<%=h @place.rank %>
-	</p>
-	<p>
 		<b>Rate Average:</b>
-	<!--		#To display static stars: -->
-		<%= ratings_for @place, :static %>
-		Your rate:
-	<!--	# To display the rating for the current user (current_user): -->
-		<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
+		<!--		#To display average with static stars: -->
+		<%= ratings_for @place, :static, :dimension => :rank %>
+		
 	</p>
-	
-	<% if current_user.id == @place.user_id %>
-	<%= link_to 'Edit place', edit_place_path(@place) %>
-	<% end %>
+
+	<p class="edit_links">
+		<% if current_user %>
+		<% if current_user.id == @place.user_id %>
+		<%= link_to 'Edit place', edit_place_path(@place) %>
+		<% end %>
+		<% end %>
+	</p>
 </div>
 
 
-<div id="map">
-	<img src="/images/map.png" alt="map" />
+<div class="ratings">
+	<h3>
+		<% if current_user %>
+		Your rate:
+		<!--	# To display the rating for the current user (current_user): -->
+		<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
+		<% end %>
+	</h3>
 </div>
-
-
 
 <div id="comments">
-			
-	<p>
-		Rate:
-		<!--	%= ratings_for @place, @user, :dimension => :rank %> -->
-	</p>
 
 	<%= render(:partial => "/placecomments/list", :object => @place) %> 
 	<%= render(:partial => "/placecomments/new", :object => @place) %>

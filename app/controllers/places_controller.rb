@@ -17,8 +17,8 @@ class PlacesController < ApplicationController
   # GET /places/1
   def show
     @place = Place.find(params[:id])
-    @newPlacecomment = Placecomment.new
     @place_id = params[:id]
+    @newPlacecomment = Placecomment.new
   end
 
   # GET /places/new
@@ -50,7 +50,6 @@ class PlacesController < ApplicationController
       render :action => "edit" 
     end
   end
-
 
   # DELETE /places/1
   def destroy

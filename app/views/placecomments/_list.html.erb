@@ -1,6 +1,10 @@
 <h3>Comments:</h3>
 
 <ul>
+	<% if @place.placecomments.empty? %>
+	<p> There is not any comments.</p>
+
+	<% else%>
 	<% @place.placecomments.each do |placecomment| %>
 	<li class="comment">
 		<p class="user_comment"><%=h placecomment.user.login %></p>
@@ -8,14 +12,18 @@
 
 		<p><%=h placecomment.comment %></p>
 
+		<% if current_user %>
 		<% if current_user.id == placecomment.user_id %>
 		<p class="links_comment">
 			<%= link_to 'Edit', edit_placecomment_path(placecomment) %>
 			<%= link_to 'Delete', placecomment, :confirm => 'Are you sure?', :method => :delete %>
 		</p>
+		<% end %>		
 		<% end %>
 
 	</li>
 	<% end %>
+	<% end %>
+
 </ul>
 

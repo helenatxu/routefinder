@@ -3,6 +3,7 @@
 <h1>
 	<%=h @route.name %>
 </h1>
+
 <div id="map">
 	<img src="/images/map.png" alt="map" />
 </div>
@@ -29,10 +30,19 @@
 		<b>Description:</b>
 		<%=h @route.description %>
 	</p>
+	
+	<div id="addplace">
+		<% if current_user %>
+		<% if current_user.id == @route.user_id %>
+		<%= render(:partial => "/routes/addtoroute", :object => @place) %>
+		<% end %>
+		<% end %>
+	</div>
+	
 	<p>
 		<b>Places:</b>
 		<% if @route.places.empty? %>
-		This route have not any place.
+		This route is empty (have not any place).
 		<% else %>
 		<ul>
 			<% @route.places.each do |r| %>
@@ -41,36 +51,37 @@
 		</ul>
 		<% end %>	
 	</p>
+	
+	
 	<p>
 		<b>Rate Average:</b>
-	<!--		#To display static stars: -->
-		<%= ratings_for @route, :static %>
-		Your rate:
-	<!--	# To display the rating for the current user (current_user): -->
-		<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
-
-
-		<% for rater in @route.raters(:rank) %>
-		  <%= rater.login %>:
-		  <%= ratings_for @route, rater, :dimension => :rank, :show_user_rating => true %>
-		<% end %>
-		
+		<!--		#To display average with static stars: -->
+		<%= ratings_for @route, :static, :dimension => :rank %>
 		
 	</p>
-	<% if current_user.id == @route.user_id %>
-	<%= link_to 'Edit route', edit_route_path(@route) %>
-	<% end %>
+
+	<p class="edit_links">
+		<% if current_user %>
+		<% if current_user.id == @route.user_id %>
+		<%= link_to 'Edit route', edit_route_path(@route) %>
+		<% end %>
+		<% end %>
+	</p>
+</div>
+
+
+<div class="ratings">
+	<h3>
+		<% if current_user %>
+		Your rate:
+		<!--	# To display the rating for the current user (current_user): -->
+		<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
+		<% end %>
+	</h3>
 </div>
 
 
 <div id="comments">
-	
-	<%= render(:partial => "/routes/addtoroute", :object => @place) %>
-	
-	<p>
-		Rate:
-		<!--	%= ratings_for @route, @user, :dimension => :rank %> -->
-	</p>
 
 	<%= render(:partial => "/routecomments/list", :object => @route) %> 
 	<%= render(:partial => "/routecomments/new", :object => @route) %>
