@@ -418,13 +418,13 @@ table,th, td {
 	width: 640px;
 	height: 480px;
 	float: left;
-	margin-bottom: 20px;
 }
 
-#form_fields #map_canvas {
-	display: none;
+fieldset #map_canvas {
+	_display: none;
 	width: 300px; 
 	height: 300px;
+	margin: auto auto 10px 10px;
 }
 
 #showlocation {
@@ -433,6 +433,7 @@ table,th, td {
 
 .prueba {
 	border: 1px solid #9DD999 !important;
+	margin: 20px;
 }
 
 .prueba legend {

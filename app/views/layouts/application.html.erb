@@ -18,15 +18,27 @@
 	<% if @place %>
 	<script type="text/javascript">
 	function initialize() {
-		var geocoder = new google.maps.Geocoder();;
-
-		var latlng = new google.maps.LatLng(-34.397, 150.644);
+		var geocoder = new google.maps.Geocoder();
+		
+		<% if @place.coordinates_lat %>
+		var latlng = new google.maps.LatLng(<%= @place.coordinates_lat %>, <%= @place.coordinates_long %>); 
 		var myOptions = {
 			zoom: 16,
 			center: latlng,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
+		<% else %>
+		var latlng = new google.maps.LatLng(-34.397, 150.644);
+		var myOptions = {
+			zoom: 7,
+			center: latlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		<% end %>
+		
+
 		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
 	}
 	</script>
 
@@ -35,6 +47,7 @@
 		var address = document.getElementById("place_direction").value;
 		geocoder.geocode( { 'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
+				alert("GEOCODING FUNCIONANDO!");
 				map.setCenter(results[0].geometry.location);
 				var marker = new google.maps.Marker({
 					map: map, 

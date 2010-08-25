@@ -19,9 +19,28 @@
 				<%= f.text_field :direction %>
 			</p>
 
+			<p id="showlocation" class="button">
+				<button type="button" id="showmap" onclick="codeAddress()">Show Map</button>
+				<button type="button" id="hidemap">Hide Map</button>
+			</p>
+			
+			<div id="map_canvas"></div>
+
+			<script type="text/javascript">
+
+			$('#showmap').click(function() {
+				$('#map_canvas').show(800);
+			});
+
+			$("#hidemap").click(function () {
+				$("#map_canvas").hide(1000);
+			});
+			</script>
+
+
 		</fieldset>
 	</div>
-	<br /><br />
+
 	<div>
 		<fieldset class="prueba">
 			<legend>Or the coordinates if you know them</legend>
@@ -33,26 +52,10 @@
 				<%= f.label :coordinates_long %><br />
 				<%= f.text_field :coordinates_long %>
 			</p>
+			
 		</fieldset>
 	</div>
 
-	<div id="map_canvas"></div>
-
-	<p id="showlocation" class="button">
-		<button type="button" id="showmap">Show Map</button>
-		<button type="button" id="hidemap">Hide Map</button>
-	</p>
-
-	<script type="text/javascript">
-
-	$('#showmap').click(function() {
-		$('#map_canvas').show(800);
-	});
-
-	$("#hidemap").click(function () {
-		$("#map_canvas").hide(1000);
-	});
-	</script>
 
 	<p>
 		Country
