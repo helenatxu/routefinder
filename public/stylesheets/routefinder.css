@@ -421,7 +421,7 @@ table,th, td {
 }
 
 fieldset #map_canvas {
-	_display: none;
+/*	display: none; */
 	width: 300px; 
 	height: 300px;
 	margin: auto auto 10px 10px;

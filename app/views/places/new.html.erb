@@ -1,3 +1,6 @@
+<% content_for :head do %>
+	<script type="text/javascript" src="/javascripts/places.new.js"></script>
+<% end -%>
 <h1>New place</h1>
 
 <% if current_user %>
@@ -20,23 +23,11 @@
 			</p>
 
 			<p id="showlocation" class="button">
-				<button type="button" id="showmap" onclick="codeAddress()">Show Map</button>
+				<button type="button" id="showmap">Show Map</button>
 				<button type="button" id="hidemap">Hide Map</button>
 			</p>
-			
+
 			<div id="map_canvas"></div>
-
-			<script type="text/javascript">
-
-			$('#showmap').click(function() {
-				$('#map_canvas').show(800);
-			});
-
-			$("#hidemap").click(function () {
-				$("#map_canvas").hide(1000);
-			});
-			</script>
-
 
 		</fieldset>
 	</div>
@@ -52,7 +43,7 @@
 				<%= f.label :coordinates_long %><br />
 				<%= f.text_field :coordinates_long %>
 			</p>
-			
+
 		</fieldset>
 	</div>
 

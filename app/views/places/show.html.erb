@@ -1,3 +1,14 @@
+<% content_for :head do %>
+	<script type="text/javascript">
+		var placeName = "<%= @place.name %>";
+		<% if @place.coordinates_lat %>
+			var latlng = new google.maps.LatLng(<%= @place.coordinates_lat %>, <%= @place.coordinates_long %>); 
+		<% else %>
+			var latlng = new google.maps.LatLng(-34.397, 150.644);
+		<% end %>
+	</script>
+	<script type="text/javascript" src="/javascripts/places.show.js"></script>
+<% end -%>
 <%= render(:partial => "search_small") %>
 
 <h1>
