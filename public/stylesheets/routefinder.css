@@ -486,14 +486,19 @@ fieldset #map_canvas {
 	
 }
 
-.prueba {
+.fieldset {
 	border: 1px solid #9DD999 !important;
 	margin: 20px;
 }
 
-.prueba legend {
+.fieldset legend {
 	font-size:90%;
 }
 
+#advertisement {
+	color: red;
+	font-size: 150%;
+	padding: 20px;
+}
 
 

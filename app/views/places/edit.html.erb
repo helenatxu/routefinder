@@ -1,45 +1,78 @@
+<% content_for :head do %>
+<script type="text/javascript" src="/javascripts/places.new.js"></script>
+<% end -%>
+
+<% if current_user && current_user.id == @place.user_id %>
 <h1>Editing place</h1>
 
 <div id="form_fields">
-<% form_for(@place) do |f| %>
-  <%= f.error_messages %>
+<% form_for(@place, :html => { :id => "place_form"}) do |f| %>
+	<%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :coordinates_lat %><br />
-    <%= f.text_field :coordinates_lat %>
-  </p>
-  <p>
-    <%= f.label :coordinates_long %><br />
-    <%= f.text_field :coordinates_long %>
-  </p>
-  <p>
-    <%= f.label :direction %><br />
-    <%= f.text_field :direction %>
-  </p>
-  <p>Country</p>
-  <p class="button">
-	<%=@countries = Country.find(:all, :order => "name") 
-	f.collection_select(:country_id, @countries, :id, :name) %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </p>
-  <p class="button">
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	
+	<div>
+		<fieldset class="fieldset"> 
+			<legend>You can type the direction...</legend>
+			<p>
+				<%= f.label :direction %><br />
+				<%= f.text_field :direction %>
+			</p>
 
-<%= link_to 'Show', @place %> |
-<%= link_to 'Back', places_path %> |
-<%= link_to 'Back to Main', '/application/index' %>
+			<p id="showlocation" class="button">
+				<button type="button" id="showmap">Show Map</button>
+				<button type="button" id="hidemap">Hide Map</button>
+			</p>
 
+			<div id="map_canvas"></div>
+
+		</fieldset>
+	</div>
+	
+	<div>
+		<fieldset class="fieldset">
+			<legend>Or the coordinates if you know them</legend>
+			<p>
+				<%= f.label :coordinates_lat %><br />
+				<%= f.text_field :coordinates_lat %>
+			</p>
+			<p>
+				<%= f.label :coordinates_long %><br />
+				<%= f.text_field :coordinates_long %>
+			</p>
+
+		</fieldset>
+	</div>
+
+
+	<p>Country</p>
+	<p class="button">
+		<%=@countries = Country.find(:all, :order => "name") 
+		f.collection_select(:country_id, @countries, :id, :name) %>
+	</p>
+	<p>
+		<%= f.label :description %><br />
+		<%= f.text_area :description %>
+	</p>
+	<p>
+		<%= f.label :image_url %><br />
+		<%= f.text_field :image_url %>
+	</p>
+	<p class="button">
+		<%= f.submit 'Update' %>
+	</p>
+	<% end %>
+
+	<%= link_to 'Show', @place %> |
+	<%= link_to 'Back', places_path %> |
+	<%= link_to 'Back to Main', '/' %>
+
+	<% else %>
+	<p id="advertisement"> 
+		You do not have permission to edit this place.
+	</p>
+	<% end %>
 </div>

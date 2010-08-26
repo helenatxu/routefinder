@@ -1,17 +1,20 @@
 var geocoder;
 var map;
 var marker = null;
-var location = null;
+var latlng = null;
+var isLatlngValid = false;
 
 function setMap() {
-	map.setCenter(location);
+	map.setCenter(latlng);
 	if (marker) {
 		marker.setMap(null);
 	}
 	marker = new google.maps.Marker({
 		map: map, 
-		position: location
+		position: latlng
 	});
+	
+	isLatlngValid = true;
 }
 
 $(document).ready(function(){
@@ -24,6 +27,10 @@ $(document).ready(function(){
 	};
 
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+	$("#place_direction").change(function() {
+		isLatlngValid = false;
+	});
 
 	$("#map_canvas").hide();
 	
@@ -42,7 +49,7 @@ $(document).ready(function(){
 		var address = $("#place_direction").val();
 		geocoder.geocode( { 'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				location = results[0].geometry.location;
+				latlng = results[0].geometry.location;
 				if (ready) {
 					setMap()
 				} else {
@@ -59,7 +66,31 @@ $(document).ready(function(){
 		$("#map_canvas").hide(500);
 	});
 	
-	$("#new_place_form").submit(function() {
+	$("#place_form").submit(function() {
+		if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
+			if (isLatlngValid) {
+				$("#place_coordinates_lat").val(latlng.lat());
+				$("#place_coordinates_long").val(latlng.lng());
+				
+				return true;
+			} else {
+				var address = $("#place_direction").val();
+				geocoder.geocode( { 'address': address}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						latlng = results[0].geometry.location;
+						
+						$("#place_coordinates_lat").val(latlng.lat());
+						$("#place_coordinates_long").val(latlng.lng());
+						
+						$("#place_form").submit();
+					} else {
+						alert("Geocode was not successful for the following reason: " + status);
+					}
+				});
+				return false;
+			}
+		}
 		
+		return true;
 	});
 });
