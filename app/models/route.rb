@@ -1,8 +1,8 @@
 class Route < ActiveRecord::Base
 
 
-  has_many :routepoints
-  has_many :places, :through => :routepoints
+  has_many :routepoints, :order => '"order" ASC'
+  has_many :places, :through => :routepoints, :order => '"order" ASC'
 
   has_and_belongs_to_many :users # users can mark this route as favourite
   belongs_to :user # one user is the author

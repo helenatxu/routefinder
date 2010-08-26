@@ -475,6 +475,13 @@ fieldset #map_canvas {
 	margin: auto auto 10px 10px;
 }
 
+#directionsPanel {
+	width: 200px;
+	height: 480px;
+	float:left;
+	overflow: auto;
+}
+
 #showlocation {
 	
 }
@@ -487,4 +494,6 @@ fieldset #map_canvas {
 .prueba legend {
 	font-size:90%;
 }
+
+
 
