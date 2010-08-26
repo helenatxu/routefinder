@@ -9,7 +9,6 @@
 	<%= stylesheet_link_tag 'routefinder' %>
 	<%= javascript_include_tag :defaults %> 
 	<%= ajaxful_rating_style %> 
-	<script type="text/javascript" src="/javascripts/jquery.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<%= yield :head %>
@@ -19,7 +18,9 @@
 <body>
 
 	<div id="header">
-		<p>Route Finder</p>
+		<a id="aheader" href="/">
+			Route Finder
+		</a>
 	</div>
 
 	<div id="container">
