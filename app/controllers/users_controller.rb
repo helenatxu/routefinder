@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
+    @favoriteplaces = Favoriteplace.find(:all, :conditions => ['user_id = ?', @current_user]) 
   end
 
   def edit
@@ -44,5 +45,6 @@ class UsersController < ApplicationController
       page.visual_effect :highlight, @user.wrapper_dom_id(params)
     end
   end
+  
 
 end

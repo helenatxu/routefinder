@@ -320,7 +320,7 @@ color: green;
 	display: block;
 }
 
-#show_user_fields {
+.show_user_fields {
 	width: 350px;
 	margin-left: 200px;
 	background-color: #FFFFF0;
@@ -329,7 +329,7 @@ color: green;
 }
 
 
-#show_user_fields p {
+.show_user_fields p {
 	padding: 10px;
 }
 

@@ -1,0 +1,2 @@
+module FavoriteplacesHelper
+end

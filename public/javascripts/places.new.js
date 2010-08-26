@@ -1,8 +1,9 @@
 var geocoder;
 var map;
 var marker = null;
+var location = null;
 
-function setMap(location) {
+function setMap() {
 	map.setCenter(location);
 	if (marker) {
 		marker.setMap(null);
@@ -28,12 +29,11 @@ $(document).ready(function(){
 	
 	$('#showmap').click(function() {
 		var ready = false;
-		var location = null;
 		
 		$('#map_canvas').show(500, function() {
 			google.maps.event.trigger(map, 'resize');
 			if (ready) {
-				setMap(location)
+				setMap()
 			} else {
 				ready = true;
 			}
@@ -44,7 +44,7 @@ $(document).ready(function(){
 			if (status == google.maps.GeocoderStatus.OK) {
 				location = results[0].geometry.location;
 				if (ready) {
-					setMap(location)
+					setMap()
 				} else {
 					ready = true;
 				}
@@ -57,5 +57,9 @@ $(document).ready(function(){
 
 	$("#hidemap").click(function () {
 		$("#map_canvas").hide(500);
+	});
+	
+	$("#new_place_form").submit(function() {
+		
 	});
 });

@@ -6,7 +6,9 @@ class Place < ActiveRecord::Base
   has_many :routes, :through => :routepoints
     
     
-  has_and_belongs_to_many :users # users can mark this route as favourite
+  has_many :favoriteplaces
+  has_many :users, :through => :favoriteplaces # users can mark this place as favourite
+
   belongs_to :country
   belongs_to :user # one user is the author
   has_many :placecomments

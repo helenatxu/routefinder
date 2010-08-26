@@ -9,10 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100818150058) do
+ActiveRecord::Schema.define(:version => 20100826130658) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favoriteplaces", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favoriteroutes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "route_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

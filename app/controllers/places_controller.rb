@@ -19,6 +19,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @place_id = params[:id]
     @newPlacecomment = Placecomment.new
+    @newFavoriteplace = Favoriteplace.new
   end
 
   # GET /places/new

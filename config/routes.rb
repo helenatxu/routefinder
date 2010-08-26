@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :favoriteplaces
+
+  map.resources :favoriteroutes
+
   
   map.resources :routes, :member => {:rate => :post}
   map.resources :places, :member => {:rate => :post}

@@ -4,7 +4,11 @@ class Route < ActiveRecord::Base
   has_many :routepoints, :order => '"order" ASC'
   has_many :places, :through => :routepoints, :order => '"order" ASC'
 
-  has_and_belongs_to_many :users # users can mark this route as favourite
+
+  has_many :favoriteroutes
+  has_many :users, :through => :favoriteroutes # users can mark this route as favourite
+  
+  
   belongs_to :user # one user is the author
 
   has_many :routecomments

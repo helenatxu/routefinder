@@ -1,5 +1,5 @@
 <h1>Your Account</h1>
-<div id="show_user_fields">
+<div class="show_user_fields">
 	<p>
 		<b>Login:</b>
 		<%=h @user.login %>
@@ -55,6 +55,11 @@
 		<%=h @user.current_login_ip %>
 	</p>
 
+</div>
+
+<div class="show_user_fields">
+	
+	<%= render(:partial => "/favoriteplaces/index", :object => @user) %>
 </div>
 
 <p id="comeback_links">

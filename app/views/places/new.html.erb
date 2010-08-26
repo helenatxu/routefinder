@@ -6,7 +6,7 @@
 <% if current_user %>
 <div id="form_fields">
 
-	<% form_for(@place) do |f| %>
+	<% form_for(@place, :html => { :id => "new_place_form"}) do |f| %>
 	<%= f.error_messages %>
 
 	<p>

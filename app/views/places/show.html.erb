@@ -1,13 +1,13 @@
 <% content_for :head do %>
-	<script type="text/javascript">
-		var placeName = "<%= @place.name %>";
-		<% if @place.coordinates_lat %>
-			var latlng = new google.maps.LatLng(<%= @place.coordinates_lat %>, <%= @place.coordinates_long %>); 
-		<% else %>
-			var latlng = new google.maps.LatLng(0.0, 0.0);
-		<% end %>
-	</script>
-	<script type="text/javascript" src="/javascripts/places.show.js"></script>
+<script type="text/javascript">
+var placeName = "<%= @place.name %>";
+<% if @place.coordinates_lat %>
+var latlng = new google.maps.LatLng(<%= @place.coordinates_lat %>, <%= @place.coordinates_long %>); 
+<% else %>
+var latlng = new google.maps.LatLng(0.0, 0.0);
+<% end %>
+</script>
+<script type="text/javascript" src="/javascripts/places.show.js"></script>
 <% end -%>
 <%= render(:partial => "search_small") %>
 
@@ -84,9 +84,17 @@
 	<!--	# To display the rating for the current user (current_user): -->
 	<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
 </div>
-<% end %>
+
+<div class="favorite ratings">
+	<h3>
+		Add to my favorites: 
+	</h3>
+	<%= render(:partial => "/favoriteplaces/new", :object => @place) %>
+</div>	
 
 <div id="comments">
+	<% end %>
+
 
 	<%= render(:partial => "/placecomments/list", :object => @place) %> 
 	<%= render(:partial => "/placecomments/new", :object => @place) %>
