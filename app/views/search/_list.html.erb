@@ -1,5 +1,6 @@
 <h1>Listing results</h1>
 
+<% count = 0 %>
 
 <% if params[:search_by] and not params[:search_by].empty? %>
 	<% search_by = params[:search_by] %>
@@ -20,6 +21,7 @@
 	</tr>
 
 	<% @search.each do |route| %>
+	<% count = count + 1 %>
 	<tr>
 		<td><%=h route.name %></td>
 		<td><%=h route.user.login %></td>
@@ -28,6 +30,9 @@
 	</tr>
 	<% end %>
 </table>
+<p>
+	Total = <%= count %>
+</p>
 
 	<% else %> 
 		<% if search_by == "place" %>
@@ -45,6 +50,7 @@
 			</tr>
 
 			<% @search.each do |place| %>
+			<% count = count + 1 %>
 			<tr>
 				<td><%=h place.name %></td>
 				<td><%=h place.user.login %></td>
@@ -56,6 +62,9 @@
 			</tr>
 			<% end %>
 		</table>
+		<p>
+			Total = <%= count %>
+		</p>
 
 			<% else %>
 
@@ -69,15 +78,19 @@
 				</tr>
 
 				<% @search.each do |thing| %>
+				<% count = count + 1 %>
 				<tr>
 					<td><%=h thing.name %></td>
 					<td><%=h thing.user.login %></td>
+					
 					<td><%= ratings_for thing, :static, :small => true, :dimension => :rank %></td>
 					<td><%= link_to 'Show', thing %></td>
 				</tr>
 				<% end %>
 			</table>
-
+			<p>
+				Total = <%= count %>
+			</p>
 
 			<% end %>
 	<% end %>

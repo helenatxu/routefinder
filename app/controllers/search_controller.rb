@@ -24,8 +24,7 @@ class SearchController < ApplicationController
 
             # we search in place and routes       
           else 
-             @search = Place.find(:all) and Route.find(:all)
-            # @search = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]]) and Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]]) 
+             @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]]) + Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
           end
         end
 
@@ -39,14 +38,25 @@ class SearchController < ApplicationController
             @search = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
 
           else 
-            @search = Place.find(:all) and Route.find(:all)
+            @search = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"]) + Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
           end
 
         end
       end
       # now we look without parameters
     else
-      @search = Route.find(:all) + Place.find(:all)
+      
+      if search_by == "place"
+         @search = Place.find(:all)
+       else
+
+         if search_by == "route"
+           @search = Route.find(:all)
+
+         else 
+           @search = Route.find(:all) + Place.find(:all)
+         end
+     end
     end
 
   end  # end of def
