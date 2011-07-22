@@ -10,18 +10,20 @@ class SearchController < ApplicationController
 
     if params[:search_p] and not params[:search_r]
       search_by = "place"
-    end
+    else
+      if params[:search_r] and not params[:search_p]
+        search_by = "route"
+      else
 
-    if params[:search_r] and not params[:search_p]
-      search_by = "route"
-    end
+        if params[:search_r] and params[:search_p]
+          search_by = "both"
+        else
 
-    if params[:search_r] and params[:search_p]
-      search_by = "both"
-    end
-
-    if not params[:search_r] and not params[:search_p]
-      search_by = "both"
+          if not params[:search_r] and not params[:search_p]
+            search_by = "both"
+          end
+        end
+      end 
     end
 
 
