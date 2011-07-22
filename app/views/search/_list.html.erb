@@ -30,7 +30,7 @@
 	</tr>
 	<% end %>
 </table>
-<p>
+<p class="total">
 	Total = <%= count %>
 </p>
 
@@ -62,7 +62,7 @@
 			</tr>
 			<% end %>
 		</table>
-		<p>
+		<p class="total">
 			Total = <%= count %>
 		</p>
 
@@ -87,10 +87,12 @@
 					<td><%= link_to 'Show', thing %></td>
 				</tr>
 				<% end %>
-			</table>
-			<p>
+				<tr>
+					<td>
+			<p class="total">
 				Total = <%= count %>
-			</p>
-
+			</p></td>
+		</tr>
+			</table>
 			<% end %>
 	<% end %>

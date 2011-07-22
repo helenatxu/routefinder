@@ -14,61 +14,78 @@ class SearchController < ApplicationController
     if params[:keywords_search] and not params[:keywords_search].empty?
       if params[:country_id] and not params[:country_id].empty?
 
-        # we search in places or routes with country
-        if search_by == "place" 
-          @search = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
+                  # we search in places or routes with params & country
+                  if search_by == "place" 
+                    @search = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
 
-        else 
-          if search_by == "route"
-            @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
+                  else 
+                        if search_by == "route"
+                          @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
 
-            # we search in place and routes       
-          else 
-             @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]]) + Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
-          end
-        end
+                          # we search in place and routes       
+                        else 
+                          @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]]) + Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
+                        end # of search by route
+                  end # of search by place
 
-        # now we look for without country
-      else 
-        if search_by == "place"
-          @search = Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
-        else
+         else  # now we look for by parameters but without country
 
-          if search_by == "route"
-            @search = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
+                      if search_by == "place"
+                        @search = Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
+                        else
+                            if search_by == "route"
+                              @search = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
+                            else 
+                              @search = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"]) + Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
+                            end # of search by route
 
-          else 
-            @search = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"]) + Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
-          end
+                      end # of search by place by parameters but without country
 
-        end
-      end
-      # now we look without parameters
-    else
+                end # of search in places or routes with params & country
+
+       else   # now we look without parameters 
       
-      if search_by == "place"
-         @search = Place.find(:all)
-       else
+      if params[:country_id] and not params[:country_id].empty?       
+          # now we look without parameters but by country
 
-         if search_by == "route"
-           @search = Route.find(:all)
-
-         else 
-           @search = Route.find(:all) + Place.find(:all)
-         end
-     end
-    end
-
-  end  # end of def
-end    # end of class
+              if search_by == "place"
+                @search = Place.find(:all, :conditions => ['(country_id = ?', params[:country_id]])
+ 
+                  else
+                          if search_by == "route"
+                            @search = Route.find(:all, :conditions => ['(country_id = ?', params[:country_id]])
+                            else 
+                              @search = Route.find(:all, :conditions => ['(country_id = ?', params[:country_id]]) + Place.find(:all, :conditions => ['(country_id = ?', params[:country_id]])
+                            end # of search by route
+               end # of search by place
 
 
-#  if search_by == "place"
-#  @search = Place.find() 
-#  else 
-#   if search_by == "route"
-#   @search = Place.find()
-#   else
-#   @search = Place.find(:all) and Route.find(:all)
-#   end
-# end
+            else   # now we look without any parameters
+                  if search_by == "place"
+                    @search = Place.find(:all)
+                  else
+
+                        if search_by == "route"
+                          @search = Route.find(:all)
+
+                        else 
+                          @search = Route.find(:all) + Place.find(:all)
+                        end # of search by route
+                  end # of search by place 
+            end # of search without parameters but by country
+            
+          end # of search with parameters
+
+    end  # end of def
+  end    # end of class
+
+
+  #  if search_by == "place"
+  #  @search = Place.find() 
+  #  else 
+  #   if search_by == "route"
+  #   @search = Place.find()
+  #   else
+  #   @search = Place.find(:all) and Route.find(:all)
+  #   end
+  # end

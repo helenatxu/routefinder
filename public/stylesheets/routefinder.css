@@ -95,7 +95,11 @@ table,th, td {
 	text-align:center;
 }
 
-
+.total {
+	padding: 5px;
+	text-align:center;
+	font-weight: bold;
+}
 
 #summary {
 	width: 400px;
