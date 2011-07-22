@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
 
+  # Warning: routes cannot be searched by country, routes does not have country
 
   # GET /search
   def index
@@ -20,11 +21,11 @@ class SearchController < ApplicationController
 
                   else 
                         if search_by == "route"
-                          @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
+                          @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?)', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"])
 
                           # we search in place and routes       
                         else 
-                          @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]]) + Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
+                          @search = Route.find(:all, :conditions => ['(name LIKE ? or description LIKE ?)', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%"]) + Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_search]}%", "%#{params[:keywords_search]}%", params[:country_id]])
                         end # of search by route
                   end # of search by place
 
@@ -49,13 +50,13 @@ class SearchController < ApplicationController
           # now we look without parameters but by country
 
               if search_by == "place"
-                @search = Place.find(:all, :conditions => ['(country_id = ?', params[:country_id]])
+                @search = Place.find(:all, :conditions => ['country_id = ?', params[:country_id]])                
  
                   else
                           if search_by == "route"
-                            @search = Route.find(:all, :conditions => ['(country_id = ?', params[:country_id]])
+                            @search = Route.find(:all)
                             else 
-                              @search = Route.find(:all, :conditions => ['(country_id = ?', params[:country_id]]) + Place.find(:all, :conditions => ['(country_id = ?', params[:country_id]])
+                              @search = Route.find(:all) + Place.find(:all, :conditions => ['country_id = ?', params[:country_id]])
                             end # of search by route
                end # of search by place
 
