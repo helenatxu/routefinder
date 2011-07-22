@@ -1,4 +1,4 @@
-<h1>Listing favoriteplaces</h1>
+<h2>Your favorite places</h2>
 
 
 <% if @favoriteplaces.empty? %>
@@ -13,7 +13,7 @@
 
 	<% @favoriteplaces.each do |favoriteplace| %>
 	<tr>
-		<td><%=h favoriteplace.place.name %></td>
+		<td><a href="<%=place_path(favoriteplace.place)%>"><%=h favoriteplace.place.name %></a></td>
 		<td><%= link_to 'Destroy', favoriteplace, :confirm => 'Are you sure?', :method => :delete %></td>
 	</tr>
 	<% end %>

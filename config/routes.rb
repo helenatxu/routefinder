@@ -22,7 +22,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :user_session
  # map.root :controller => "user_sessions", :action => "new"
-
+  
+  map.search "search", :controller => "search"
+  
   map.resources :places
 
   map.resources :routes

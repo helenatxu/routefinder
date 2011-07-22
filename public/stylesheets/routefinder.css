@@ -38,6 +38,17 @@ body {
 	text-shadow: 0 0 0.3em white, 0 0 0.4em white, 0 0 0.6em green;
 }
 
+#welcome {
+	width: 525px;
+	float: left;
+	margin: 20px 110px auto auto;
+	clear:both;
+}
+
+#welcome h1 {
+	margin: 10px;
+}
+
 
 
 #container {
@@ -84,23 +95,12 @@ table,th, td {
 	text-align:center;
 }
 
-#welcome {
-	width: 525px;
-	float: right;
-	margin: 20px 110px auto auto;
-	clear:both;
-}
-
-#welcome h1 {
-	margin: 10px;
-}
-
 
 
 #summary {
-	width: 500px;
+	width: 400px;
 	float: right;
-	margin: 0 20px 0 0;
+	margin: 0 10px 0 0;
 	border:solid 2px #9DEE96;
 	background: #CCFFE0;
 }
@@ -113,6 +113,11 @@ table,th, td {
 #summary div {
 	margin: -10px auto 10px 20px;
 }
+
+#summary ul {
+	clear:both;
+}
+
 
 #summary .routepoints {
 	margin: 0 10px 5px 20px;
@@ -245,12 +250,12 @@ color: green;
 	font: normal 12px arial, sans-serif;
 }
 
-#comments {
+.comments {
 	clear:left;
 	padding: 20px 0 0 0;
 }
 
-#comments .comment {
+.comments .comment {
 	background-color: #FFFFF0;
 	border: 1px solid #FFE899;
 	height: auto;
@@ -259,20 +264,20 @@ color: green;
 	padding: 5px;
 }
 
-#comments .user_comment{
+.comments .user_comment{
 	color: #004500;
 	font:italic bold 100% Georgia,serif;
 	margin: 5px;
 }
 
-#comments .date_comment {
+.comments .date_comment {
 	color: #004500;
 	font:italic 80% Georgia,serif;
 	text-align: right;
 	margin: -15px 10px 10px auto;
 }
 
-#comments .links_comment {
+.comments .links_comment {
 	margin: -10px 10px auto auto;
 	text-align: right;
 }
@@ -297,20 +302,6 @@ color: green;
 	font: normal 12px arial, sans-serif;
 }
 
-.aaaabutton span {
-	display: block;
-	line-height: 14px;
-	padding: 0em 0.5em 0em 0.5em; 
-}
-
-.aaaaabutton:active {
-	color: #000;
-	outline: none; /* hide dotted outline in Firefox */
-}
-
-.aaaaaabutton:active span {
-	padding: 0.15em 0.5em 0em 0.5em; /* NO FUNCIONA */
-}
 
 
 
@@ -322,7 +313,7 @@ color: green;
 
 .show_user_fields {
 	width: 350px;
-	margin-left: 200px;
+	margin-left: 25px;
 	background-color: #FFFFF0;
 	border: 1px solid #FFE899;
 	padding: 10px;
@@ -377,6 +368,12 @@ color: green;
 	color: #FFFFFF;
 }
 
+#title_tab_search {
+	margin: 15px 0 0 30px;
+	float:left;
+	color: #FFFFFF;
+}
+
 
 .example {
 	margin: -0.65em 0 0 6.5em;
@@ -397,6 +394,7 @@ color: green;
 	width: 441px;
 	height: 225px;
 	margin: 0 0 0 30px;
+	float:right;
 	background-image:url(/images/search_form5.png);
 	background-repeat:no-repeat;	
 	color: #B2A100;
@@ -463,7 +461,7 @@ color: green;
 
 
 #map_canvas {
-	width: 640px;
+	width: 560px;
 	height: 480px;
 	float: left;
 }
@@ -476,7 +474,7 @@ fieldset #map_canvas {
 }
 
 #directionsPanel {
-	width: 200px;
+	width: 250px;
 	height: 480px;
 	float:left;
 	overflow: auto;
@@ -499,6 +497,18 @@ fieldset #map_canvas {
 	color: red;
 	font-size: 150%;
 	padding: 20px;
+}
+
+#profile {
+	float: left;
+}
+
+#favpla {
+	float: left;
+}
+
+#favrut {
+	float: left;
 }
 
 

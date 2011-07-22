@@ -1,5 +1,7 @@
 <h1>New route</h1>
 
+<% if current_user %>
+
 <div id="form_fields">
 <% form_for(@route) do |f| %>
   <%= f.error_messages %>
@@ -7,14 +9,6 @@
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :place_id %><br />
-    <%= f.text_field :place_id %>
   </p>
   <p>
     <%= f.label :description %><br />
@@ -29,3 +23,8 @@
 
 </div>
 
+<% else %>
+<div id="form_fields">
+	<p>You must be logged to add a new place.</p>
+</div>
+<% end %>

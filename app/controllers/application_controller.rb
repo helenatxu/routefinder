@@ -31,7 +31,6 @@ class ApplicationController < ActionController::Base
   end
 
 
-
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
@@ -48,7 +47,7 @@ class ApplicationController < ActionController::Base
       #   redirect_to new_user_session_url
       redirect_to("/")
       #if not flash[:notice]    #<-- How to check if an array or dictionary has an element
-        flash[:notice] = "You must be logged in to access this page"
+      flash[:notice] = "You must be logged in to access this page"
       #end
       return false
     end

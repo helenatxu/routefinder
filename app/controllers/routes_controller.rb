@@ -3,13 +3,13 @@ class RoutesController < ApplicationController
   # GET /routes
   def index
     @countries = Country.find(:all)
-    if params[:keywords] and not params[:keywords].empty?
-      if params[:country_id] and not params[:country_id].empty?
+    if params[:keywords_route] and not params[:keywords_route].empty?
+#      if params[:country_id_route] and not params[:country_id_route].empty?
         #   @routes = Route.find(:all, :conditions => ['(routes.name LIKE ? or routes.description LIKE ?) and (places.country = ? and places.id IN routes.places)', "%#{params[:keywords]}%", "%#{params[:keywords]}%", params[:country_id]])
-        @routes = Route.find(:all, :conditions => ['(routes.name LIKE ? or routes.description LIKE ? )', "%#{params[:keywords]}%", "%#{params[:keywords]}%"])
-      else
-        @routes = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords]}%", "%#{params[:keywords]}%"])
-      end
+        @routes = Route.find(:all, :conditions => ['(routes.name LIKE ? or routes.description LIKE ? )', "%#{params[:keywords_route]}%", "%#{params[:keywords_route]}%"])
+#      else
+#        @routes = Route.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_route]}%", "%#{params[:keywords_route]}%"])
+#      end
     else
       @routes = Route.find(:all)
     end
@@ -21,6 +21,7 @@ class RoutesController < ApplicationController
     @route_id = params[:id]
     @newRoutecomment = Routecomment.new
     @routepoint = Routepoint.new
+    @newFavoriteroute = Favoriteroute.new
   end
 
   # GET /routes/new
@@ -36,6 +37,7 @@ class RoutesController < ApplicationController
   # POST /routes
   def create
     @route = Route.new(params[:route])
+    @route.user = @current_user
     if @route.save
       redirect_to(@route, :notice => 'Route was successfully created.') 
     else
@@ -61,12 +63,12 @@ class RoutesController < ApplicationController
   end
 
   def rate 
-      @route = Route.find(params[:id]) 
-      @route.rate(params[:stars], current_user, params[:dimension]) 
-      render :update do |page| 
-        page.replace_html @route.wrapper_dom_id(params), ratings_for(@route, params.merge(:wrap => false)) 
-        page.visual_effect :highlight, @route.wrapper_dom_id(params) 
-      end 
+    @route = Route.find(params[:id]) 
+    @route.rate(params[:stars], current_user, params[:dimension]) 
+    render :update do |page| 
+      page.replace_html @route.wrapper_dom_id(params), ratings_for(@route, params.merge(:wrap => false)) 
+      page.visual_effect :highlight, @route.wrapper_dom_id(params) 
     end 
+  end 
 
 end

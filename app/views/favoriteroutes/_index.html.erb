@@ -1,0 +1,22 @@
+<h2>Your favorite routes</h2>
+
+
+<% if @favoriteplaces.empty? %>
+<p>No favorite places.</p>
+
+<% else%>
+
+<table>
+	<tr>
+		<th>Route Name:</th>
+	</tr>
+
+	<% @favoriteroutes.each do |favoriteroute| %>
+	<tr>
+		<td><a href="<%=route_path(favoriteroute.route)%>"><%=h favoriteroute.route.name %></a></td>
+		<td><%= link_to 'Destroy', favoriteroute, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+<% end %>

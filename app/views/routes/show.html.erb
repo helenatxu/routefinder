@@ -107,9 +107,16 @@
 	<!--	# To display the rating for the current user (current_user): -->
 	<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
 </div>
+
+<div class="favorite ratings">
+	<h3>
+		Add to my favorites: 
+	</h3>
+	<%= render(:partial => "/favoriteroutes/new", :object => @route) %>
+</div>
 <% end %>
 
-<div id="comments">
+<div class="comments">
 
 	<%= render(:partial => "/routecomments/list", :object => @route) %> 
 	<%= render(:partial => "/routecomments/new", :object => @route) %>

@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = @current_user
     @favoriteplaces = Favoriteplace.find(:all, :conditions => ['user_id = ?', @current_user]) 
+    @favoriteroutes = Favoriteroute.find(:all, :conditions => ['user_id = ?', @current_user]) 
   end
 
   def edit

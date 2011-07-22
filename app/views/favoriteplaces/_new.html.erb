@@ -1,13 +1,12 @@
 
 
 <% form_for(@newFavoriteplace) do |f| %>
-  <%= f.error_messages %>
-	<fieldset>
+<%= f.error_messages %>
+<fieldset>
 	<input id="favoriteplace_place_id" name="favoriteplace[place_id]" type="hidden" value="<%=@place_id%>" />
 
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-
-	</fieldset>
+	<p class="button">
+		<%= f.submit 'Add' %>
+	</p>
+</fieldset>
 <% end %>

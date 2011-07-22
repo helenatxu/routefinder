@@ -3,11 +3,11 @@ class PlacesController < ApplicationController
   # GET /places
   def index
     @countries = Country.find(:all)
-    if params[:keywords] and not params[:keywords].empty?
-      if params[:country_id] and not params[:country_id].empty?
-        @places = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country = ?', "%#{params[:keywords]}%", "%#{params[:keywords]}%", params[:country_id]])
+    if params[:keywords_place] and not params[:keywords_place].empty?
+      if params[:country_id_place] and not params[:country_id_place].empty?
+        @places = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_place]}%", "%#{params[:keywords_place]}%", params[:country_id_place]])
       else
-        @places = Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords]}%", "%#{params[:keywords]}%"])
+        @places = Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_place]}%", "%#{params[:keywords_place]}%"])
       end
     else
       @places = Place.find(:all)
@@ -61,13 +61,13 @@ class PlacesController < ApplicationController
   end
 
   def rate 
-      @place = Place.find(params[:id]) 
-      @place.rate(params[:stars], current_user, params[:dimension]) 
-      render :update do |page| 
-        page.replace_html @place.wrapper_dom_id(params), ratings_for(@place, params.merge(:wrap => false)) 
-        page.visual_effect :highlight, @place.wrapper_dom_id(params) 
-      end 
-    end
+    @place = Place.find(params[:id]) 
+    @place.rate(params[:stars], current_user, params[:dimension]) 
+    render :update do |page| 
+      page.replace_html @place.wrapper_dom_id(params), ratings_for(@place, params.merge(:wrap => false)) 
+      page.visual_effect :highlight, @place.wrapper_dom_id(params) 
+    end 
+  end
 
 end
 

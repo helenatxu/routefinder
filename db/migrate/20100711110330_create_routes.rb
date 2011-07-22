@@ -6,7 +6,6 @@ class CreateRoutes < ActiveRecord::Migration
       t.string :name
       t.integer :user_id
       t.text :description
-      t.integer :place_id
 
       t.timestamps
     end

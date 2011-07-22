@@ -1,25 +1,22 @@
 <h1>Your Account</h1>
-<div class="show_user_fields">
-	<p>
-		<b>Login:</b>
-		<%=h @user.login %>
-	</p>
-	
+<div id="profile" class="show_user_fields">
+	<h2>Your Profile</h2>
 	<p>
 		<b>Login:</b>
 		<%=h @user.login %>
 	</p>
 
+
 	<p>
 		<b>You have logged in:</b>
 		<%=h @user.login_count %> times
 	</p>
-	
+
 	<p>
 		<b>Photo:</b>
 		<%= image_tag @user.photo_url, :class => 'list-image' %>
 	</p>
-	
+
 	<p>
 		<b>Something about you:</b>
 		<%=h @user.profile %> 
@@ -57,10 +54,14 @@
 
 </div>
 
-<div class="show_user_fields">
-	
-	<%= render(:partial => "/favoriteplaces/index", :object => @user) %>
-</div>
+
+	<div id="favpla" class="show_user_fields">
+		<%= render(:partial => "/favoriteplaces/index", :object => @user) %>
+	</div>
+	<div id="favrut" class="show_user_fields">
+		<%= render(:partial => "/favoriteroutes/index", :object => @user) %>
+	</div>
+
 
 <p id="comeback_links">
 <%= link_to 'Edit profile', edit_account_path %> |

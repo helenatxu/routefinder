@@ -1,6 +1,6 @@
 <div class="search_form">
 	<h3 id="title_tab_places">
-		Places
+		delete!!
 	</h3>
 	<div class="content-search">
 		<% form_tag places_path, :method => 'get' do %> 
@@ -20,10 +20,10 @@
 			<option value="3">France</option>
 			<option value="4">Portugal</option>
 			<option value="5">Italy</option>
-			<option value="6">Holand</option>
-			<option value="7">Chec Republic</option>
+			<option value="6">Holland</option>
+			<option value="7">Czech Republic</option>
 			<option value="8">Slovakia</option>
-			<option value="9">Ucrania</option>
+			<option value="9">Ukraine</option>
 			<option value="10">Turkey</option>
 			<option value="11">Greece</option>
 			<option value="12">Germany</option>'	
@@ -31,11 +31,14 @@
 		</p>
 
 		<p>
-			<%= check_box_tag(:caravanista_place) %>
-			<%= label_tag(:caravanista_place, "Llevo caravana") %>	
-			<%= check_box_tag(:autocaravanista_place) %>
-			<%= label_tag(:autocaravanista_place, "Llevo autocaravana") %>
+			<%= radio_button_tag(:search_in, "place") %>
+			<%= label_tag(:search_p, "search in places") %>
+			<%= radio_button_tag(:search_in, "route") %>
+			<%= label_tag(:search_r, "search in routes") %>
 		</p>
+		
+		
+		
 		<p class="search_button button">
 			<%= submit_tag "Search!", :name => nil %>
 		</p>

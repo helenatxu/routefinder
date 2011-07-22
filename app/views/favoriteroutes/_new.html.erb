@@ -1,0 +1,14 @@
+
+
+<% form_for(@newFavoriteroute) do |f| %>
+<%= f.error_messages %>
+<fieldset>
+	<input id="favoriteroute_route_id" name="favoriteroute[route_id]" type="hidden" value="<%=@route_id%>" />
+
+	<p class="button">
+		<%= f.submit 'Add' %>
+	</p>
+</fieldset>
+<% end %>
+
+

@@ -1,6 +1,6 @@
 <div class="search_form">
 	<h3 id="title_tab_routes">
-		Routes
+		Search
 	</h3>
 	<div class="content-search">
 		<% form_tag routes_path, :method => 'get' do %> 
@@ -9,7 +9,7 @@
 			<%= text_field_tag :keywords_route, params[:keywords] %>
 		</p>
 		<p class="example">
-			(eg.: castle, river, coast, ...)
+			(eg.: city, castle, river, ...)
 		</p>
 		<p>
 			<%= label_tag(:country_id_route, "Select a country:") %> 
@@ -20,10 +20,10 @@
 			<option value="3">France</option>
 			<option value="4">Portugal</option>
 			<option value="5">Italy</option>
-			<option value="6">Holand</option>
-			<option value="7">Chec Republic</option>
+			<option value="6">Holland</option>
+			<option value="7">Czech Republic</option>
 			<option value="8">Slovakia</option>
-			<option value="9">Ucrania</option>
+			<option value="9">Ukraine</option>
 			<option value="10">Turkey</option>
 			<option value="11">Greece</option>
 			<option value="12">Germany</option>'	
@@ -31,10 +31,10 @@
 		</p>
 
 		<p>
-			<%= check_box_tag(:caravanista_route) %>
-			<%= label_tag(:caravanista_route, "Llevo caravana") %>	
-			<%= check_box_tag(:autocaravanista_route) %>
-			<%= label_tag(:autocaravanista_route, "Llevo autocaravana") %>
+			<%= check_box_tag(:search_in) %>
+			<%= label_tag(:search_p, "Search in Places") %>	
+			<%= check_box_tag(:search_in) %>
+			<%= label_tag(:search_r, "Search in Routes") %>
 		</p>
 		<p class="search_button button">
 			<%= submit_tag "Search!", :name => nil %>
