@@ -2,13 +2,26 @@
 
 <% count = 0 %>
 
-<% if params[:search_by] and not params[:search_by].empty? %>
+<!-- <% if params[:search_by] and not params[:search_by].empty? %>
 <% search_by = params[:search_by] %>
 <% else %>
 <% search_by = "both" %>
 <% end %>
+-->
+
+<% if (params[:search_p] == 1 and params[:search_r] == 0) %>
+<%  search_by = "place" %>
+<% else %>
+<%  if (params[:search_p] == 0 and params[:search_r] == 1) %>
+<%    search_by = "route" %>
+<%  else %>
+<%    search_by = "both" %>
+<%  end %>
+<% end %>
 
 <% if search_by == "route" %>
+
+
 
 <h2>Listing routes</h2>
 

@@ -6,11 +6,24 @@ class SearchController < ApplicationController
   def index
 
     @countries = Country.find(:all) 
-    if params[:search_by] and not params[:search_by].empty?
-      search_by = params[:search_by]
-    else
+    
+
+    if params[:search_p] and not params[:search_r]
+      search_by = "place"
+    end
+
+    if params[:search_r] and not params[:search_p]
+      search_by = "route"
+    end
+
+    if params[:search_r] and params[:search_p]
       search_by = "both"
     end
+
+    if not params[:search_r] and not params[:search_p]
+      search_by = "both"
+    end
+
 
     if params[:keywords_search] and not params[:keywords_search].empty?
       if params[:country_id] and not params[:country_id].empty?

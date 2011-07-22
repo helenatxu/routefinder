@@ -34,12 +34,22 @@
 			) %>
 		</p>
 
-		<p>
+<!--		<p>
 			<%= radio_button_tag(:search_by, "place") %>
 			<%= label_tag(:search_p, "search in places") %>
 			<%= radio_button_tag(:search_by, "route") %>
 			<%= label_tag(:search_r, "search in routes") %>
 		</p>	
+-->		
+		
+		<p>
+			<%= check_box_tag(:search_p) %>
+			<%= label_tag(:search_p, "Search in Places") %>	
+			<%= check_box_tag(:search_r) %>
+			<%= label_tag(:search_r, "Search in Routes") %>
+		</p>
+		
+		
 		
 		<p class="search_button button">
 			<%= submit_tag "Search!", :name => nil %>
