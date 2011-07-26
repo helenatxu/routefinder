@@ -4,6 +4,21 @@
 	font-size: 100%;
 }
 
+html, body {
+	height: 100%;
+	margin: 0px;
+	background-color: #EFF3FE;
+}
+
+
+
+#content {
+	clear:both;
+	padding: 0 15px 90px 20px;
+}
+
+
+
 fieldset, img {
 	border: none;
 }
@@ -13,18 +28,13 @@ ul, ol {
 }
 
 
-body {
-	margin: 0em;
-	background-color: #EFF3FE;
-
-}
-
-
 #header {
 	text-align:center;
 	background-image:url(/images/header_pixel3.png);
-	background-repeat: x-repeat;
+	background-repeat: repeat-x;
 	height: 99px;
+	width: 100%;
+	
 }
 
 #aheader {
@@ -34,14 +44,15 @@ body {
 	text-decoration:none;
 	color: #3D2709;
 	font-size: 350%;
-	padding: 20px;
+	padding: 20px 0 20px 20px;
 	text-shadow: 0 0 0.3em white, 0 0 0.4em white, 0 0 0.6em green;
 }
+
 
 #welcome {
 	width: 525px;
 	float: left;
-	margin: 20px 110px auto auto;
+	margin: 0px 10px auto 15px;
 	clear:both;
 }
 
@@ -49,25 +60,44 @@ body {
 	margin: 10px;
 }
 
+#results {
+	margin-top: -200px;
+}
 
+#content2 {
+	margin: 0px;
+	padding: 30px;
+}
 
-#container {
-	padding: 0 15px 10px 20px;
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -100px;
+	position: relative;
+}
+
+#footer, .push {
+	height: 80px;
 }
 
 #footer {
 	clear:both;
-	padding: 20px;
+	margin-top: 10px;
+	padding: 10px;
 	color: #E5FFDE;
 	text-align:center;
 	background-image:url(/images/footer.png);
-	background-repeat: x-repeat;
-	height: 60px;
-	font: italic 80% Georgia,serif;
+	background-repeat: repeat-x;
+	font: italic 80% Georgia,serif;		
+	width: 100%;
+	
+	aposition: absolute;
+	abottom: 0;
 }
 
-#content {
-	clear:both;
+#footer p{
+	padding-bottom: 5px;
 }
 
 
@@ -80,9 +110,21 @@ h1 {
 h2 {
 	color: #3B2910;
 	font:italic bold 25px/2em Georgia,serif;
-	margin: 30px auto 10px 30px;
+	margin: 50px auto 10px 30px;
 }
 
+
+#whatare {
+	padding: 20px 60px 0 10px;
+	margin: 30px 10px 20px auto !important;
+	text-align: right !important;
+	width: 450px;
+}
+
+
+.text {
+	padding: 15px;
+}
 
 table {
 	border-collapse:collapse;
@@ -303,7 +345,7 @@ color: green;
 }
 
 .button {
-	font: normal 12px arial, sans-serif;
+	font: normal 18px arial, sans-serif !important;
 }
 
 
@@ -373,20 +415,20 @@ color: green;
 }
 
 #title_tab_search {
-	margin: 15px 0 0 10px;
+	margin: 13px 0 0 27px;
 	float:left;
 	color: #FFFFFF;
 }
 
 
 .example {
-	margin: -0.65em 0 0 6.5em;
+	margin: -13px 0 0 73px;
 	font-size:85%;
 }
 
 .search_button{
 	float:right;
-	margin: -20px 0 0 0;
+	margin: -38px 0 0 0;
 }
 
 .options_search {
@@ -397,7 +439,7 @@ color: green;
 .search_form {
 	width: 441px;
 	height: 225px;
-	margin: 0 0 0 30px;
+	margin: 0 0 0 10px;
 	float:right;
 	background-image:url(/images/search_form5.png);
 	background-repeat:no-repeat;	
@@ -406,12 +448,16 @@ color: green;
 }
 
 .content-search {
-	margin-top: 10px;
+	margin: 10px;
 	padding: 45px 20px 20px 30px;
 }
 
 .content-search p {
 	padding: 8px;
+}
+
+#checkbox label {
+	padding-right: 14px;
 }
 
 

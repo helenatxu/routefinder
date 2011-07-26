@@ -1,80 +1,40 @@
-<h1>Listing results</h1>
+<div id="results">
+	<h1>Listing results</h1>
 
-<% count = 0 %>
-
-<!-- <% if params[:search_by] and not params[:search_by].empty? %>
-<% search_by = params[:search_by] %>
-<% else %>
-<% search_by = "both" %>
-<% end %>
--->
-
-<% if (params[:search_p] == 1 and params[:search_r] == 0) %>
-<%  search_by = "place" %>
-<% else %>
-<%  if (params[:search_p] == 0 and params[:search_r] == 1) %>
-<%    search_by = "route" %>
-<%  else %>
-<%    search_by = "both" %>
-<%  end %>
-<% end %>
-
-<% if search_by == "route" %>
+	<% count = 0 %>
 
 
-
-<h2>Listing routes</h2>
-
-<table>
-	<tr>
-		<th>Name:</th>
-		<th>Author:</th>
-		<th>Rank:</th>
-		<th>Places:</th>
-	</tr>
-
-	<% @search.each do |route| %>
-	<% count = count + 1 %>
-	<tr>
-		<td><%=h route.name %></td>
-		<td><%=h route.user.login %></td>
-		<td><%= ratings_for route, :static, :small => true, :dimension => :rank %></td>
-		<td><%= link_to 'Show', route %></td>
-	</tr>
+	<% if (params[:search_p] == 1 and params[:search_r] == 0) %>
+	<%  search_by = "place" %>
+	<% else %>
+	<%  if (params[:search_p] == 0 and params[:search_r] == 1) %>
+	<%    search_by = "route" %>
+	<%  else %>
+	<%    search_by = "both" %>
+	<%  end %>
 	<% end %>
-	<tr>
-		<td>
-			<p class="total">
-				Total = <%= count %>
-			</p></td>
-		</tr>
-	</table>
 
-	<% else %> 
-	<% if search_by == "place" %>
+	<% if search_by == "route" %>
 
-	<h2>Listing places</h2>
+
+
+	<h2>Listing routes</h2>
 
 	<table>
 		<tr>
 			<th>Name:</th>
 			<th>Author:</th>
-			<th>Direction:</th>
-			<th>Country:</th>
 			<th>Rank:</th>
-			<th>Photo:</th>
+			<th>Places:</th>
 		</tr>
 
-		<% @search.each do |place| %>
+		<% @search.each do |route| %>
 		<% count = count + 1 %>
 		<tr>
-			<td><%=h place.name %></td>
-			<td><%=h place.user.login %></td>
-			<td><%=h place.direction %></td>
-			<td><%=h place.country.name %></td>
-			<td><%= ratings_for place, :static, :small => true, :dimension => :rank %></td>
-			<td class="image_url"><%= image_tag place.image_url, :class => 'list-image' %></td>
-			<td><%= link_to 'Show', place %></td>
+			<td><%=h route.name %></td>
+			<td><%=h route.user.login %></td>
+			<td><%= ratings_for route, :static, :small => true, :dimension => :rank %></td>
+			<td><%= link_to 'Show', route %></td>
 		</tr>
 		<% end %>
 		<tr>
@@ -85,25 +45,31 @@
 			</tr>
 		</table>
 
-		<% else %>
+		<% else %> 
+		<% if search_by == "place" %>
 
-		<h2>Listing routes & places</h2>
+		<h2>Listing places</h2>
 
 		<table>
 			<tr>
 				<th>Name:</th>
 				<th>Author:</th>
+				<th>Direction:</th>
+				<th>Country:</th>
 				<th>Rank:</th>
+				<th>Photo:</th>
 			</tr>
 
-			<% @search.each do |thing| %>
+			<% @search.each do |place| %>
 			<% count = count + 1 %>
 			<tr>
-				<td><%=h thing.name %></td>
-				<td><%=h thing.user.login %></td>
-
-				<td><%= ratings_for thing, :static, :small => true, :dimension => :rank %></td>
-				<td><%= link_to 'Show', thing %></td>
+				<td><%=h place.name %></td>
+				<td><%=h place.user.login %></td>
+				<td><%=h place.direction %></td>
+				<td><%=h place.country.name %></td>
+				<td><%= ratings_for place, :static, :small => true, :dimension => :rank %></td>
+				<td class="image_url"><%= image_tag place.image_url, :class => 'list-image' %></td>
+				<td><%= link_to 'Show', place %></td>
 			</tr>
 			<% end %>
 			<tr>
@@ -113,5 +79,35 @@
 					</p></td>
 				</tr>
 			</table>
-			<% end %>
-			<% end %>
+
+			<% else %>
+
+			<h2>Listing routes & places</h2>
+
+			<table>
+				<tr>
+					<th>Name:</th>
+					<th>Author:</th>
+					<th>Rank:</th>
+				</tr>
+
+				<% @search.each do |thing| %>
+				<% count = count + 1 %>
+				<tr>
+					<td><%=h thing.name %></td>
+					<td><%=h thing.user.login %></td>
+
+					<td><%= ratings_for thing, :static, :small => true, :dimension => :rank %></td>
+					<td><%= link_to 'Show', thing %></td>
+				</tr>
+				<% end %>
+				<tr>
+					<td>
+						<p class="total">
+							Total = <%= count %>
+						</p></td>
+					</tr>
+				</table>
+				<% end %>
+				<% end %>
+			</div>

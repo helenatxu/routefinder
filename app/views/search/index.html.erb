@@ -1,10 +1,10 @@
-<h2>What Are You Looking For?</h2>
+<div id="content2">
+	<%= render(:partial => "/application/index_search") %>
 
-<%= render(:partial => "/application/index_search") %>
+	<%= render(:partial => "list") %>
 
-<%= render(:partial => "list") %>
+	<%= link_to 'Create new route', new_route_path %> |
+	<%= link_to 'Create new place', new_place_path %> |
+	<%= link_to 'Back', root_path %>
 
-<%= link_to 'New route', new_route_path %> |
-<%= link_to 'New place', new_place_path %> |
-<%= link_to 'Back', root_path %>
-
+</div>
