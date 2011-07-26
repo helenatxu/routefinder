@@ -33,7 +33,7 @@ ul, ol {
 	background-image:url(/images/header_pixel3.png);
 	background-repeat: repeat-x;
 	height: 99px;
-	width: 100%;
+	width: 102%;
 	
 }
 
@@ -44,7 +44,8 @@ ul, ol {
 	text-decoration:none;
 	color: #3D2709;
 	font-size: 350%;
-	padding: 20px 0 20px 20px;
+	padding: 20px 0 20px 0;
+	margin-right: 0px;
 	text-shadow: 0 0 0.3em white, 0 0 0.4em white, 0 0 0.6em green;
 }
 
@@ -84,6 +85,7 @@ ul, ol {
 #footer {
 	clear:both;
 	margin-top: 10px;
+	margin-right:-10px;
 	padding: 10px;
 	color: #E5FFDE;
 	text-align:center;
