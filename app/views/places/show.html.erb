@@ -1,3 +1,4 @@
+
 <% content_for :head do %>
 <script type="text/javascript">
 var placeName = "<%= @place.name %>";
@@ -11,97 +12,100 @@ var latlng = new google.maps.LatLng(0.0, 0.0);
 <% end -%>
 <%= render(:partial => "search_small") %>
 
-<h1>
-	<%=h @place.name %>
-</h1>
+<div id="content_show">
 
-<div id="map_canvas">
-
-</div>
-
-<div id="summary">
-	<h2>Place Summary</h2>
-	<p>
-		<b>Name:</b>
+	<h1>
 		<%=h @place.name %>
-	</p>
-	<p>
-		<b>Created at:</b>
-		<%=h @place.created_at %>
-	</p>
-	<p>
-		<b>Last update:</b>
-		<%=h @place.updated_at %>
-	</p>
-	<p>
-		<b>Author:</b>
-		<%=h @place.user.login %>
-	</p>
-	<p>
-		<b>Coordinates lat:</b>
-		<%=h @place.coordinates_lat %>
-	</p>
-	<p>
-		<b>Coordinates long:</b>
-		<%=h @place.coordinates_long %>
-	</p>
-	<p>
-		<b>Direction:</b>
-		<%=h @place.direction %>
-	</p>
-	<p>
-		<b>Country:</b>
-		<%=h @place.country.name %>
-	</p>
-	<p>
-		<b>Description:</b>
-		<%=h @place.description %>
-	</p>
-	<p>
-		<b>Image: </b>
-		<%= image_tag @place.image_url, :class => 'list-image' %>
-	</p>
-	<p>
-		<b>Rate Average:</b>
-	</p>
-	<!--		#To display average with static stars: -->
-	<%= ratings_for @place, :static, :dimension => :rank %>
+	</h1>
 
-	<p class="edit_links">
-		<% if current_user %>
-		<% if current_user.id == @place.user_id %>
-		<%= link_to 'Edit place', edit_place_path(@place) %>
+	<div id="map_canvas">
+
+	</div>
+
+	<div id="summary">
+		<h2>Place Summary</h2>
+		<p>
+			<b>Name:</b>
+			<%=h @place.name %>
+		</p>
+		<p>
+			<b>Created at:</b>
+			<%=h @place.created_at %>
+		</p>
+		<p>
+			<b>Last update:</b>
+			<%=h @place.updated_at %>
+		</p>
+		<p>
+			<b>Author:</b>
+			<%=h @place.user.login %>
+		</p>
+		<p>
+			<b>Coordinates lat:</b>
+			<%=h @place.coordinates_lat %>
+		</p>
+		<p>
+			<b>Coordinates long:</b>
+			<%=h @place.coordinates_long %>
+		</p>
+		<p>
+			<b>Direction:</b>
+			<%=h @place.direction %>
+		</p>
+		<p>
+			<b>Country:</b>
+			<%=h @place.country.name %>
+		</p>
+		<p>
+			<b>Description:</b>
+			<%=h @place.description %>
+		</p>
+		<p>
+			<b>Image: </b>
+			<%= image_tag @place.image_url, :class => 'list-image' %>
+		</p>
+		<p>
+			<b>Rate Average:</b>
+		</p>
+		<!--		#To display average with static stars: -->
+		<%= ratings_for @place, :static, :dimension => :rank %>
+
+		<p class="edit_links">
+			<% if current_user %>
+			<% if current_user.id == @place.user_id %>
+			<%= link_to 'Edit place', edit_place_path(@place) %>
+			<% end %>
+			<% end %>
+		</p>
+	</div>
+
+	<% if current_user %>
+	<div class="ratings">
+		<h3>
+			Your rating:
+		</h3>
+		<!--	# To display the rating for the current user (current_user): -->
+		<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
+	</div>
+
+	<div class="favorite ratings">
+		<h3>
+			Add to my favorites: 
+		</h3>
+		<%= render(:partial => "/favoriteplaces/new", :object => @place) %>
+	</div>	
+
+	<div class="comments">
 		<% end %>
-		<% end %>
-	</p>
-</div>
-
-<% if current_user %>
-<div class="ratings">
-	<h3>
-		Your rating:
-	</h3>
-	<!--	# To display the rating for the current user (current_user): -->
-	<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
-</div>
-
-<div class="favorite ratings">
-	<h3>
-		Add to my favorites: 
-	</h3>
-	<%= render(:partial => "/favoriteplaces/new", :object => @place) %>
-</div>	
-
-<div class="comments">
-	<% end %>
 
 
-	<%= render(:partial => "/placecomments/list", :object => @place) %> 
-	<%= render(:partial => "/placecomments/new", :object => @place) %>
+		<%= render(:partial => "/placecomments/list", :object => @place) %> 
+		<%= render(:partial => "/placecomments/new", :object => @place) %>
 
 
-	<p id="comeback_links">
-		<%= link_to 'New place', new_place_path %> |
-		<%= link_to 'Back', places_path %>
-	</p>
+		<p id="comeback_links">
+			<%= link_to 'Create new place', new_place_path %> |
+			<%= link_to 'Back', places_path %>
+		</p>
+	</div>
 </div>

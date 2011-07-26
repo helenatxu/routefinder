@@ -70,6 +70,11 @@ ul, ol {
 	padding: 30px;
 }
 
+#content_show {
+	margin: 0px;
+	padding: 10px 10px 30px 10px;
+}
+
 #wrapper {
 	min-height: 100%;
 	height: auto !important;
@@ -113,6 +118,10 @@ h2 {
 	color: #3B2910;
 	font:italic bold 25px/2em Georgia,serif;
 	margin: 50px auto 10px 30px;
+}
+
+#results h2 {
+	margin: 20px auto 10px 30px !important;
 }
 
 
@@ -189,7 +198,7 @@ table,th, td {
 
 #comeback_links {
 	clear: both;
-	margin: 5px auto 30px 300px;
+	margin: 5px auto 30px 0px;
 	float: left;
 }
 
@@ -271,7 +280,7 @@ color: green;
 
 
 #remember_me label{
-	margin: 5px auto auto auto;
+	margin: 0px auto auto auto;
 	float: right;
 	font-size:87%;
 }
@@ -280,7 +289,7 @@ color: green;
 	clear:both;
 	width: 20px;
 	float: right;
-	margin: 5px 40px auto auto;
+	margin: 4px 40px auto auto;
 }
 
 
@@ -291,7 +300,7 @@ color: green;
 
 .button_login {
 	clear:both;
-	margin: 6px 35px 0 0 !important;
+	margin: 5px 35px 0 0 !important;
 	float: right !important;
 	height: 20px !important;
 	width: 60px !important;
@@ -347,7 +356,8 @@ color: green;
 }
 
 .button {
-	font: normal 18px arial, sans-serif !important;
+	font-size: 100%;
+	font: normal 16px arial, sans-serif !important;
 }
 
 
@@ -462,6 +472,8 @@ color: green;
 	padding-right: 14px;
 }
 
+#checkbox input {
+}
 
 
 /***** Search form small ****/ 
