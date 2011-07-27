@@ -94,14 +94,14 @@
 				<% @search.each do |thing| %>
 				<% count = count + 1 %>
 				<tr>
-					<td><%=h thing.name %></td>
+					<td><%= link_to  thing.name, thing %></td>
 					<td><%=h thing.user.login %></td>
-
 					<td><%= ratings_for thing, :static, :small => true, :dimension => :rank %></td>
-					<td><%= link_to 'Show', thing %></td>
 				</tr>
 				<% end %>
 				<tr>
+					<td></td>
+					<td></td>	
 					<td>
 						<p class="total">
 							Total = <%= count %>
