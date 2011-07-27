@@ -18,9 +18,7 @@ var latlng = new google.maps.LatLng(0.0, 0.0);
 		<%=h @place.name %>
 	</h1>
 
-	<div id="map_canvas">
-
-	</div>
+	<div id="map_canvas"></div>
 
 	<div id="summary">
 		<h2>Place Summary</h2>
@@ -104,8 +102,9 @@ var latlng = new google.maps.LatLng(0.0, 0.0);
 
 
 		<p id="comeback_links">
-			<%= link_to 'Create new place', new_place_path %> |
-			<%= link_to 'Back', places_path %>
+		<%= link_to 'Create new place', new_place_path %> 
+		<%= link_to 'Create new route', new_route_path %> 
+		<%= link_to 'Back', root_path %>
 		</p>
 	</div>
 </div>

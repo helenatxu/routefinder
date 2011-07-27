@@ -511,7 +511,7 @@ color: green;
 	float:right;
 	background-image:url(/images/search_form5.png);
 	background-repeat:no-repeat;	
-	color: #B2A100;
+	color: #C6B302;
 	/*	border: dotted 3px; */
 }
 
@@ -525,10 +525,12 @@ color: green;
 }
 
 #checkbox label {
-	padding-right: 14px;
+	padding-left: 14px;
 }
 
-#checkbox input {
+.search_form #checkbox {
+	margin-top: 14px;
+	margin-left: -14px;
 }
 
 
@@ -540,20 +542,16 @@ color: green;
 	height: 127px;
 	background-image:url(/images/search_form_small1.png);
 	background-repeat:no-repeat;
-	color: #B2A100; 
+	color: #C6B302; 
+/*	B2A100 antiguo */
 }
 
-#title_tab_places_small{
+#title_tab_search_small{
 	margin: 8px 0 0 40px;
 	float:left;
 	color: #FFFFFF;
 }
 
-#title_tab_routes_small{
-	margin: 8px 0 0 40px;
-	float:left;
-	color: #FFFFFF;
-}
 
 .content-search_small{
 	margin-top: 60px;
@@ -562,21 +560,16 @@ color: green;
 }
 
 .content-search_small p {
-	padding: 8px;
+	padding: 10px 20px 10px 20px;
 }
 
-.content-search_small #country_id_route, .content-search_small #keywords_route {
-	font-size:85%;
+.content-search_small p label{
+	padding-left: 20px;
 }
 
 .search_button_small{
 	margin: -30px 20px 0 0;
 	float:right;
-}
-
-.example_small {
-	margin: 0em 0 0 7em;
-	font-size:75%;
 }
 
 

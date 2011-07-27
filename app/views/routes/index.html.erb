@@ -1,8 +1,13 @@
-<h2>What Are You Looking For?</h2>
-<%= render(:partial => "/application/search_route") %>
+<div id="content2">
+	<h2>What Are You Looking For?</h2>
+	<%= render(:partial => "/application/search_route") %>
 
-<%= render(:partial => "list") %>
+	<%= render(:partial => "list") %>
 
-<%= link_to 'New route', new_route_path %> |
-<%= link_to 'Back', root_path %>
+	<p id="comeback_links">
+	<%= link_to 'Create new route', new_route_path %> 
+	<%= link_to 'Create new place', new_place_path %> 
+	<%= link_to 'Back', root_path %>
+</p>
 
+</div>
