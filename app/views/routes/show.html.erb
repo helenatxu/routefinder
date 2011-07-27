@@ -1,32 +1,34 @@
 <% content_for :head do %>
-<script type="text/javascript">
-var displayRoute = false;
-<% if @route.places.length >= 2 %>
-var origin = new google.maps.LatLng(<%=@route.places[0].coordinates_lat%>, <%=@route.places[0].coordinates_long%>);
-var destination = new google.maps.LatLng(<%=@route.places[-1].coordinates_lat%>, <%=@route.places[-1].coordinates_long%>);
-displayRoute = true;
-var waypoints = null;
-<% end %>
-<% if @route.places.length >= 3 %>
-waypoints = [
-<% for i in @route.places[1..-3] do %>
-{
-	location: new google.maps.LatLng(<%=i.coordinates_lat%>, <%=i.coordinates_long%>),
-	stopover: true
-},
-<% end %>
-<% if @route.places[-2] %>
-{
-	location: new google.maps.LatLng(<%=@route.places[-2].coordinates_lat%>, <%=@route.places[-2].coordinates_long%>),
-	stopover: true
-}
-<% end %>
-];
-<% end %>
-</script>
-<script type="text/javascript" src="/javascripts/routes.show.js"></script>
-<% end -%>
-<%= render(:partial => "search_small") %>
+	<script type="text/javascript">
+	var displayRoute = false;
+	<% if @route.places.length >= 2 %>
+	var origin = new google.maps.LatLng(<%=@route.places[0].coordinates_lat%>, <%=@route.places[0].coordinates_long%>);
+	var destination = new google.maps.LatLng(<%=@route.places[-1].coordinates_lat%>, <%=@route.places[-1].coordinates_long%>);
+	displayRoute = true;
+	var waypoints = null;
+	<% end %>
+	<% if @route.places.length >= 3 %>
+	waypoints = [
+	<% for i in @route.places[1..-3] do %>
+	{
+		location: new google.maps.LatLng(<%=i.coordinates_lat%>, <%=i.coordinates_long%>),
+		stopover: true
+	},
+	<% end %>
+	<% if @route.places[-2] %>
+	{
+		location: new google.maps.LatLng(<%=@route.places[-2].coordinates_lat%>, <%=@route.places[-2].coordinates_long%>),
+		stopover: true
+	}
+	<% end %>
+	];
+	<% end %>
+	</script>
+	
+	<script type="text/javascript" src="/javascripts/routes.show.js"></script>
+	<% end -%>
+	
+	<%= render(:partial => "search_small") %>
 
 <div id="content_show">
 

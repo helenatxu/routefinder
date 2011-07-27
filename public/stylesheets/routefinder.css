@@ -137,7 +137,7 @@ h2 {
 	padding: 15px;
 }
 
-table {
+.results_table {
 /*	border-collapse:collapse; */
 	margin: 0px 40px;
 	padding: 20px !important;
@@ -166,8 +166,36 @@ td {
 	font-weight: bold;
 }
 
+.adp-directions {
+		margin: 0px 5px;
+		padding: 20px !important;
+		width: 220px;
+		font-size: 95%;
+		background-color: #F0F0F0;
+		border: solid 1px #CFCFCF;
+
+		-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
+		box-shadow: 3px 3px 5px #888888;
+}
+
+.adp-placemark {
+		margin: 0px 0px;
+		padding: 0px !important;
+		width: 210px;
+		font-size: 90%;
+		background-color: #F0F0F0;
+		border: solid 1px #CFCFCF;
+
+		-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
+		box-shadow: 3px 3px 5px #888888;
+}
+
+.adp-directions td {
+	margin: 0;
+}
+
 #summary {
-	width: 400px;
+	width: 350px;
 	float: right;
 	margin: 0 10px 0 0;
 	border:solid 2px #9DEE96;
@@ -574,7 +602,7 @@ color: green;
 
 
 #map_canvas {
-	width: 560px;
+	width: 540px;
 	height: 480px;
 	float: left;
 }
