@@ -42,7 +42,7 @@ namespace :db do
           route.created_at = 2.years.ago..Time.now
           route.updated_at = 1.years.ago..Time.now
           Routecomment.populate 1..5 do |routecomment|
-            routecomment.route_id = route.id,    
+            routecomment.route_id = route.id  
             routecomment.user_id = [1, 100]
             routecomment.comment = Populator.sentences(2..10)
             routecomment.date = 2.years.ago..Time.now
@@ -52,7 +52,7 @@ namespace :db do
           count = 0
           Routepoint.populate 1..5 do |routepoint|
             count = count + 1
-            routepoint.route_id = route.id,    
+            routepoint.route_id = route.id
             routepoint.place_id = [1, 20]
             routepoint.order = count
             routepoint.created_at = 2.years.ago..Time.now
@@ -65,11 +65,11 @@ namespace :db do
         place.direction = Faker::Address.street_address
         place.country_id = [1, 100]
         place.description = Populator.sentences(2..10)
-        place.image_url => '/images/autocaravana2.jpg'
+        place.image_url = '/images/autocaravana2.jpg'
         place.created_at = 2.years.ago..Time.now
         place.updated_at = 1.years.ago..Time.now
         Placecomment.populate 1..5 do |placecomment|
-          placecomment.route_id = route.id,    
+          placecomment.route_id = route.id  
           placecomment.user_id = [1, 100]
           placecomment.comment = Populator.sentences(2..10)
           placecomment.date = 2.years.ago..Time.now
