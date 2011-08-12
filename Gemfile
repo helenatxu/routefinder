@@ -10,8 +10,8 @@ gem "sqlite3-ruby", :require => "sqlite3"
 
 gem 'heroku'
 
-
-
+gem 'populator' 
+gem 'faker'
 
 group :development do
   # bundler requires these gems in development

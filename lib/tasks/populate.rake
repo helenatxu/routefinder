@@ -1,6 +1,7 @@
 namespace :db do
   desc "Erase and fill database"
   task :populate => :environment do
+    require 'open-uri'
     require 'populator'
     require 'faker'
 
@@ -15,14 +16,13 @@ namespace :db do
     end
 
 
-    User.populate 100 do |user|
-      user.login    = Faker::Internet.user_name
-      user.email   = Faker::Internet.email
+    User.populate 4 do |user|
+      user.login = Faker::Internet.user_name
+      user.email = Faker::Internet.email
       user.crypted_password   = Faker::Lorem.words
-      user.profile   = Faker::Lorem.profile      
-      user.photo_url  = '/images/autocaravana1.jpg'
+      user.profile = Populator.sentences(1..4)
+      user.photo_url = '/images/autocaravana1.jpg'
       user.is_admin = true
-      user.zip     = Faker::Address.zip_code
       user.password_salt = 'uy'
       user.persistence_token = 'iofrfioq'
       user.single_access_token = 'qfrewfe'
@@ -32,10 +32,9 @@ namespace :db do
       user.created_at = 2.years.ago..Time.now
       user.updated_at = 1.years.ago..Time.now
 
-      Place.populate 20 do |place|
+      Place.populate 4 do |place|
         place.name = Populator.words(1..3).titleize
-        Route.populate 10..30 do |route|
-          route.place_id = place.id
+        Route.populate 1..3 do |route|
           route.name = Populator.words(1..5).titleize
           route.description = Populator.sentences(2..10)
           route.user_id = user.id
@@ -43,7 +42,7 @@ namespace :db do
           route.updated_at = 1.years.ago..Time.now
           Routecomment.populate 1..5 do |routecomment|
             routecomment.route_id = route.id  
-            routecomment.user_id = [1, 100]
+            routecomment.user_id = [1, 8]
             routecomment.comment = Populator.sentences(2..10)
             routecomment.date = 2.years.ago..Time.now
             routecomment.created_at = 2.years.ago..Time.now
@@ -69,8 +68,8 @@ namespace :db do
         place.created_at = 2.years.ago..Time.now
         place.updated_at = 1.years.ago..Time.now
         Placecomment.populate 1..5 do |placecomment|
-          placecomment.route_id = route.id  
-          placecomment.user_id = [1, 100]
+          placecomment.place_id = place.id
+          placecomment.user_id = [1, 8]
           placecomment.comment = Populator.sentences(2..10)
           placecomment.date = 2.years.ago..Time.now
           placecomment.created_at = 2.years.ago..Time.now
