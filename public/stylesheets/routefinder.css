@@ -34,7 +34,7 @@ ul, ol {
 	background-repeat: repeat-x;
 	height: 99px;
 	width: 102%;
-	
+
 }
 
 #aheader {
@@ -98,7 +98,7 @@ ul, ol {
 	background-repeat: repeat-x;
 	font: italic 80% Georgia,serif;		
 	width: 100%;
-	
+
 	aposition: absolute;
 	abottom: 0;
 }
@@ -139,21 +139,21 @@ h2 {
 
 .results_table {
 /*	border-collapse:collapse; */
-	margin: 0px 40px;
-	padding: 20px !important;
+margin: 0px 40px;
+padding: 20px !important;
 /*	border: 5px solid #CACACA; */
-	background-color: #F0F0F0;
-	border: solid 1px #CFCFCF;
-	
-	-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
-	box-shadow: 3px 3px 5px #888888;
+background-color: #F0F0F0;
+border: solid 1px #CFCFCF;
+
+-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
+box-shadow: 3px 3px 5px #888888;
 }
 
 
 th, td {
 /*	border: 1px solid green;    old */ 
-	padding: 0.5em;
-	text-align:center;
+padding: 0.5em;
+text-align:center;
 }
 
 td {
@@ -167,27 +167,27 @@ td {
 }
 
 .adp-directions {
-		margin: 0px 5px;
-		padding: 20px !important;
-		width: 220px;
-		font-size: 95%;
-		background-color: #F0F0F0;
-		border: solid 1px #CFCFCF;
+	margin: 0px 5px;
+	padding: 20px !important;
+	width: 220px;
+	font-size: 95%;
+	background-color: #F0F0F0;
+	border: solid 1px #CFCFCF;
 
-		-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
-		box-shadow: 3px 3px 5px #888888;
+	-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
+	box-shadow: 3px 3px 5px #888888;
 }
 
 .adp-placemark {
-		margin: 0px 0px;
-		padding: 0px !important;
-		width: 210px;
-		font-size: 90%;
-		background-color: #F0F0F0;
-		border: solid 1px #CFCFCF;
+	margin: 0px 0px;
+	padding: 0px !important;
+	width: 210px;
+	font-size: 90%;
+	background-color: #F0F0F0;
+	border: solid 1px #CFCFCF;
 
-		-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
-		box-shadow: 3px 3px 5px #888888;
+	-webkit-box-shadow: 3px 3px 5px #888888; /* Safari and Chrome */
+	box-shadow: 3px 3px 5px #888888;
 }
 
 .adp-directions td {
@@ -257,7 +257,7 @@ td {
 }
 
 #content2 #comeback_links a:hover {
- color: #549F03; 
+	color: #549F03; 
 }
 
 #content_show #comeback_links {
@@ -282,7 +282,7 @@ td {
 }
 
 #content_show #comeback_links a:hover {
- color: #549F03; 
+	color: #549F03; 
 }
 
 
@@ -302,38 +302,38 @@ td {
 
 /* The error box */
 .fieldWithErrors {
-padding: 2px;
-background-color: green;
-display: table;
-margin: 10px auto auto 60px;
+	padding: 2px;
+	background-color: green;
+	display: table;
+	margin: 10px auto auto 60px;
 }
 #errorExplanation {
-width: 400px;
-border: 2px solid green;
-padding: 7px;
-padding-bottom: 12px;
-margin: 10px auto 20px 60px;
-background-color: #f0f0f0 ;
+	width: 400px;
+	border: 2px solid green;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin: 10px auto 20px 60px;
+	background-color: #f0f0f0 ;
 }
 #errorExplanation h2 {
-text-align: left;
-font-weight: bold;
-padding: 5px 5px 5px 15px;
-font-size: 12px;
-margin: -7px;
-background-color: green ;
-color: #fff ;
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: green ;
+	color: #fff ;
 }
 #errorExplanation p {
-color: #333 ;
-margin-bottom: 0;
-padding: 5px;
+	color: #333 ;
+	margin-bottom: 0;
+	padding: 5px;
 }
 #errorExplanation ul li {
-font-size: 82%;
-list-style: square;
-margin: auto auto 8px 30px;
-color: green;
+	font-size: 82%;
+	list-style: square;
+	margin: auto auto 8px 30px;
+	color: green;
 }
 
 
@@ -441,7 +441,7 @@ color: green;
 
 .button {
 	font-size: 100%;
-	font: normal 16px arial, sans-serif !important;
+	font: normal 14px arial, sans-serif !important;
 }
 
 
@@ -571,7 +571,7 @@ color: green;
 	background-image:url(/images/search_form_small1.png);
 	background-repeat:no-repeat;
 	color: #C6B302; 
-/*	B2A100 antiguo */
+	/*	B2A100 antiguo */
 }
 
 #title_tab_search_small{
@@ -588,11 +588,11 @@ color: green;
 }
 
 .content-search_small p {
-	padding: 10px 20px 10px 20px;
+	padding: 8px 10px;
 }
 
 .content-search_small p label{
-	padding-left: 20px;
+	padding-left: 10px;
 }
 
 .search_button_small{
@@ -609,9 +609,9 @@ color: green;
 
 fieldset #map_canvas {
 /*	display: none; */
-	width: 300px; 
-	height: 300px;
-	margin: auto auto 10px 10px;
+width: 300px; 
+height: 300px;
+margin: auto auto 10px 10px;
 }
 
 #directionsPanel {
@@ -622,7 +622,7 @@ fieldset #map_canvas {
 }
 
 #showlocation {
-	
+
 }
 
 .fieldset {
