@@ -11,6 +11,6 @@ gem 'sqlite3'
 
 gem "ajaxful_rating", '2.2.8.2'
 gem "authlogic", '>3.0.0'
-gem "sqlite3-ruby", :lib => "sqlite3"
+gem "sqlite3-ruby", 'sqlite3'
 
 gem 'heroku'
