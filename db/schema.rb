@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100827021331) do
+ActiveRecord::Schema.define(:version => 20100826130658) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(:version => 20100827021331) do
     t.decimal  "rating_average_rank", :precision => 6, :scale => 2, :default => 0.0
   end
 
+  create_table "places_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "place_id"
+  end
+
+  add_index "places_users", ["user_id", "place_id"], :name => "index_places_users_on_user_id_and_place_id", :unique => true
+  add_index "places_users", ["user_id"], :name => "index_places_users_on_user_id"
+
   create_table "rates", :force => true do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -86,12 +94,21 @@ ActiveRecord::Schema.define(:version => 20100827021331) do
 
   create_table "routes", :force => true do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.text     "description"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "rating_average_rank", :default => 0.0
+    t.decimal  "rating_average_rank", :precision => 6, :scale => 2, :default => 0.0
   end
+
+  create_table "routes_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "route_id"
+  end
+
+  add_index "routes_users", ["user_id", "route_id"], :name => "index_routes_users_on_user_id_and_route_id", :unique => true
+  add_index "routes_users", ["user_id"], :name => "index_routes_users_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

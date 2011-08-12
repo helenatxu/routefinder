@@ -1,5 +1,6 @@
 source :gemcutter
 
+gem 'rdoc', '2.4.3'
 gem 'rails', '2.3.12'
 
 
