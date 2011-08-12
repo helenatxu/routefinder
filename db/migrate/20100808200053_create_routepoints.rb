@@ -13,3 +13,4 @@ class CreateRoutepoints < ActiveRecord::Migration
     drop_table :routepoints
   end
 end
+
