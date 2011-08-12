@@ -9,7 +9,7 @@ gem 'sqlite3'
 
 
 
-gem "ajaxful_rating", :version => '2.2.8.2'
+gem "ajaxful_rating"
 gem "authlogic", :version => '>3.0.0'
 gem "sqlite3-ruby", :lib => "sqlite3"
 
