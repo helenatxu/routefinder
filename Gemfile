@@ -1,18 +1,22 @@
-bundle_path "vendor/bundler_gems"
+source :gemcutter
 
 gem 'rails', '2.3.12'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-#gem 'sqlite3'
-
-
 
 gem "ajaxful_rating", '2.2.8.2'
-gem "authlogic", '>3.0.0'
-gem "sqlite3-ruby", 'sqlite3'
+gem "authlogic", '<3.0.0'
+gem "sqlite3-ruby", :require => "sqlite3"
 
 gem 'heroku'
 
 
+group :development do
+  # bundler requires these gems in development
+  # gem "rails-footnotes"
+end
+
+group :test do
+  # bundler requires these gems while running tests
+  # gem "rspec"
+  # gem "faker"
+end
