@@ -242,6 +242,11 @@ td {
 	float: left;	
 }
 
+#profile #comeback_links {
+	float: left;
+    margin: 50px 800px 20px 20px;
+}
+
 #content2 #comeback_links a {
 	padding: 5px 10px;
 	text-decoration: none !important;
