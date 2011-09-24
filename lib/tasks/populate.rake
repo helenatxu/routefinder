@@ -55,7 +55,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Piazza di San Marco, Venezzia'
-    place.country_id = 3
+    place.country_id = 4
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana2.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -76,7 +76,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Fontana di Trevi, Roma'
-    place.country_id = 3
+    place.country_id = 4
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana1.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -96,7 +96,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'ul. Czerwona 1, Lodz'
-    place.country_id = 4
+    place.country_id = 5
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana2.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -117,7 +117,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Piotrkowska 100, Lodz'
-    place.country_id = 4
+    place.country_id = 5
     place.description = Populator.sentences(1..3)
     place.image_url = '/images/autocaravana1.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -138,7 +138,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'C/Doctor Manuel Candela, 10, Valencia'
-    place.country_id = 5
+    place.country_id = 6
     place.description = Populator.sentences(1..3)
     place.image_url = '/images/autocaravana2.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -160,7 +160,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Playa de las Arenas, Valencia'
-    place.country_id = 5
+    place.country_id = 6
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana2.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -181,7 +181,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Univeridad Politécnica de Valencia'
-    place.country_id = 5
+    place.country_id = 6
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana1.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -202,7 +202,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Centraal Station, Amsterdam'
-    place.country_id = 6
+    place.country_id = 7
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana2.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -223,7 +223,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Musee du Louvre, Paris'
-    place.country_id = 2
+    place.country_id = 3
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana1.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -244,7 +244,7 @@ namespace :db do
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Fith Avenue, New York'
-    place.country_id = 8
+    place.country_id = 2
     place.description = Populator.sentences(1..4)
     place.image_url = '/images/autocaravana2.jpg'
     place.created_at = 2.years.ago..Time.now
@@ -261,7 +261,7 @@ namespace :db do
     
     Place.populate 1 do |place|
     place.name = 'Nice Village in Virginia'
-    place.user_id = 3
+    place.user_id = 2
     place.coordinates_lat = ''
     place.coordinates_long = ''
     place.direction = 'Charlottesville, VA'

@@ -1,12 +1,12 @@
  |
-GB|United Kingdom
+US|United States
 FR|France
 IT|Italy
 PL|Poland
 ES|Spain
 NL|Netherlands
 BE|Belgium
-US|United States
+GB|United Kingdom
 AF|Afghanistan
 AL|Albania
 DZ|Algeria
