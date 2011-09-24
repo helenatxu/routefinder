@@ -5,6 +5,7 @@
 <p>No favorite places.</p>
 
 <% else%>
+<% if @favoriteplaces %>
 
 <table>
 	<tr>
@@ -18,5 +19,7 @@
 	</tr>
 	<% end %>
 </table>
+
+<% end %>
 
 <% end %>

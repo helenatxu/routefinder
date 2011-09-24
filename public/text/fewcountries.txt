@@ -1,10 +1,11 @@
-BE|Belgium
+ |
+GB|United Kingdom
 FR|France
 IT|Italy
 PL|Poland
 ES|Spain
 NL|Netherlands
-GB|United Kingdom
+BE|Belgium
 US|United States
 AF|Afghanistan
 AL|Albania
