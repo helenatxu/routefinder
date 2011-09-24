@@ -3,12 +3,16 @@ class PlacesController < ApplicationController
   # GET /places
   def index
     @countries = Country.find(:all)
-    if params[:country_id] ==1
+    if params[:country_id] == '1'
       @places = Place.find(:all)
     else
       if params[:keywords_place] and not params[:keywords_place].empty?
         if params[:country_id_place] and not params[:country_id_place].empty?
+          if params[:country_id] == '1'
+            @places = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?)', "%#{params[:keywords_place]}%", "%#{params[:keywords_place]}%"])
+          else
           @places = Place.find(:all, :conditions => ['(name LIKE ? or description LIKE ?) and country_id = ?', "%#{params[:keywords_place]}%", "%#{params[:keywords_place]}%", params[:country_id_place]])
+       end
         else
           @places = Place.find(:all, :conditions => ['name LIKE ? or description LIKE ?', "%#{params[:keywords_place]}%", "%#{params[:keywords_place]}%"])
         end

@@ -18,7 +18,7 @@ class FavoriteroutesController < ApplicationController
     @favoriteroute = Favoriteroute.new(params[:favoriteroute])
     @favoriteroute.user = @current_user
       if @favoriteroute.save
-        redirect_to route_path(@favoriteroute[:route_id]), :notice => 'Route aded to your favorites.'
+        redirect_to route_path(@favoriteroute[:route_id]), :notice => 'Route added to your favorites.'
       else
         render :action => "new" 
       end
@@ -30,6 +30,6 @@ class FavoriteroutesController < ApplicationController
   def destroy
     @favoriteroute = Favoriteroute.find(params[:id])
     @favoriteroute.destroy
-    redirect_to account_url, :notice => 'Your favorite route was deleted.'
+    redirect_to account_url, :notice => 'The route was deleted from your favorites.'
   end
 end

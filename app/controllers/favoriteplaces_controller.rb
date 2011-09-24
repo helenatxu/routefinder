@@ -18,7 +18,7 @@ class FavoriteplacesController < ApplicationController
     @favoriteplace = Favoriteplace.new(params[:favoriteplace])
     @favoriteplace.user = @current_user
       if @favoriteplace.save
-        redirect_to place_path(@favoriteplace[:place_id]), :notice => 'Place aded to your favorites.'
+        redirect_to place_path(@favoriteplace[:place_id]), :notice => 'Place added to your favorites.'
       else
         render :action => "new" 
     end
@@ -30,6 +30,6 @@ class FavoriteplacesController < ApplicationController
   def destroy
     @favoriteplace = Favoriteplace.find(params[:id])
     @favoriteplace.destroy
-    redirect_to account_url, :notice => 'Your favorite place was deleted.'
+    redirect_to account_url, :notice => 'The place was deleted from your favorites.'
   end
 end
