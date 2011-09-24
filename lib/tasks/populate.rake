@@ -5,7 +5,7 @@ namespace :db do
     require 'populator'
     require 'faker'
 
-    [Country, User, Place, Route, Routecomment, Routepoint, Placecomment, Favoriteroute, Favoriteplace].each(&:delete_all)
+    [Country, User, Place, Route, Routecomment, Routepoint, Placecomment, Favoriteroute, Favoriteplace, Rate].each(&:delete_all)
 
     ActiveRecord::Base.connection.select_value('delete from sqlite_sequence where name="countries"')
     ActiveRecord::Base.connection.select_value('delete from sqlite_sequence where name="placecomments"')
@@ -30,7 +30,7 @@ namespace :db do
     #    Country.populate 100 do |country|
     #      country.name = Faker::Address.country
     #   end
-    
+
     User.populate 1 do |user|
       user.login = 'helenatxu'
       user.email = 'yo@yo.com'
@@ -50,237 +50,237 @@ namespace :db do
 
 
     Place.populate 1 do |place|
-    place.name = 'Piazza di San Marco, Venezia'
-    place.user_id = 1
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Piazza di San Marco, Venezzia'
-    place.country_id = 4
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana2.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..3 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(1..2)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'Piazza di San Marco, Venezia'
+      place.user_id = 1
+      place.coordinates_lat = '45.4340217'
+      place.coordinates_long = '12.3372918'
+      place.direction = 'Piazza di San Marco, Venezzia'
+      place.country_id = 4
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana2.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..3 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(1..2)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'La Fontana, Roma'
-    place.user_id = 2
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Fontana di Trevi, Roma'
-    place.country_id = 4
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana1.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..3 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 3]
-      placecomment.comment = Populator.sentences(1..2)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'La Fontana, Roma'
+      place.user_id = 2
+      place.coordinates_lat = '41.90051769999999'
+      place.coordinates_long = '12.482560400000011'
+      place.direction = 'Fontana di Trevi, Roma'
+      place.country_id = 4
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana1.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..3 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 3]
+        placecomment.comment = Populator.sentences(1..2)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
     Place.populate 1 do |place|
-    place.name = 'IX Dorm in Lodz'
-    place.user_id = 3
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'ul. Czerwona 1, Lodz'
-    place.country_id = 5
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana2.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..2 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 2]
-      placecomment.comment = Populator.sentences(1..3)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'IX Dorm in Lodz'
+      place.user_id = 3
+      place.coordinates_lat = '51.7462279'
+      place.coordinates_long = '19.460660299999972'
+      place.direction = 'ul. Czerwona 1, Lodz'
+      place.country_id = 5
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana2.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..2 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 2]
+        placecomment.comment = Populator.sentences(1..3)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'Piotrkowska, Lodz'
-    place.user_id = 3
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Piotrkowska 100, Lodz'
-    place.country_id = 5
-    place.description = Populator.sentences(1..3)
-    place.image_url = '/images/autocaravana1.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..2 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(0..4)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'Piotrkowska, Lodz'
+      place.user_id = 3
+      place.coordinates_lat = '51.7592289'
+      place.coordinates_long = '19.45864830000005'
+      place.direction = 'Piotrkowska 100, Lodz'
+      place.country_id = 5
+      place.description = Populator.sentences(1..3)
+      place.image_url = '/images/autocaravana1.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..2 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(0..4)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'Nice district in Valencia'
-    place.user_id = 4
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'C/Doctor Manuel Candela, 10, Valencia'
-    place.country_id = 6
-    place.description = Populator.sentences(1..3)
-    place.image_url = '/images/autocaravana2.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..5 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(1..2)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'Nice district in Valencia'
+      place.user_id = 4
+      place.coordinates_lat = '51.7592289'
+      place.coordinates_long = '19.45864830000005'
+      place.direction = 'C/Doctor Manuel Candela, 10, Valencia'
+      place.country_id = 6
+      place.description = Populator.sentences(1..3)
+      place.image_url = '/images/autocaravana2.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..5 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(1..2)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
-    
+
+
     Place.populate 1 do |place|
-    place.name = 'The Beach in Valencia'
-    place.user_id = 4
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Playa de las Arenas, Valencia'
-    place.country_id = 6
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana2.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..3 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 3]
-      placecomment.comment = Populator.sentences(0..3)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'The Beach in Valencia'
+      place.user_id = 4
+      place.coordinates_lat = '39.474673'
+      place.coordinates_long = '-0.3231379999999717'
+      place.direction = 'Playa de la Malvarrosa, Valencia, Valencia'
+      place.country_id = 6
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana2.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..3 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 3]
+        placecomment.comment = Populator.sentences(0..3)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'Universidad Politécnica de Valencia'
-    place.user_id = 4
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Univeridad Politécnica de Valencia'
-    place.country_id = 6
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana1.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..5 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(0..3)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'Universidad Politécnica de Valencia'
+      place.user_id = 4
+      place.coordinates_lat = '39.4832917'
+      place.coordinates_long = '-0.34739839999997457'
+      place.direction = 'Univeridad Politécnica de Valencia, Camino de Vera s/n'
+      place.country_id = 6
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana1.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..5 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(0..3)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'The train station in Amsterdam'
-    place.user_id = 1
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Centraal Station, Amsterdam'
-    place.country_id = 7
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana2.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..5 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(1..3)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'The train station in Amsterdam'
+      place.user_id = 1
+      place.coordinates_lat = '52.378153'
+      place.coordinates_long = '4.899363999999991'
+      place.direction = 'Centraal Station, Amsterdam'
+      place.country_id = 7
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana2.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..5 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(1..3)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'The Louvre Museum'
-    place.user_id = 2
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Musee du Louvre, Paris'
-    place.country_id = 3
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana1.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..5 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(0..4)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'The Louvre Museum'
+      place.user_id = 2
+      place.coordinates_lat = '48.841808'
+      place.coordinates_long = '2.3577410000000327'
+      place.direction = 'Musee du Louvre, Paris'
+      place.country_id = 3
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana1.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..5 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(0..4)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = '5th Avenue in New York'
-    place.user_id = 3
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Fith Avenue, New York'
-    place.country_id = 2
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana2.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..5 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(1..2)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = '5th Avenue in New York'
+      place.user_id = 3
+      place.coordinates_lat = '40.817057'
+      place.coordinates_long = '-73.93446240000003'
+      place.direction = 'Fith Avenue, New York'
+      place.country_id = 2
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana2.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..5 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(1..2)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
+
     Place.populate 1 do |place|
-    place.name = 'Nice Village in Virginia'
-    place.user_id = 2
-    place.coordinates_lat = ''
-    place.coordinates_long = ''
-    place.direction = 'Charlottesville, VA'
-    place.country_id = 8
-    place.description = Populator.sentences(1..4)
-    place.image_url = '/images/autocaravana1.jpg'
-    place.created_at = 2.years.ago..Time.now
-    place.updated_at = 1.years.ago..Time.now
-    Placecomment.populate 1..5 do |placecomment|
-      placecomment.place_id = place.id
-      placecomment.user_id = [1, 4]
-      placecomment.comment = Populator.sentences(1..4)
-      placecomment.date = 2.years.ago..Time.now
-      placecomment.created_at = 2.years.ago..Time.now
-      placecomment.updated_at = 1.years.ago..Time.now
+      place.name = 'Nice Village in Virginia'
+      place.user_id = 2
+      place.coordinates_lat = '38.0293059'
+      place.coordinates_long = '-78.47667810000002'
+      place.direction = 'Charlottesville, VA'
+      place.country_id = 8
+      place.description = Populator.sentences(1..4)
+      place.image_url = '/images/autocaravana1.jpg'
+      place.created_at = 2.years.ago..Time.now
+      place.updated_at = 1.years.ago..Time.now
+      Placecomment.populate 1..5 do |placecomment|
+        placecomment.place_id = place.id
+        placecomment.user_id = [1, 4]
+        placecomment.comment = Populator.sentences(1..4)
+        placecomment.date = 2.years.ago..Time.now
+        placecomment.created_at = 2.years.ago..Time.now
+        placecomment.updated_at = 1.years.ago..Time.now
+      end
     end
-  end
-    
-    
+
+
     User.populate 4 do |user|
       user.login = Faker::Internet.user_name
       user.email = Faker::Internet.email
@@ -296,12 +296,12 @@ namespace :db do
       user.failed_login_count = 0
       user.created_at = 2.years.ago..Time.now
       user.updated_at = 1.years.ago..Time.now
-      
+
       Favoriteroute.populate 4 do |favoriteroute|
         favoriteroute.user_id = [1, 5]
         favoriteroute.route_id = [1, 8]
       end
-      
+
       Favoriteplace.populate 4 do |favoriteplace|
         favoriteplace.user_id = [1, 5]
         favoriteplace.place_id = [1, 11]
@@ -330,11 +330,29 @@ namespace :db do
           routepoint.created_at = 2.years.ago..Time.now
           routepoint.updated_at = 1.years.ago..Time.now
         end
-      end    
 
+        Rate.populate 1 do |rate|
+          rate.rater_id = user.id
+          rate.rateable_id = [1, 8]
+          rate.rateable_type = 'Route'
+          rate.stars = [1, 5]
+          rate.dimension = 'rank'
+          rate.created_at = 2.years.ago..Time.now
+          rate.updated_at = 1.years.ago..Time.now
+        end    
+
+        Rate.populate 1 do |rate|
+          rate.rater_id = user.id
+          rate.rateable_id = [1, 11]
+          rate.rateable_type = 'Place'
+          rate.stars = [1, 5]
+          rate.dimension = 'rank'
+          rate.created_at = 2.years.ago..Time.now
+          rate.updated_at = 1.years.ago..Time.now
+        end
+      end   
 
     end
-
 
   end
 

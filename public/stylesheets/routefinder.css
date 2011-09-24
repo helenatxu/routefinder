@@ -229,6 +229,12 @@ td {
 .ratings {
 	margin: 20px ;
 	clear: left;
+/*	display: inline;*/
+}
+
+#user_actions {
+	margin: 0 auto;
+	clear: both;
 }
 
 .edit_links {
