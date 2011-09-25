@@ -544,18 +544,23 @@ td {
 
 
 .example {
-	margin: -13px 0 0 73px;
+	margin: -10px 0 0 73px;
 	font-size:85%;
 }
 
 .search_button{
 	float:right;
-	margin: -38px 0 0 0;
+	margin: -30px 0 0 0;
 }
 
 .options_search {
 	margin: 0.5em;
 	margin-left: 4em;
+}
+
+#keywords_search, #country_id {
+	width: 350px;
+	height: 15px;
 }
 
 .search_form {
@@ -571,22 +576,39 @@ td {
 
 .content-search {
 	margin: 10px;
-	padding: 45px 20px 20px 30px;
+	padding: 40px 20px 20px 30px;
 }
 
 .content-search p {
-	padding: 8px;
+	padding: 5px;
+}
+
+#checkbox{
+	margin: 0px;
 }
 
 #checkbox label {
-	padding-left: 14px;
+/*	padding-left: 14px;*/
 }
 
 .search_form #checkbox {
-	margin-top: 14px;
+/*	margin-top: 14px;*/
 	margin-left: -14px;
 }
 
+#content2 .content-search p {
+	padding: 5px;
+}
+
+#content2 .content-search #keywords_search, #content2 .content-search select  {
+	width: 350px;
+}
+
+
+#content2 .content-search #checkbox {
+/*	margin-top: 14px;*/
+	margin-left: 0px;
+}
 
 /***** Search form small ****/ 
 
@@ -614,7 +636,7 @@ td {
 }
 
 .content-search_small p {
-	padding: 8px 10px;
+	padding: 3px 10px;
 }
 
 .content-search_small p label{
@@ -622,7 +644,7 @@ td {
 }
 
 .search_button_small{
-	margin: -30px 20px 0 0;
+	margin: -20px 20px 0 0;
 	float:right;
 }
 

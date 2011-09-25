@@ -7,9 +7,10 @@
 		<p>
 			<%= label_tag(:keywords_search, "Search for:") %> 
 			<%= text_field_tag :keywords_search, params[:keywords] %>
-
-			<%@countries = Country.find(:all) %>
+		</p>
+		<p>
 			<%= label_tag(:country_id, "Select a country:") %> 
+			<%@countries = Country.find(:all) %>
 			<%= select_tag :country_id, options_from_collection_for_select(@countries, 'id', 'name')%>
 		</p>
 		
