@@ -221,17 +221,6 @@ td {
 	padding: 2px;
 }
 
-#addplace{
-	float: right;
-	margin: 10px 50px auto auto !important;
-}
-
-.ratings {
-	margin: 20px ;
-	clear: left;
-/*	display: inline;*/
-}
-
 #user_actions {
 	margin: 0 auto;
 	clear: both;
@@ -293,7 +282,7 @@ td {
 	float: left;	
 }
 
-#content_show #comeback_links a, #userpanel #comeback_links a {
+#content_show #comeback_links a, #userpanel #comeback_links a, #content_show_place a {
 	padding: 5px 10px;
 	text-decoration: none !important;
 	color: #54470B; 
@@ -304,15 +293,19 @@ td {
 	box-shadow: 2px 2px 2px #888888;
 }
 
-#content_show #comeback_links a:visited, #userpanel #comeback_links a:visited {
+#content_show #comeback_links a:visited, #userpanel #comeback_links a:visited, #content_show_place a  {
 	color: #54470B;
 }
 
-#content_show #comeback_links a:hover, #userpanel #comeback_links a:hover {
+#content_show #comeback_links a:hover, #userpanel #comeback_links a:hover, #content_show_place a  {
 	color: #549F03; 
 	padding: 6px 11px 6px 11px;
 }
 
+#content_show_place #comeback_links {
+	clear: both;
+	margin: 20px auto 20px 40px;
+}
 
 #register_link {
 	margin: 62px auto auto 5px;
@@ -511,6 +504,10 @@ td {
 	width: 325px !important;
 }
 
+#form_fields p input, #form_fields p textarea, #form_fields p select {
+	margin: 5px 0 10px;
+}
+
 .texta { 
 	height: 70px !important;
 	width: 320px !important;
@@ -519,6 +516,11 @@ td {
 .fieldarea, .texta { 
 	font-size: 100%; 
 	float:right;
+}
+
+.place_form button, .place_form #place_submit {
+	padding: 2px !important;
+	font-size: 13px !important;
 }
 
 
@@ -672,6 +674,10 @@ margin: auto auto 10px 10px;
 
 }
 
+#place_country_id {
+	width: 275px;
+}
+
 .fieldset {
 	border: 1px solid #9DD999 !important;
 	margin: 20px;
@@ -699,4 +705,33 @@ margin: auto auto 10px 10px;
 	float: left;
 }
 
+/*   ---------   */
 
+#ratings, #favorite {
+	display: inline;
+	float: left;
+}
+
+#ratings {
+	width: 200px;
+	position: relative;
+	float: left;
+}
+
+#favorite {
+	width: 200px;
+	float: right;
+}
+
+#fav_rat_block {
+	display: block;
+	clear: left;
+	float: left;
+	width: 400px;
+	margin: 20px;
+}
+
+#favoriteplace_submit {
+	padding: 2px !important;
+	font-size: 16px !important;
+}

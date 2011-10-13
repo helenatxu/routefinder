@@ -6,7 +6,7 @@
 
 <% if current_user && current_user.id == @place.user_id %>
 
-<div id="form_fields">
+<div id="form_fields" class="place_form">
 <% form_for(@place, :html => { :id => "place_form"}) do |f| %>
 	<%= f.error_messages %>
 
@@ -43,11 +43,9 @@
 				<%= f.label :coordinates_long %><br />
 				<%= f.text_field :coordinates_long %>
 			</p>
-			
 			<!-- <p>
 			<button type="button" id="set_coordinates_button" class="button">Set Coordinates</button>
-			</p> -->
-			
+			</p> -->			
 		</fieldset>
 	</div>
 
@@ -55,9 +53,8 @@
 		<%= f.label :country_id, "Push 'Show Map button' to get the country" %><br />
 		<!-- <button type="button" id="get_country_button" class="button">Get Country</button> -->
 		<%= @country = Country.find(:all, :conditions => ['(name LIKE ?)', "%#{params[:place_country]}%"]) 
-		f.collection_select(:country_id, @country, :id, :name) %>
+		f.collection_select (:country_id, @country, :id, :name, {}, {:disabled => true}) %>
 	</p>
-	
 	<p>
 		<%= f.label :description %><br />
 		<%= f.text_area :description %>
