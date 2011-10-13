@@ -1,12 +1,12 @@
 <% content_for :head do %>
-	<script type="text/javascript" src="/javascripts/places.new.js"></script>
+<script type="text/javascript" src="/javascripts/places.new.js"></script>
 <% end -%>
 
 <h1>New place</h1>
 
 <% if current_user %>
-<div id="form_fields">
 
+<div id="form_fields">
 	<% form_for(@place, :html => { :id => "place_form"}) do |f| %>
 	<%= f.error_messages %>
 
@@ -24,13 +24,11 @@
 			</p>
 
 			<p id="showlocation" class="button">
-				<button type="button" id="showmap">Show Map</button>
+				<!-- <button type="button" id="showmap">Show Map</button> -->
+				<button type="button" id="getcoordinates">Show Map &amp; Coordinates</button>
 				<button type="button" id="hidemap">Hide Map</button>
-				<button type="button" id="getcoordinates">Get Coordinates</button>
 			</p>
-
 			<div id="map_canvas"></div>
-
 		</fieldset>
 	</div>
 
@@ -59,7 +57,7 @@
 	</p>
 	
 	<p>
-		<button type="button" id="get_country" class="button">Get Country</button>
+		<!-- <button type="button" id="get_country" class="button">Get Country</button> -->
 		<%= f.label :get_country %><br />
 		<%= f.text_field :get_country %>
 	</p>

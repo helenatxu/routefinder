@@ -17,6 +17,76 @@ function setMap() {
 	isLatlngValid = true;
 }
 
+function showMap() {
+	var ready = false;
+
+	$('#map_canvas').show(500, function() {
+		google.maps.event.trigger(map, 'resize');
+		if (ready) {
+			setMap()
+		} else {
+			ready = true;
+		}
+	});
+
+	var address = $("#place_direction").val();
+	geocoder.geocode( { 'address': address}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			latlng = results[0].geometry.location;
+			if (ready) {
+				setMap()
+			} else {
+				ready = true;
+			}
+
+		} else {
+			alert("Geocode was not successful for the following reason: " + status);
+		}
+	});
+}
+
+function getCountry() {
+	if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
+		if (isLatlngValid) {				
+			geocoder.geocode( { 'latlng': marker.getPosition()}, function(results, status) {
+				var country;
+				if (status == google.maps.GeocoderStatus.OK) {
+					for (i=0;i<results[0].address_components.length;i++){
+						for (j=0;j<results[0].address_components[i].types.length;j++){
+							if(results[0].address_components[i].types[j]=='country')
+							country = results[0].address_components[i].long_name
+						}
+					}
+					$("#place_country_id").val(country);
+				} else {
+					alert("Geocode was not successful for the following reason: " + status);
+				}
+			});
+			return true;
+		} else {
+			var address = $("#place_direction").val();
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				var country;
+				if (status == google.maps.GeocoderStatus.OK) {
+					for (i=0;i<results[0].address_components.length;i++){
+						for (j=0;j<results[0].address_components[i].types.length;j++){
+							if(results[0].address_components[i].types[j]=='country')
+							country = results[0].address_components[i].long_name
+						}
+					}
+					$("#place_country_id").val(country);
+
+				} else {
+					alert("Geocode was not successful for the following reason: " + status);
+				}
+			});
+			return false;
+		}
+	}
+	return true;
+	
+}
+
 $(document).ready(function(){
 	geocoder = new google.maps.Geocoder();
 
@@ -71,7 +141,9 @@ $(document).ready(function(){
 			if (isLatlngValid) {
 				$("#place_coordinates_lat").val(latlng.lat());
 				$("#place_coordinates_long").val(latlng.lng());
-
+				showMap();
+				getCountry();
+				
 				return true;
 			} else {
 				var address = $("#place_direction").val();
@@ -81,6 +153,8 @@ $(document).ready(function(){
 
 						$("#place_coordinates_lat").val(latlng.lat());
 						$("#place_coordinates_long").val(latlng.lng());
+						showMap();
+						getCountry();
 
 					} else {
 						alert("Geocode was not successful for the following reason: " + status);
@@ -94,46 +168,48 @@ $(document).ready(function(){
 	});
 
 
-	$("#get_country_button").click(function() {
-		if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
-			if (isLatlngValid) {				
-				geocoder.geocode( { 'latlng': marker.getPosition()}, function(results, status) {
-					var country;
-					if (status == google.maps.GeocoderStatus.OK) {
-						for (i=0;i<results[0].address_components.length;i++){
-							for (j=0;j<results[0].address_components[i].types.length;j++){
-								if(results[0].address_components[i].types[j]=='country')
-								country = results[0].address_components[i].long_name
-							}
-						}
-						$("#place_country_id").val(country);
-					} else {
-						alert("Geocode was not successful for the following reason: " + status);
-					}
-				});
-				return true;
-			} else {
-				var address = $("#place_direction").val();
-				geocoder.geocode( { 'address': address}, function(results, status) {
-					var country;
-					if (status == google.maps.GeocoderStatus.OK) {
-						for (i=0;i<results[0].address_components.length;i++){
-							for (j=0;j<results[0].address_components[i].types.length;j++){
-								if(results[0].address_components[i].types[j]=='country')
-								country = results[0].address_components[i].long_name
-							}
-						}
-						$("#place_country_id").val(country);
-
-					} else {
-						alert("Geocode was not successful for the following reason: " + status);
-					}
-				});
-				return false;
-			}
-		}
-		return true;
-	});
+	// $("#get_country_button").click(function() {
+	// 	if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
+	// 		if (isLatlngValid) {				
+	// 			geocoder.geocode( { 'latlng': marker.getPosition()}, function(results, status) {
+	// 				var country;
+	// 				if (status == google.maps.GeocoderStatus.OK) {
+	// 					for (i=0;i<results[0].address_components.length;i++){
+	// 						for (j=0;j<results[0].address_components[i].types.length;j++){
+	// 							if(results[0].address_components[i].types[j]=='country')
+	// 							country = results[0].address_components[i].long_name
+	// 						}
+	// 					}
+	// 					$("#place_country_id").val(country);
+	// 				} else {
+	// 					alert("Geocode was not successful for the following reason: " + status);
+	// 				}
+	// 			});
+	// 			return true;
+	// 		} else {
+	// 			var address = $("#place_direction").val();
+	// 			geocoder.geocode( { 'address': address}, function(results, status) {
+	// 				var country;
+	// 				if (status == google.maps.GeocoderStatus.OK) {
+	// 					for (i=0;i<results[0].address_components.length;i++){
+	// 						for (j=0;j<results[0].address_components[i].types.length;j++){
+	// 							if(results[0].address_components[i].types[j]=='country')
+	// 							country = results[0].address_components[i].long_name
+	// 						}
+	// 					}
+	// 					$("#place_country_id").val(country);
+	// 
+	// 				} else {
+	// 					alert("Geocode was not successful for the following reason: " + status);
+	// 				}
+	// 			});
+	// 			return false;
+	// 		}
+	// 	}
+	// 	return true;
+	// });
+	
+	
 
 	// $('#set_coordinates_button').click(function() {
 	// 	var ready = false;

@@ -2,8 +2,9 @@
 <script type="text/javascript" src="/javascripts/places.new.js"></script>
 <% end -%>
 
-<% if current_user && current_user.id == @place.user_id %>
 <h1>Editing place</h1>
+
+<% if current_user && current_user.id == @place.user_id %>
 
 <div id="form_fields">
 <% form_for(@place, :html => { :id => "place_form"}) do |f| %>
@@ -23,13 +24,11 @@
 			</p>
 
 			<p id="showlocation" class="button">
-				<button type="button" id="showmap">Show Map</button>
+				<!-- <button type="button" id="showmap">Show Map</button> -->
+				<button type="button" id="getcoordinates">Show Map &amp; Coordinates</button>
 				<button type="button" id="hidemap">Hide Map</button>
-				<button type="button" id="getcoordinates">Get Coordinates</button>
 			</p>
-
 			<div id="map_canvas"></div>
-
 		</fieldset>
 	</div>
 	
@@ -52,8 +51,9 @@
 		</fieldset>
 	</div>
 
-	<p class="button">
-		<button type="button" id="get_country_button" class="button">Get Country</button>
+	<p>
+		<%= f.label :country_id, "Push 'Show Map button' to get the country" %><br />
+		<!-- <button type="button" id="get_country_button" class="button">Get Country</button> -->
 		<%= @country = Country.find(:all, :conditions => ['(name LIKE ?)', "%#{params[:place_country]}%"]) 
 		f.collection_select(:country_id, @country, :id, :name) %>
 	</p>
