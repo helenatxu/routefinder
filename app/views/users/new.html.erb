@@ -7,27 +7,27 @@
 
 	<p>
 		<%= f.label :login %>
-		<%= f.text_field ( :login, :class => "fieldarea" ) %>
+		<%= f.text_field :login, :class => "fieldarea" %>
 	</p>
 	<p>
 		<%= f.label :email %>
-		<%= f.text_field ( :email, :class => "fieldarea" ) %>
+		<%= f.text_field (:email, :class => "fieldarea") %>
 	</p>
 	<p>
 		<%= f.label :password, f.object.new_record? ? nil : "Change password" %>
-		<%= f.password_field ( :password, :class => "fieldarea" ) %>
+		<%= f.password_field (:password, :class => "fieldarea") %>
 	</p>
 	<p>
 		<%= f.label :password_confirmation %>
-		<%= f.password_field ( :password_confirmation, :class => "fieldarea" ) %>
+		<%= f.password_field (:password_confirmation, :class => "fieldarea") %>
 	</p>
 	<p>
 		<%= f.label :photo_url %>
-		<%= f.text_field ( :photo_url, :class => "fieldarea" ) %>
+		<%= f.text_field (:photo_url, :class => "fieldarea") %>
 	</p>
 	<p>
 		<%= f.label :profile %>
-		<%= f.text_area ( :profile, :class => "texta" ) %>
+		<%= f.text_area (:profile, :class => "texta") %>
 	</p>
 
 	<p class="button">
