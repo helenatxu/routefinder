@@ -26,6 +26,7 @@
 			<p id="showlocation" class="button">
 				<button type="button" id="showmap">Show Map</button>
 				<button type="button" id="hidemap">Hide Map</button>
+				<button type="button" id="getcoordinates">Get Coordinates</button>
 			</p>
 
 			<div id="map_canvas"></div>
@@ -56,6 +57,13 @@
 		<%=@countries = Country.find(:all, :order => "name") 
 		f.collection_select(:country_id, @countries, :id, :name) %>
 	</p>
+	
+	<p>
+		<button type="button" id="get_country" class="button">Get Country</button>
+		<%= f.label :get_country %><br />
+		<%= f.text_field :get_country %>
+	</p>
+	
 	<p>
 		<%= f.label :description %><br />
 		<%= f.text_area :description %>

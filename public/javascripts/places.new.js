@@ -13,7 +13,7 @@ function setMap() {
 		map: map, 
 		position: latlng
 	});
-	
+
 	isLatlngValid = true;
 }
 
@@ -33,10 +33,10 @@ $(document).ready(function(){
 	});
 
 	$("#map_canvas").hide();
-	
+
 	$('#showmap').click(function() {
 		var ready = false;
-		
+
 		$('#map_canvas').show(500, function() {
 			google.maps.event.trigger(map, 'resize');
 			if (ready) {
@@ -55,7 +55,7 @@ $(document).ready(function(){
 				} else {
 					ready = true;
 				}
-				
+
 			} else {
 				alert("Geocode was not successful for the following reason: " + status);
 			}
@@ -65,24 +65,23 @@ $(document).ready(function(){
 	$("#hidemap").click(function () {
 		$("#map_canvas").hide(500);
 	});
-	
-	$("#place_form").submit(function() {
+
+	$("#getcoordinates").click(function() {
 		if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
 			if (isLatlngValid) {
 				$("#place_coordinates_lat").val(latlng.lat());
 				$("#place_coordinates_long").val(latlng.lng());
-				
+
 				return true;
 			} else {
 				var address = $("#place_direction").val();
 				geocoder.geocode( { 'address': address}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						latlng = results[0].geometry.location;
-						
+
 						$("#place_coordinates_lat").val(latlng.lat());
 						$("#place_coordinates_long").val(latlng.lng());
-						
-						$("#place_form").submit();
+
 					} else {
 						alert("Geocode was not successful for the following reason: " + status);
 					}
@@ -90,7 +89,87 @@ $(document).ready(function(){
 				return false;
 			}
 		}
-		
+
 		return true;
 	});
+
+
+	$("#get_country_button").click(function() {
+		if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
+			if (isLatlngValid) {				
+				geocoder.geocode( { 'latlng': marker.getPosition()}, function(results, status) {
+					var country;
+					if (status == google.maps.GeocoderStatus.OK) {
+						for (i=0;i<results[0].address_components.length;i++){
+							for (j=0;j<results[0].address_components[i].types.length;j++){
+								if(results[0].address_components[i].types[j]=='country')
+								country = results[0].address_components[i].long_name
+							}
+						}
+						$("#place_country_id").val(country);
+					} else {
+						alert("Geocode was not successful for the following reason: " + status);
+					}
+				});
+				return true;
+			} else {
+				var address = $("#place_direction").val();
+				geocoder.geocode( { 'address': address}, function(results, status) {
+					var country;
+					if (status == google.maps.GeocoderStatus.OK) {
+						for (i=0;i<results[0].address_components.length;i++){
+							for (j=0;j<results[0].address_components[i].types.length;j++){
+								if(results[0].address_components[i].types[j]=='country')
+								country = results[0].address_components[i].long_name
+							}
+						}
+						$("#place_country_id").val(country);
+
+					} else {
+						alert("Geocode was not successful for the following reason: " + status);
+					}
+				});
+				return false;
+			}
+		}
+		return true;
+	});
+
+	// $('#set_coordinates_button').click(function() {
+	// 	var ready = false;
+	// 
+	// 	$('#map_canvas').show(500, function() {
+	// 		google.maps.event.trigger(map, 'resize');
+	// 		if (ready) {
+	// 			setMap()
+	// 		} else {
+	// 			ready = true;
+	// 		}
+	// 	});
+	// 
+	// 	if ($(!isLatlngValid || "#place_coordinates_lat").val().length == 0 || $("#place_coordinates_long").val().length == 0) {
+	// 		if (isLatlngValid) {
+	// 			var latLng;
+	// 			
+	// 			latLng.lat = $("#place_coordinates_lat");
+	// 			latLng.lng = $("#place_coordinates_long");
+	// 
+	// 			geocoder.geocode( { 'latLng': marker.getPosition()}, function(status, results) {
+	// 				if (status == google.maps.GeocoderStatus.OK) {
+	// 					var address = results[0].formatted_address;
+	// 					if (ready) {
+	// 						setMap()
+	// 					} else {
+	// 						ready = true;
+	// 					}
+	// 
+	// 				} else {
+	// 					alert("Geocode was not successful for the following reason: " + status);
+	// 				}
+	// 			});
+	// 		}
+	// 	}
+	// });
+	
+	
 });

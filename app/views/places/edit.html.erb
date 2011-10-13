@@ -25,6 +25,7 @@
 			<p id="showlocation" class="button">
 				<button type="button" id="showmap">Show Map</button>
 				<button type="button" id="hidemap">Hide Map</button>
+				<button type="button" id="getcoordinates">Get Coordinates</button>
 			</p>
 
 			<div id="map_canvas"></div>
@@ -43,16 +44,20 @@
 				<%= f.label :coordinates_long %><br />
 				<%= f.text_field :coordinates_long %>
 			</p>
-
+			
+			<!-- <p>
+			<button type="button" id="set_coordinates_button" class="button">Set Coordinates</button>
+			</p> -->
+			
 		</fieldset>
 	</div>
 
-
-	<p>Country</p>
 	<p class="button">
-		<%=@countries = Country.find(:all, :order => "name") 
-		f.collection_select(:country_id, @countries, :id, :name) %>
+		<button type="button" id="get_country_button" class="button">Get Country</button>
+		<%= @country = Country.find(:all, :conditions => ['(name LIKE ?)', "%#{params[:place_country]}%"]) 
+		f.collection_select(:country_id, @country, :id, :name) %>
 	</p>
+	
 	<p>
 		<%= f.label :description %><br />
 		<%= f.text_area :description %>
