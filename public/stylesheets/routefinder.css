@@ -169,7 +169,7 @@ td {
 .adp-directions {
 	margin: 0px 5px;
 	padding: 20px !important;
-	width: 220px;
+/*	width: 120px !important;*/
 	font-size: 95%;
 	background-color: #F0F0F0;
 	border: solid 1px #CFCFCF;
@@ -181,7 +181,7 @@ td {
 .adp-placemark {
 	margin: 0px 0px;
 	padding: 0px !important;
-	width: 210px;
+/*	width: 210px;*/
 	font-size: 90%;
 	background-color: #F0F0F0;
 	border: solid 1px #CFCFCF;
@@ -720,10 +720,11 @@ margin: auto auto 10px 10px;
 }
 
 #directionsPanel {
-	width: 250px;
+	width: 300px;
 	height: 480px;
 	float:left;
 	overflow: auto;
+	border: dotted 1px #9DEE96;
 }
 
 #showlocation {
