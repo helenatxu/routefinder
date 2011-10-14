@@ -27,20 +27,13 @@ waypoints = [
 
 <script type="text/javascript" src="/javascripts/routes.show.js"></script>
 <% end -%>
-
 <%= render(:partial => "search_small") %>
 
-<div id="content_show">
+<div id="content_show_route">
 
-	<h1>
-		<%=h @route.name %>
-	</h1>
-
-	<div id="map_canvas">
-	</div>
-
-	<div id="directionsPanel">
-	</div>
+	<h1><%=h @route.name %></h1>
+	<div id="map_canvas"></div>
+	<div id="directionsPanel"></div>
 
 	<div id="summary">
 		<h2>Route Summary</h2>
@@ -73,66 +66,64 @@ waypoints = [
 			<% end %>
 		</div>
 
-		<p>
-			<b>Places:</b>
+		<p><strong>Places:</strong>
 			<% if @route.places.empty? %>
 			This route is empty (have not any place).
 			<% else %>
 			<ul>
 				<% @route.routepoints.each do |rp| %>
-				<li class="routepoints"><a href="<%=place_path(rp.place)%>"><%=h rp.place.name %></a>
+				<li class="routepoints">
+					<a href="<%=place_path(rp.place)%>"><%=h rp.place.name %></a>
 					<% if current_user and current_user.id == @route.user_id %>
-					<%= link_to 'Destroy', rp, :confirm => 'Are you sure?', :method => :delete %></li>
-					<% end %>
-					<% end %>
-				</ul>
-				<% end %>	
-			</p>
-
-
-			<p>
-				<b>Rate Average:</b>
-				<!--		#To display average with static stars: -->
-			</p>
-			<%= ratings_for @route, :static, :dimension => :rank %>
-
-			<p class="edit_links">
-				<% if current_user %>
-				<% if current_user.id == @route.user_id %>
-				<%= link_to 'Edit route', edit_route_path(@route) %>
+					<%= link_to 'Destroy', rp, :confirm => 'Are you sure?', :method => :delete %>
+				</li>
 				<% end %>
 				<% end %>
-			</p>
-		</div>
+			</ul>
+			<% end %>	
+		</p>
 
+		<p>
+			<strong>Rate Average:</strong>
+			<!--#To display average with static stars: -->
+		</p>
+		<%= ratings_for @route, :static, :dimension => :rank %>
+
+		<p class="edit_links">
+			<% if current_user %>
+			<% if current_user.id == @route.user_id %>
+			<%= link_to 'Edit route', edit_route_path(@route) %>
+			<% end %>
+			<% end %>
+		</p>
+	</div>
+
+	<div id="user_actions">
 		<% if current_user %>
-		<div id="user_actions">
-			
-			<div id="fav_rat_block">
-				<div id="ratings">
-					<h3>Your rating:</h3>
-					<!--	# To display the rating for the current user (current_user): -->
-					<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
-				</div>
-
-				<div id="favorite">
-					<h3>Add to my favorites:</h3>
-					<%= render(:partial => "/favoriteroutes/new", :object => @route) %>
-				</div>
+		<div id="user_controls">
+			<div id="ratings">
+				<h3>Your rating:</h3>
+				<!--	# To display the rating for the current user (current_user): -->
+				<%= ratings_for @route, :dimension => :rank, :show_user_rating => true %>
 			</div>
-			
-		<% end %>
 
-		<div class="comments">
-
-			<%= render(:partial => "/routecomments/list", :object => @route) %> 
-			<%= render(:partial => "/routecomments/new", :object => @route) %>
-
-			<p id="comeback_links">
-				<%= link_to 'Create new route', new_route_path %> 
-				<%= link_to 'Create new place', new_place_path %> 
-				<%= link_to 'Back', root_path %>
-			</p>
+			<div id="favorite">
+				<h3>Add to my favorites:</h3>
+				<%= render(:partial => "/favoriteroutes/new", :object => @route) %>
+			</div>
 		</div>
+
+		<% end %>
+		<div class="comments">
+			<%= render(:partial => "/routecomments/list", :object => @route) %> 
+			<%= render(:partial => "/routecomments/new", :object => @route) %>			
+		</div>
+
+		<p id="comeback_links">
+			<%= link_to 'Create new route', new_route_path %> 
+			<%= link_to 'Create new place', new_place_path %> 
+			<%= link_to 'Back', root_path %>
+		</p>
+
 	</div>
 </div>

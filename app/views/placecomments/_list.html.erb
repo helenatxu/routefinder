@@ -1,31 +1,31 @@
 <div class="comments">
-<h3>Comments:</h3>
+	<h3>Comments:</h3>
 
-<ul>
-	<% if @place.placecomments.empty? %>
-	<li><p>There are no comments.</p></li>
+	<ul>
+		<% if @place.placecomments.empty? %>
+		<li><p>There are no comments.</p></li>
 
-	<% else%>
-	<% @place.placecomments.each do |placecomment| %>
-	<li class="comment">
-		<p class="user_comment"><%=h placecomment.user.login %></p>
-		<p class="date_comment"><%=h placecomment.date %></p>
+		<% else%>
+		<% @place.placecomments.each do |placecomment| %>
+		<li class="comment">
+			<p class="user_comment"><%=h placecomment.user.login %></p>
+			<p class="date_comment"><%=h placecomment.date %></p>
 
-		<p><%=h placecomment.comment %></p>
+			<p><%=h placecomment.comment %></p>
 
-		<% if current_user %>
-		<% if current_user.id == placecomment.user_id %>
-		<p class="links_comment">
-			<%= link_to 'Edit', edit_placecomment_path(placecomment) %>
-			<%= link_to 'Delete', placecomment, :confirm => 'Are you sure?', :method => :delete %>
-		</p>
-		<% end %>		
+			<% if current_user %>
+			<% if current_user.id == placecomment.user_id %>
+			<p class="links_comment">
+				<button type="button"><%= link_to 'Edit', edit_placecomment_path(placecomment) %></button>
+				<button type="button"><%= link_to 'Delete', placecomment, :confirm => 'Are you sure?', :method => :delete %></button>
+			</p>
+			<% end %>		
+			<% end %>
+
+		</li>
+		<% end %>
 		<% end %>
 
-	</li>
-	<% end %>
-	<% end %>
-
-</ul>
+	</ul>
 
 </div>

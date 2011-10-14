@@ -15,8 +15,8 @@
 		<% if current_user %>
 		<% if current_user.id == routecomment.user_id %>
 		<p class="links_comment">
-			<%= link_to 'Edit', edit_routecomment_path(routecomment) %>
-			<%= link_to 'Delete', routecomment, :confirm => 'Are you sure?', :method => :delete %>
+			<button type="button"><%= link_to 'Edit', edit_routecomment_path(routecomment) %></button>
+			<button type="button"><%= link_to 'Delete', routecomment, :confirm => 'Are you sure?', :method => :delete %></button>
 		</p>
 		<% end %>
 		<% end %>

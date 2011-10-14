@@ -14,12 +14,9 @@ var latlng = new google.maps.LatLng(0.0, 0.0);
 
 <div id="content_show_place">
 
-	<h1>
-		<%=h @place.name %>
-	</h1>
-
+	<h1><%=h @place.name %></h1>
 	<div id="map_canvas"></div>
-
+	
 	<div id="summary">
 		<h2>Place Summary</h2>
 		<p>
@@ -77,26 +74,27 @@ var latlng = new google.maps.LatLng(0.0, 0.0);
 		</p>
 	</div>
 
-	<% if current_user %>
-	<div id="fav_rat_block">
-		<div id="ratings">
-			<h3>Your rating:</h3>
-			<!--	# To display the rating for the current user (current_user): -->
-			<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
+	<div id="user_actions">
+		<% if current_user %>
+		<div id="user_controls">
+			<div id="ratings">
+				<h3>Your rating:</h3>
+				<!--	# To display the rating for the current user (current_user): -->
+				<%= ratings_for @place, :dimension => :rank, :show_user_rating => true %>
+			</div>
+
+			<div id="favorite">
+				<h3>Add to my favorites:</h3>
+				<%= render(:partial => "/favoriteplaces/new", :object => @place) %>
+			</div>
 		</div>
 
-		<div id="favorite">
-			<h3>Add to my favorites:</h3>
-			<%= render(:partial => "/favoriteplaces/new", :object => @place) %>
+		<% end %>
+
+		<div class="comments">
+			<%= render(:partial => "/placecomments/list", :object => @place) %> 
+			<%= render(:partial => "/placecomments/new", :object => @place) %>
 		</div>
-	</div>
-	<% end %>
-	
-	<div class="comments">
-
-		<%= render(:partial => "/placecomments/list", :object => @place) %> 
-		<%= render(:partial => "/placecomments/new", :object => @place) %>
-
 
 		<p id="comeback_links">
 			<%= link_to 'Create new place', new_place_path %> 

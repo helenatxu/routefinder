@@ -194,8 +194,15 @@ td {
 	margin: 0;
 }
 
-#summary {
+#content_show_place #summary {
+	width: 450px;
+}
+
+#content_show_route #summary {
 	width: 350px;
+}
+
+#content_show_place #summary, #content_show_route #summary {
 	float: right;
 	margin: 0 10px 0 0;
 	border:solid 2px #9DEE96;
@@ -222,8 +229,10 @@ td {
 }
 
 #user_actions {
-	margin: 0 auto;
-	clear: both;
+/*	margin: 0 auto;*/
+/*	clear: both;*/
+width: 670px;
+margin: 60px 0;
 }
 
 .edit_links {
@@ -233,7 +242,7 @@ td {
 
 #results a {
 	text-decoration: none !important;
-/*	color: #54470B;*/
+	/*	color: #54470B;*/
 	color: #549F03;
 }
 
@@ -243,7 +252,7 @@ td {
 
 #results a:hover {
 /*	color: #549F03; */
-	color: #54470B; 
+color: #54470B; 
 }
 
 
@@ -255,7 +264,7 @@ td {
 
 #profile #comeback_links {
 	float: left;
-    margin: 50px 800px 20px 20px;
+	margin: 50px 800px 20px 20px;
 }
 
 #content2 #comeback_links a {
@@ -282,7 +291,7 @@ td {
 	float: left;	
 }
 
-#content_show #comeback_links a, #userpanel #comeback_links a, #content_show_place a {
+#content_show #comeback_links a, #userpanel #comeback_links a, #content_show_place #comeback_links a, #content_show_route #comeback_links a {
 	padding: 5px 10px;
 	text-decoration: none !important;
 	color: #54470B; 
@@ -293,19 +302,20 @@ td {
 	box-shadow: 2px 2px 2px #888888;
 }
 
-#content_show #comeback_links a:visited, #userpanel #comeback_links a:visited, #content_show_place a  {
+#content_show #comeback_links a:visited, #userpanel #comeback_links a:visited, #content_show_place #comeback_links a:visited, #content_show_route #comeback_links a:visited  {
 	color: #54470B;
 }
 
-#content_show #comeback_links a:hover, #userpanel #comeback_links a:hover, #content_show_place a  {
+#content_show #comeback_links a:hover, #userpanel #comeback_links a:hover, #content_show_place #comeback_links a:hover, #content_show_route #comeback_links a:hover  {
 	color: #549F03; 
 	padding: 6px 11px 6px 11px;
 }
 
-#content_show_place #comeback_links {
+#content_show_place #comeback_links, #content_show_route #comeback_links {
 	clear: both;
-	margin: 20px auto 20px 40px;
+	margin: 30px auto 20px 40px;
 }
+
 
 #register_link {
 	margin: 62px auto auto 5px;
@@ -412,9 +422,25 @@ td {
 	font: normal 12px arial, sans-serif;
 }
 
+.buttons_login a {
+	text-decoration:none !important;
+	font: normal 13px arial, sans-serif !important;
+	padding: 8px !important;
+}
+
+.buttons_login a:link, .buttons_login a:visited {
+	color: black !important;
+}
+
+.buttons_login a:hover{
+	color: #549F03 !important;
+}
+
+
 .comments {
 	clear:left;
-	padding: 20px 0 0 0;
+	padding: 20px 0 0 10px;
+	width: 540px;
 }
 
 .comments .comment {
@@ -444,14 +470,37 @@ td {
 	text-align: right;
 }
 
-#newcomment {
-	margin: 10px;
+
+.comments .links_comment a {
+	text-decoration:none;
+	font: normal 14px arial, sans-serif !important;
+	padding: 16px;
+}
+
+.comments .links_comment a:link, .comments .links_comment a:visited {
+	color: black;
+}
+
+.comments .links_comment a:hover{
+	color: #549F03;
+}
+
+#content_show_route #newcomment {
 	margin-top: 20px;
 }
+
+
+#content_show_place #newcomment {
+	margin: 20px 10px;
+}
+
+
 #newcomment #routecomment_comment, #newcomment #placecomment_comment {
 	height: 50px;
 	width: 640px;
+	padding: 5px;
 }
+
 
 /********** BUTTONS *************/
 
@@ -595,7 +644,7 @@ td {
 
 .search_form #checkbox {
 /*	margin-top: 14px;*/
-	margin-left: -14px;
+margin-left: -14px;
 }
 
 #content2 .content-search p {
@@ -609,7 +658,7 @@ td {
 
 #content2 .content-search #checkbox {
 /*	margin-top: 14px;*/
-	margin-left: 0px;
+margin-left: 0px;
 }
 
 /***** Search form small ****/ 
@@ -650,10 +699,17 @@ td {
 }
 
 
-#map_canvas {
+#content_show_route #map_canvas {
 	width: 540px;
 	height: 480px;
 	float: left;
+}
+
+#content_show_place #map_canvas {
+	width: 655px;
+	height: 480px;
+	float: left;
+	margin: 0 20px 20px;
 }
 
 fieldset #map_canvas {
@@ -705,7 +761,16 @@ margin: auto auto 10px 10px;
 	float: left;
 }
 
-/*   ---------   */
+/*   ----- User controls ----   */
+
+#user_controls {
+	display: block;
+	clear: left;
+	float: left;
+	width: 400px;
+	padding: 15px 70px;
+	/*	margin: 0 auto;*/
+}
 
 #ratings, #favorite {
 	display: inline;
@@ -720,15 +785,7 @@ margin: auto auto 10px 10px;
 
 #favorite {
 	width: 200px;
-	float: right;
-}
-
-#fav_rat_block {
-	display: block;
-	clear: left;
 	float: left;
-	width: 400px;
-	margin: 20px;
 }
 
 #favoriteplace_submit {
